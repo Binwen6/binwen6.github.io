@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header h1, header h2 {
+    margin: 0;
+    padding: 0.5rem;
+}
+
+.social-links {
+    text-align: center;
+    padding: 1rem;
+}
+
+.social-links img {
+    margin: 0 10px;
+    width: 40px;
+    height: auto;
+}
+
+.bio {
+    padding: 20px;
+    text-align: center;
+}
+
+.bio img {
+    max-width: 100%;
+    height: auto;
+}
+
+section {
+    padding: 20px;
+    margin: 20px 0;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: #fff;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.programming-languages img {
+    width: 80px; /* Adjust size as needed */
+    margin: 10px;
+}

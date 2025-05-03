@@ -81,13 +81,13 @@ document.querySelectorAll('section').forEach(section => {
     sectionObserver.observe(section);
 });
 
-// 使用 Google Analytics API 获取访问量
+// 使用 Google Analytics 获取访问量
 document.addEventListener('DOMContentLoaded', function() {
     const GA_MEASUREMENT_ID = 'G-BLLQR6VZCC';
     
-    console.log('Starting Google Analytics API call...');
+    console.log('Initializing Google Analytics...');
     
-    // 使用 gtag 配置和事件
+    // 配置 Google Analytics
     gtag('config', GA_MEASUREMENT_ID, {
         'send_page_view': true,
         'anonymize_ip': true
@@ -99,14 +99,24 @@ document.addEventListener('DOMContentLoaded', function() {
             // 使用 gtag 的回调来获取访问量
             gtag('get', GA_MEASUREMENT_ID, 'clientId', function(clientId) {
                 console.log('Client ID:', clientId);
-                // 这里我们可以使用 clientId 来跟踪访问量
-                let count = localStorage.getItem('ga_visitor_count');
-                if (!count) {
-                    count = 0;
+                
+                // 检查是否是新访客
+                let isNewVisitor = !localStorage.getItem('ga_visitor_id');
+                if (isNewVisitor) {
+                    localStorage.setItem('ga_visitor_id', clientId);
+                    
+                    // 增加访问量计数
+                    let count = localStorage.getItem('ga_visitor_count');
+                    if (!count) {
+                        count = 0;
+                    }
+                    count = parseInt(count) + 1;
+                    localStorage.setItem('ga_visitor_count', count);
                 }
-                count = parseInt(count) + 1;
-                localStorage.setItem('ga_visitor_count', count);
-                document.getElementById('visitorCount').textContent = count;
+                
+                // 显示访问量
+                let count = localStorage.getItem('ga_visitor_count');
+                document.getElementById('visitorCount').textContent = count || '0';
             });
         }
     });

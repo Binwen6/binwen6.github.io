@@ -81,17 +81,15 @@ document.querySelectorAll('section').forEach(section => {
     sectionObserver.observe(section);
 });
 
-// 使用 Google Analytics API 获取访问量
+// 使用 Google Analytics Reporting API 获取访问量
 document.addEventListener('DOMContentLoaded', function() {
-    // 这里需要替换为你的 Google Analytics 测量 ID
     const GA_MEASUREMENT_ID = 'G-BLLQR6VZCC';
     
     // 使用 Google Analytics Reporting API 获取访问量
-    // 注意：这需要设置适当的 API 密钥和认证
     fetch(`https://analyticsdata.googleapis.com/v1beta/properties/${GA_MEASUREMENT_ID}:runReport`, {
         method: 'POST',
         headers: {
-            'Authorization': 'Bearer YOUR_ACCESS_TOKEN',
+            'Authorization': 'Bearer ya29.c.c0ASRK0GZR0SXTYmS-quEawYOXF7v4Kx0Y43tR2H8A826-89yiK50g11gH1y09hn4qDCAfJduncGPNBB2352KkoXUxU65n-1nv_vd3s1QxzlE_z-mNZikN_-ycyOQ9FCXRvmSfeEiFgVTJlroOu2E5Ktg3M9hmzY9WuG-I6tySCon976QWxvoHydSK__yLCaVzpXCzK9lO4w599PEkGApN7eb2QQ85NJp2cqu6XOwbrrs7FvnEloqg95H7I41nola1e2NIUx2P3ARF8BGQ6_eNiSPZr1kuADIvevxsc7crIyRYnxe0iKtsRcQ41_Z3DyXi2ruyfJDu2k3D9r9R4QUV62RqQmqPnKz2IDMaWkp3zPitF_TP6g7LLhAT384Pgy0xqUtju3daQI8FsJfqhgnSb3orx7SuUpM_h88smvqRIwkc5BMOVWzvr30Y935zJwOkuzRfSdM2Bdj8wppiZ0Ig9Jo5WBYVnR169j4YqtfZacI6tlV4qBOQ23oqk0cvvQVY8p-d_nnsYr9bQwqikwxZ_zVOe_UbF1dWtQkvu09QJRX3Fatgf9yBWtv_FhI4YX7eF3lcuieeo_wJr-QrBye2emSvdUbXj9JRtSMB-e8Jwm-jOgzblzjaWb9kmi2ZJx43qXVum84Qg1sOp1tsflJXZ1xZBQ_FZmkxdQU80v1U4IoyzBFuRJ8oUxqOsg7o2WZ-fUFeQatQ7_-mkbe7s2o7p36sXajbupl5dkvvkzY7tU0sO2r6p1BisxmRynz-tzR_fJt2U4a4i9if2S9Bv7mctU7Wy9d37omwsBgben7oi24In5p547fqYtbM5Yp5IQxfsrnRXgZ0rkQmnxyzz3ubUMfwus6vIq2rqM9IcMu-_-axkJd-B76h317lq7S33SUq370eXYuIUZ1b9Ocpamp0yOqIg_XwdcrdwRfhtYwSQJfwQhkctvZf1nu2-54yZZRl_SmaOs5lsnxp3vFo_YR5ZUktUI3V6u3_u3y1WFJ35w_7zhtwesfe5o1',
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
@@ -106,11 +104,15 @@ document.addEventListener('DOMContentLoaded', function() {
     })
     .then(response => response.json())
     .then(data => {
-        const totalVisitors = data.rows[0].metricValues[0].value;
-        document.getElementById('visitorCount').textContent = totalVisitors;
+        if (data.rows && data.rows[0]) {
+            const totalVisitors = data.rows[0].metricValues[0].value;
+            document.getElementById('visitorCount').textContent = totalVisitors;
+        } else {
+            document.getElementById('visitorCount').textContent = '0';
+        }
     })
     .catch(error => {
         console.error('Error fetching visitor count:', error);
-        document.getElementById('visitorCount').textContent = 'N/A';
+        document.getElementById('visitorCount').textContent = '0';
     });
 });

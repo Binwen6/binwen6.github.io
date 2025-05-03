@@ -84,7 +84,7 @@ document.querySelectorAll('section').forEach(section => {
 // 使用 Google Analytics API 获取访问量
 document.addEventListener('DOMContentLoaded', function() {
     // 这里需要替换为你的 Google Analytics 测量 ID
-    const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+    const GA_MEASUREMENT_ID = 'G-BLLQR6VZCC';
     
     // 使用 Google Analytics Reporting API 获取访问量
     // 注意：这需要设置适当的 API 密钥和认证

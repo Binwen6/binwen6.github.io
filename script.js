@@ -80,3 +80,37 @@ const sectionObserver = new IntersectionObserver((entries, observer) => {
 document.querySelectorAll('section').forEach(section => {
     sectionObserver.observe(section);
 });
+
+// 使用 Google Analytics API 获取访问量
+document.addEventListener('DOMContentLoaded', function() {
+    // 这里需要替换为你的 Google Analytics 测量 ID
+    const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+    
+    // 使用 Google Analytics Reporting API 获取访问量
+    // 注意：这需要设置适当的 API 密钥和认证
+    fetch(`https://analyticsdata.googleapis.com/v1beta/properties/${GA_MEASUREMENT_ID}:runReport`, {
+        method: 'POST',
+        headers: {
+            'Authorization': 'Bearer YOUR_ACCESS_TOKEN',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            dateRanges: [{
+                startDate: '2025-01-01',
+                endDate: 'today'
+            }],
+            metrics: [{
+                name: 'totalUsers'
+            }]
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        const totalVisitors = data.rows[0].metricValues[0].value;
+        document.getElementById('visitorCount').textContent = totalVisitors;
+    })
+    .catch(error => {
+        console.error('Error fetching visitor count:', error);
+        document.getElementById('visitorCount').textContent = 'N/A';
+    });
+});

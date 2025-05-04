@@ -268,10 +268,33 @@ h3::before {
 }
 
 .education-item .degree {
-    font-size: var(--body-size);
-    font-weight: 500;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-color);
     margin-bottom: 1rem;
+    padding-left: 0;
+    border-left: none;
+}
+
+.education-item ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 1rem;
+}
+
+.education-item ul li {
+    position: relative;
+    padding-left: 0;
+    margin-bottom: 0.5rem;
     color: var(--secondary-color);
+}
+
+.education-item ul li::before {
+    content: "•";
+    position: absolute;
+    left: -1.2rem;
+    color: var(--secondary-color);
+    font-weight: normal;
 }
 
 /* Project & Research Cards */

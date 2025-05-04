@@ -6,7 +6,12 @@
     --light-gray: #f5f6fa;
     --white: #ffffff;
     --transition: all 0.3s ease;
+    --heading-font: 'Playfair Display', serif;
+    --body-font: 'Poppins', sans-serif;
+    --mono-font: 'Roboto Mono', monospace;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&family=Roboto+Mono:wght@400;500&display=swap');
 
 * {
     margin: 0;
@@ -15,10 +20,12 @@
 }
 
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: var(--body-font);
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--white);
+    scroll-behavior: smooth;
+    animation: fadeIn 1s ease-in;
 }
 
 .container {
@@ -42,10 +49,12 @@ nav ul {
     justify-content: center;
     list-style: none;
     padding: 1rem 0;
+    flex-wrap: wrap;
 }
 
 nav ul li {
     margin: 0 1.5rem;
+    position: relative;
 }
 
 nav ul li a {
@@ -53,10 +62,24 @@ nav ul li a {
     text-decoration: none;
     font-weight: 500;
     transition: var(--transition);
+    position: relative;
+    padding: 0.5rem 0;
+    display: block;
 }
 
-nav ul li a:hover {
-    color: var(--accent-color);
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
 }
 
 /* Hero Section */
@@ -64,23 +87,37 @@ nav ul li a:hover {
     padding: 8rem 0 4rem;
     text-align: center;
     background-color: var(--light-gray);
+    position: relative;
+}
+
+#hero .container {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 #hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
     color: var(--primary-color);
+    font-weight: 700;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 3.5s steps(40, end),
+               blink .75s step-end infinite;
+    border-right: 3px solid var(--primary-color);
 }
 
 #hero .subtitle {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: var(--secondary-color);
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
 }
 
 #hero .location {
     color: var(--secondary-color);
     margin-bottom: 2rem;
+    font-size: 1.2rem;
 }
 
 .social-links {
@@ -105,6 +142,10 @@ section {
 
 section:nth-child(even) {
     background-color: var(--light-gray);
+}
+
+h1, h2, h3 {
+    font-family: var(--heading-font);
 }
 
 h2 {
@@ -153,28 +194,49 @@ h2 {
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: var(--transition);
-    display: flex;
-    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 2rem;
 }
 
 .project-card:hover,
 .research-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.project-card::before,
+.research-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1));
+    transition: transform 0.3s ease;
+    z-index: 0;
+}
+
+.project-card:hover::before,
+.research-card:hover::before {
+    transform: scale(1.1);
 }
 
 .project-card h3,
 .research-card h3 {
     color: var(--primary-color);
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
 }
 
 .project-card .date,
 .research-card .date {
     color: var(--secondary-color);
     font-style: italic;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    font-family: var(--mono-font);
 }
 
 .project-card .role,
@@ -207,6 +269,23 @@ h2 {
     margin-bottom: 1rem;
 }
 
+.skills-card ul li {
+    position: relative;
+    padding-left: 20px;
+    transition: transform 0.3s ease;
+}
+
+.skills-card ul li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+.skills-card ul li:hover {
+    transform: translateX(10px);
+}
+
 /* Awards Section */
 .awards-grid {
     display: grid;
@@ -226,6 +305,10 @@ h2 {
     text-align: center;
     max-width: 600px;
     margin: 0 auto;
+    padding: 2rem;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .contact-info p {
@@ -233,11 +316,13 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 1.1rem;
 }
 
 .contact-info i {
     margin-right: 1rem;
     color: var(--accent-color);
+    font-size: 1.2rem;
 }
 
 /* Footer */
@@ -278,6 +363,8 @@ footer {
     text-decoration: none;
     border-radius: 4px;
     transition: background-color 0.3s ease;
+    position: relative;
+    z-index: 1;
 }
 
 .file-link:hover {
@@ -343,6 +430,39 @@ footer {
     font-weight: 500;
 }
 
+/* Research Interests Section */
+.research-interests {
+    margin: 2rem 0;
+    padding: 2rem;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.research-interests h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.research-interests ul {
+    list-style: none;
+    padding: 0;
+}
+
+.research-interests ul li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.research-interests ul li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     nav ul {
@@ -356,6 +476,10 @@ footer {
 
     #hero h1 {
         font-size: 2.5rem;
+    }
+
+    #hero .subtitle {
+        font-size: 1.5rem;
     }
 
     .project-grid,
@@ -377,4 +501,30 @@ footer {
     .certificates-grid {
         grid-template-columns: 1fr;
     }
+
+    .contact-info {
+        padding: 1.5rem;
+    }
+}
+
+/* Typing Animation */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink {
+    50% { border-color: transparent }
+}
+
+/* Page Load Animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Date and Role Font */
+.date, .role {
+    font-family: var(--mono-font);
+    color: var(--secondary-color);
 } 

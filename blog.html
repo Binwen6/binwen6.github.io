@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Binwen Liu</title>
+    <meta name="description" content="Blog of Binwen Liu, an AI researcher and developer.">
+    <meta name="author" content="Binwen Liu">
+
+    <!-- Scripts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js" defer></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+    <script>
+        // Set up Tailwind dark mode
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sora': ['Sora', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'light-bg': '#F8F7F4',
+                        'light-text': '#050505',
+                        'light-accent': '#6A5ACD',
+                        'light-card': '#FFFFFF',
+                        'light-border': '#E5E7EB',
+                        'dark-bg': '#111827',
+                        'dark-text': '#E5E7EB',
+                        'dark-accent': '#8B5CF6',
+                        'dark-card': '#1F2937',
+                        'dark-border': '#374151',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text font-inter transition-colors duration-300">
+
+    <div id="highlight-gradient" class="pointer-events-none absolute left-0 top-0 z-0 h-screen w-full opacity-25" style="background-image:linear-gradient(to bottom, #6A5ACD66, transparent);"></div>
+
+    <div class="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <header class="sticky top-4 z-30 mb-12 flex items-center justify-between rounded-xl border border-transparent py-2 transition-all" id="header">
+            <a class="text-xl font-bold font-sora z-30" href="index.html">Binwen Liu</a>
+            <div class="flex items-center gap-x-2">
+                <nav class="hidden sm:flex items-center gap-x-1 bg-white/70 dark:bg-dark-card/70 backdrop-blur-md rounded-lg p-1 border border-gray-200 dark:border-dark-border">
+                    <a href="index.html#about" class="px-3 py-1 text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md">About</a>
+                    <a href="blog.html" class="px-3 py-1 text-sm font-medium bg-gray-100 dark:bg-gray-700 rounded-md">Blog</a>
+                    <a href="index.html#projects" class="px-3 py-1 text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md">Projects</a>
+                    <a href="index.html#publications" class="px-3 py-1 text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md">Publications</a>
+                    <a href="index.html#contact" class="px-3 py-1 text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md">Contact</a>
+                </nav>
+                <div class="flex items-center gap-x-2">
+                    <a href="search.html" title="Search" class="z-30 box-content size-5 rounded-md border border-gray-300 dark:border-gray-600 p-1.5 transition-colors hover:bg-gray-200 dark:hover:bg-gray-700">
+                        <i class="fa-solid fa-search"></i>
+                    </a>
+                    <button id="theme-toggle" class="z-30 box-content size-5 rounded-md border border-gray-300 dark:border-gray-600 p-1.5 transition-colors hover:bg-gray-200 dark:hover:bg-gray-700">
+                        <i class="fa-solid fa-sun block dark:hidden"></i>
+                        <i class="fa-solid fa-moon hidden dark:block"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main class="flex w-full flex-col items-center">
+            <h1 class="text-4xl font-bold font-sora text-light-text dark:text-white mb-12">Blog</h1>
+            
+            <div class="w-full space-y-8">
+
+                <!-- Blog Post Preview -->
+                <a href="blog/sample-post.html" class="block group">
+                    <div class="p-6 rounded-lg border border-light-border dark:border-dark-border bg-light-card dark:bg-dark-card group-hover:border-light-accent dark:group-hover:border-dark-accent transition-all duration-300">
+                        <p class="text-sm text-gray-500 dark:text-gray-400">October 26, 2025</p>
+                        <h2 class="text-2xl font-bold font-sora mt-2 group-hover:text-light-accent dark:group-hover:text-dark-accent transition-colors">My First Blog Post</h2>
+                        <p class="mt-3 text-gray-600 dark:text-gray-300">This is a preview of my first blog post. Click to read more about my thoughts on the future of AI, recent projects, or my learning journey.</p>
+                        <p class="inline-block mt-4 text-sm font-medium text-light-accent dark:text-dark-accent">Read more &rarr;</p>
+                    </div>
+                </a>
+
+                <!-- More posts will be added here -->
+
+            </div>
+        </main>
+
+        <footer class="mt-20 mb-10 border-t border-gray-200 dark:border-dark-border pt-10">
+            <div class="text-center text-sm text-gray-500 dark:text-gray-400">
+                 <p>&copy; 2024 Binwen Liu. All rights reserved.</p>
+            </div>
+        </footer>
+
+    </div>
+</body>
+</html> 

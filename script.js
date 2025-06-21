@@ -1,82 +1,128 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Example of a simple event listener
-    const socialLinks = document.querySelectorAll('.social-links a');
 
-    socialLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            alert('You are leaving the page to visit ' + link.getAttribute('href'));
-        });
+    // --- Theme Toggler ---
+    const themeToggle = document.getElementById('theme-toggle');
+    const htmlEl = document.documentElement;
+
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        htmlEl.classList.add(savedTheme);
+    } else {
+        // If no theme is saved, use system preference
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            htmlEl.classList.add('dark');
+        }
+    }
+
+    themeToggle.addEventListener('click', () => {
+        htmlEl.classList.toggle('dark');
+        const currentTheme = htmlEl.classList.contains('dark') ? 'dark' : 'light';
+        localStorage.setItem('theme', currentTheme);
     });
-});
 
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+    // --- Sticky Header ---
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 20) {
+            header.classList.add('not-top');
+        } else {
+            header.classList.remove('not-top');
+        }
+    });
+
+    // --- Click Particle Effect ---
+    function createParticle(x, y, angle, distance, colorClass) {
+        const particle = document.createElement('div');
+        particle.className = `click-particle ${colorClass}`;
+        const dx = Math.cos(angle) * distance;
+        const dy = Math.sin(angle) * distance;
+        particle.style.setProperty('--dx', `${dx}px`);
+        particle.style.setProperty('--dy', `${dy}px`);
+        particle.style.left = `${x}px`;
+        particle.style.top = `${y}px`;
+        const size = Math.random() * 6 + 8;
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        document.body.appendChild(particle);
+        setTimeout(() => {
+            if (particle.parentNode) {
+                particle.parentNode.removeChild(particle);
+            }
+        }, 1100);
+    }
+
+    document.addEventListener('click', (e) => {
+        const colors = [
+            'color-blue-400', 'color-purple-400', 'color-indigo-400',
+            'color-pink-400', 'color-red-400', 'color-yellow-400'
+        ];
+        for (let i = 0; i < 10; i++) {
+            const angle = (Math.PI * 2 / 10) * i;
+            const distance = 18 + Math.random() * 8;
+            const colorClass = colors[i % colors.length];
+            setTimeout(() => {
+                createParticle(e.clientX, e.clientY, angle, distance, colorClass);
+            }, i * 12);
+        }
+    });
+    
+    // --- Fun Tab Title Change ---
+    const originalTitle = document.title;
+    document.addEventListener("visibilitychange", () => {
+        if (document.hidden) {
+            document.title = "🤖 Come back soon!";
+        } else {
+            document.title = originalTitle;
+        }
+    });
+
+    // --- Search Logic (only runs on search.html) ---
+    const searchInput = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
+
+    if (searchInput && searchResults) {
+        let searchIndex = [];
+
+        // Fetch the search index
+        fetch('search-index.json')
+            .then(response => response.json())
+            .then(data => {
+                searchIndex = data;
             });
-        }
-    });
-});
 
-// Add active class to navigation items based on scroll position
-const sections = document.querySelectorAll('section');
-const navItems = document.querySelectorAll('nav ul li a');
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            searchResults.innerHTML = '';
 
-window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= sectionTop - 60) {
-            current = section.getAttribute('id');
-        }
-    });
+            if (query.length < 2) {
+                searchResults.innerHTML = '<p class="text-center text-gray-500 dark:text-gray-400">Please enter at least 2 characters to search.</p>';
+                return;
+            }
 
-    navItems.forEach(item => {
-        item.classList.remove('active');
-        if (item.getAttribute('href').slice(1) === current) {
-            item.classList.add('active');
-        }
-    });
-});
+            const results = searchIndex.filter(item => {
+                return item.title.toLowerCase().includes(query) || item.content.toLowerCase().includes(query);
+            });
 
-// Add animation to project and research cards
-const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1
-};
+            if (results.length > 0) {
+                results.forEach(result => {
+                    const resultElement = document.createElement('a');
+                    resultElement.href = result.url;
+                    resultElement.className = 'block p-4 rounded-lg border border-light-border dark:border-dark-border bg-light-card dark:bg-dark-card hover:border-light-accent dark:hover:border-dark-accent transition-all duration-300';
+                    
+                    let contentSnippet = result.content.substring(0, 150);
+                    if (result.content.length > 150) {
+                        contentSnippet += '...';
+                    }
 
-const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('animate');
-            observer.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
-
-document.querySelectorAll('.project-card, .research-card, .skills-card, .award-card').forEach(card => {
-    observer.observe(card);
-});
-
-// Add smooth fade-in animation for sections
-const sectionObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in');
-            observer.unobserve(entry.target);
-        }
-    });
-}, {
-    threshold: 0.1
-});
-
-document.querySelectorAll('section').forEach(section => {
-    sectionObserver.observe(section);
+                    resultElement.innerHTML = `
+                        <h3 class="font-bold text-lg text-light-text dark:text-white">${result.title}</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">${contentSnippet}</p>
+                    `;
+                    searchResults.appendChild(resultElement);
+                });
+            } else {
+                searchResults.innerHTML = '<p class="text-center text-gray-500 dark:text-gray-400">No results found.</p>';
+            }
+        });
+    }
 });

@@ -90,4 +90,67 @@
 
 .dark .skill-tag:hover {
     background-color: #4b5563; /* gray-600 */
+}
+
+/* Profile image styling to prevent distortion */
+.profile-image {
+    width: 144px;
+    height: 144px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 50%;
+    border: 4px solid #ffffff;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.5rem;
+    background-color: #f3f4f6;
+    transition: transform 0.2s ease-in-out;
+}
+
+.dark .profile-image {
+    border-color: #1f2937;
+    background-color: #374151;
+}
+
+.profile-image:hover {
+    transform: scale(1.05);
+}
+
+/* Navigation button styling for perfect icon centering */
+#header .flex.items-center.justify-center {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+#header .flex.items-center.justify-center i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-size: 0.875rem;
+    line-height: 1;
+}
+
+/* Hero section styling for better spacing */
+#hero {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 1.5rem;
+}
+
+@media (min-width: 640px) {
+    #hero {
+        padding: 3rem 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    #hero {
+        padding: 4rem 3rem;
+    }
 } 

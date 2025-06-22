@@ -1,34 +1,300 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- Theme Toggler ---
-    const themeToggle = document.getElementById('theme-toggle');
-    const htmlEl = document.documentElement;
+    // --- Language Toggler ---
+    const languageToggle = document.getElementById('language-toggle');
+    if (languageToggle) {
+        let currentLanguage = localStorage.getItem('language') || 'en';
 
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        htmlEl.classList.add(savedTheme);
-    } else {
-        // If no theme is saved, use system preference
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            htmlEl.classList.add('dark');
+        // Translation data
+        const translations = {
+            en: {
+                title: "Binwen Liu - AI Researcher & Developer",
+                nav: {
+                    about: "About",
+                    blog: "Blog",
+                    projects: "Projects",
+                    publications: "Publications",
+                    contact: "Contact"
+                },
+                hero: {
+                    title: "AI Researcher & Developer",
+                    description: "Currently a student at Xi'an Jiaotong University, pursuing a degree in Artificial Intelligence. Passionate about LLMs, Brain-Computer Interfaces, and AI for Science."
+                },
+                sections: {
+                    about: "About",
+                    projects: "Projects",
+                    publications: "Publications",
+                    posts: "Recent Posts",
+                    research: "Research",
+                    education: "Education",
+                    skills: "Skills",
+                    awards: "Awards",
+                    contact: "Contact"
+                },
+                about: {
+                    paragraph1: "I am a strategic AI researcher and developer with a passion for large language models and collaborative innovation. I have experience creating high-performance applications by leveraging state-of-the-art AI techniques and cross-functional collaboration.",
+                    paragraph2: "My primary research interests include Brain-Computer Interfaces, the capabilities of Large Language Models, applying AI for Scientific discovery, and developing Multi-Modal Agents. I am dedicated to continuous learning and contributing to open-source communities."
+                },
+                projects: {
+                    vaiage: {
+                        title: "Vaiage: AI Travel Planner",
+                        role: "Group Member, CS194 Project",
+                        description: "Proposed product concept and integrated techniques like model fine-tuning, RAG, and CoT."
+                    },
+                    sleep: {
+                        title: "Intelligent Sleep Medicine Consultation",
+                        role: "Group Member, NLP Project",
+                        description: "Constructed knowledge graphs with Neo4j and used BERT for full-stack development."
+                    },
+                    editor: {
+                        title: "Online Editor with LLM",
+                        role: "Team Member, China Software Cup",
+                        description: "Handled PaddlePaddle & Wenxin LLM API integration and full-stack development."
+                    }
+                },
+                publications: {
+                    icll: {
+                        title: "Probing In-Context Learning: Impact of Task Complexity and Model Architecture",
+                        author: "Main Author, May 2025"
+                    },
+                    vaiage: {
+                        title: "Vaiage: A Multi-Agent Solution to Personalized Travel Planning",
+                        author: "Group Member, May 2025 (Project Paper)"
+                    }
+                },
+                posts: {
+                    first: {
+                        title: "My First Blog Post",
+                        preview: "This is a preview of my first blog post. Click to read more about my thoughts on the future of AI..."
+                    },
+                    more: "More posts"
+                },
+                research: {
+                    lowlight: {
+                        title: "Generalizable Low-Light Image Enhancement",
+                        role: "Special Contributor | Jul 2024 - Jan 2025",
+                        description: "Designed experimental benchmarks and led ablation study analysis."
+                    },
+                    video: {
+                        title: "Video-Editing-Friendly Text-to-Image",
+                        role: "Special Contributor | Feb 2024 - Aug 2024",
+                        description: "Optimized LoRA fine-tuning strategies and implemented core code."
+                    }
+                },
+                education: {
+                    berkeley: {
+                        school: "University of California, Berkeley",
+                        degree: "Visiting Undergraduate Student | Jan 2025 - May 2025",
+                        courses: "Courses: Deep Learning, Advanced LLM Agents, Internet Architecture."
+                    },
+                    xjtu: {
+                        school: "Xi'an Jiaotong University",
+                        degree: "B.Eng, Artificial Intelligence | Sep 2022 - Jun 2026",
+                        courses: "Courses: Machine Learning, Computer Vision, NLP, Data Structures."
+                    }
+                },
+                skills: {
+                    hard: {
+                        title: "Hard Skills"
+                    },
+                    languages: {
+                        title: "Languages",
+                        english: "English (Fluent)",
+                        chinese: "Chinese (Native)"
+                    }
+                },
+                awards: {
+                    software: "13th \"China Software Cup\", National Finals Third Prize",
+                    mcm: "Mathematical Contest in Modeling (MCM), H Prize",
+                    fltrp: "FLTRP Cup National English Ability Competition, Silver Award"
+                },
+                contact: {
+                    description: "Feel free to reach out. I'm always open to discussing new projects and opportunities."
+                }
+            },
+            zh: {
+                title: "刘滨闻 - AI研究员与开发者",
+                nav: {
+                    about: "关于",
+                    blog: "博客",
+                    projects: "项目",
+                    publications: "论文",
+                    contact: "联系"
+                },
+                hero: {
+                    title: "AI研究员与开发者",
+                    description: "目前是西安交通大学的学生，正在攻读人工智能学位。热衷于大语言模型、脑机接口和科学AI。"
+                },
+                sections: {
+                    about: "关于",
+                    projects: "项目",
+                    publications: "论文",
+                    posts: "最新文章",
+                    research: "研究",
+                    education: "教育",
+                    skills: "技能",
+                    awards: "奖项",
+                    contact: "联系"
+                },
+                about: {
+                    paragraph1: "我是一名战略AI研究员和开发者，热衷于大语言模型和协作创新。我拥有通过利用最先进的AI技术和跨职能协作创建高性能应用程序的经验。",
+                    paragraph2: "我的主要研究兴趣包括脑机接口、大语言模型的能力、AI在科学发现中的应用以及多模态智能体的开发。我致力于持续学习并为开源社区做出贡献。"
+                },
+                projects: {
+                    vaiage: {
+                        title: "Vaiage: AI旅行规划师",
+                        role: "小组成员，CS194项目",
+                        description: "提出产品概念并集成模型微调、RAG和CoT等技术。"
+                    },
+                    sleep: {
+                        title: "智能睡眠医学咨询",
+                        role: "小组成员，NLP项目",
+                        description: "使用Neo4j构建知识图谱，并使用BERT进行全栈开发。"
+                    },
+                    editor: {
+                        title: "集成LLM的在线编辑器",
+                        role: "团队成员，中国软件杯",
+                        description: "处理PaddlePaddle和文心LLM API集成以及全栈开发。"
+                    }
+                },
+                publications: {
+                    icll: {
+                        title: "探索上下文学习：任务复杂性和模型架构的影响",
+                        author: "主要作者，2025年5月"
+                    },
+                    vaiage: {
+                        title: "Vaiage：个性化旅行规划的多智能体解决方案",
+                        author: "小组成员，2025年5月（项目论文）"
+                    }
+                },
+                posts: {
+                    first: {
+                        title: "我的第一篇博客文章",
+                        preview: "这是我的第一篇博客文章的预览。点击阅读更多关于我对AI未来的思考..."
+                    },
+                    more: "更多文章"
+                },
+                research: {
+                    lowlight: {
+                        title: "通用低光照图像增强",
+                        role: "特别贡献者 | 2024年7月 - 2025年1月",
+                        description: "设计实验基准并主导消融研究分析。"
+                    },
+                    video: {
+                        title: "视频编辑友好的文本到图像",
+                        role: "特别贡献者 | 2024年2月 - 2024年8月",
+                        description: "优化LoRA微调策略并实现核心代码。"
+                    }
+                },
+                education: {
+                    berkeley: {
+                        school: "加利福尼亚大学伯克利分校",
+                        degree: "访问本科生 | 2025年1月 - 2025年5月",
+                        courses: "课程：深度学习、高级LLM智能体、互联网架构。"
+                    },
+                    xjtu: {
+                        school: "西安交通大学",
+                        degree: "工学学士，人工智能 | 2022年9月 - 2026年6月",
+                        courses: "课程：机器学习、计算机视觉、自然语言处理、数据结构。"
+                    }
+                },
+                skills: {
+                    hard: {
+                        title: "硬技能"
+                    },
+                    languages: {
+                        title: "语言",
+                        english: "英语（流利）",
+                        chinese: "中文（母语）"
+                    }
+                },
+                awards: {
+                    software: "第十三届\"中国软件杯\"，全国总决赛三等奖",
+                    mcm: "美国大学生数学建模竞赛，H奖",
+                    fltrp: "外研社杯全国英语能力竞赛，银奖"
+                },
+                contact: {
+                    description: "欢迎随时联系。我总是乐于讨论新项目和机会。"
+                }
+            }
+        };
+
+        // Function to update text content
+        function updateLanguage(lang) {
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                const keys = key.split('.');
+                let value = translations[lang];
+                
+                for (const k of keys) {
+                    if (value && value[k]) {
+                        value = value[k];
+                    } else {
+                        value = key; // Fallback to key if translation not found
+                        break;
+                    }
+                }
+                
+                if (typeof value === 'string') {
+                    element.textContent = value;
+                }
+            });
+            
+            // Update page title
+            document.title = translations[lang].title;
+            
+            // Update meta tags
+            const ogTitle = document.querySelector('meta[property="og:title"]');
+            const twitterTitle = document.querySelector('meta[property="twitter:title"]');
+            if (ogTitle) ogTitle.setAttribute('content', translations[lang].title);
+            if (twitterTitle) twitterTitle.setAttribute('content', translations[lang].title);
         }
+
+        // Initialize language
+        updateLanguage(currentLanguage);
+
+        // Language toggle event listener
+        languageToggle.addEventListener('click', () => {
+            currentLanguage = currentLanguage === 'en' ? 'zh' : 'en';
+            localStorage.setItem('language', currentLanguage);
+            updateLanguage(currentLanguage);
+        });
     }
 
-    themeToggle.addEventListener('click', () => {
-        htmlEl.classList.toggle('dark');
-        const currentTheme = htmlEl.classList.contains('dark') ? 'dark' : 'light';
-        localStorage.setItem('theme', currentTheme);
-    });
+    // --- Theme Toggler ---
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+        const htmlEl = document.documentElement;
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            htmlEl.classList.add(savedTheme);
+        } else {
+            // If no theme is saved, use system preference
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                htmlEl.classList.add('dark');
+            }
+        }
+
+        themeToggle.addEventListener('click', () => {
+            htmlEl.classList.toggle('dark');
+            const currentTheme = htmlEl.classList.contains('dark') ? 'dark' : 'light';
+            localStorage.setItem('theme', currentTheme);
+        });
+    }
 
     // --- Sticky Header ---
     const header = document.getElementById('header');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 20) {
-            header.classList.add('not-top');
-        } else {
-            header.classList.remove('not-top');
-        }
-    });
+    if (header) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                header.classList.add('not-top');
+            } else {
+                header.classList.remove('not-top');
+            }
+        });
+    }
 
     // --- Click Particle Effect ---
     function createParticle(x, y, angle, distance, colorClass) {

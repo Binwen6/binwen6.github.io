@@ -349,11 +349,21 @@ document.addEventListener('DOMContentLoaded', () => {
     if (searchInput && searchResults) {
         let searchIndex = [];
 
-        // Fetch the search index
-        fetch('search-index.json')
-            .then(response => response.json())
+        // Fetch the search index - use relative path to root
+        fetch('../search-index.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to fetch search index');
+                }
+                return response.json();
+            })
             .then(data => {
                 searchIndex = data;
+                console.log('Search index loaded:', data.length, 'items');
+            })
+            .catch(error => {
+                console.error('Error loading search index:', error);
+                searchResults.innerHTML = '<p class="text-center text-red-500">Error loading search index. Please try again later.</p>';
             });
 
         searchInput.addEventListener('input', (e) => {
@@ -362,6 +372,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (query.length < 2) {
                 searchResults.innerHTML = '<p class="text-center text-gray-500 dark:text-gray-400">Please enter at least 2 characters to search.</p>';
+                return;
+            }
+
+            if (searchIndex.length === 0) {
+                searchResults.innerHTML = '<p class="text-center text-gray-500 dark:text-gray-400">Search index not loaded yet. Please wait...</p>';
                 return;
             }
 

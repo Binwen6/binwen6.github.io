@@ -15,8 +15,33 @@
     "content": "Vaiage: AI Travel Planner. Intelligent Sleep Medicine Consultation. Online Editor with LLM."
   },
   {
-      "title": "Publications",
-      "url": "index.html#publications",
-      "content": "Probing In-Context Learning: Impact of Task Complexity and Model Architecture. Vaiage: A Multi-Agent Solution to Personalized Travel Planning."
+    "title": "Publications",
+    "url": "index.html#publications",
+    "content": "Probing In-Context Learning: Impact of Task Complexity and Model Architecture. Vaiage: A Multi-Agent Solution to Personalized Travel Planning."
+  },
+  {
+    "title": "Research",
+    "url": "index.html#research",
+    "content": "Generalizable Low-Light Image Enhancement. Video-Editing-Friendly Text-to-Image."
+  },
+  {
+    "title": "Education",
+    "url": "index.html#education",
+    "content": "University of California, Berkeley. Xi'an Jiaotong University."
+  },
+  {
+    "title": "Skills",
+    "url": "index.html#skills",
+    "content": "Python, PyTorch, TensorFlow, JavaScript, React, Node.js, Git, Docker, AWS, Google Cloud."
+  },
+  {
+    "title": "Awards",
+    "url": "index.html#awards",
+    "content": "13th China Software Cup National Finals Third Prize. Mathematical Contest in Modeling H Prize. FLTRP Cup National English Ability Competition Silver Award."
+  },
+  {
+    "title": "Contact",
+    "url": "index.html#contact",
+    "content": "Feel free to reach out. I'm always open to discussing new projects and opportunities."
   }
 ] 

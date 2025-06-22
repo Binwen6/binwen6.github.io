@@ -1,31 +1,24 @@
-# Service account credentials
-ga-token/
-*.json
-*.key
-*.pem
-*.p12
-*.pfx
-*.cer
-*.crt
-*.der
-*.p7b
-*.p7c
-*.p7m
-*.p7s
-*.p8
-*.pk8
-*.pkcs12
-*.pfx
-*.p12
-*.pem
-*.key
-*.crt
-*.cer
-*.der
-*.p7b
-*.p7c
-*.p7m
-*.p7s
-*.p8
-*.pk8
-*.pkcs12 
+# build output
+dist/
+# generated types
+.astro/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+
+# environment variables
+.env
+.env.production
+
+# macOS-specific files
+.DS_Store
+
+# jetbrains setting folder
+.idea/

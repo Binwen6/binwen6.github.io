@@ -1,0 +1,23 @@
+{
+  "name": "binwen6.github.io",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Personal website of Binwen Liu - AI Researcher & Developer",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "new-post": "node scripts/new-post.js"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^4.3.0",
+    "@astrojs/rss": "^4.0.12",
+    "@astrojs/sitemap": "^3.4.1",
+    "@tailwindcss/vite": "^4.1.10",
+    "astro": "^5.10.0",
+    "date-fns": "^4.1.0",
+    "gray-matter": "^4.0.3",
+    "tailwindcss": "^4.1.10"
+  }
+}

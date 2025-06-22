@@ -1,0 +1,22 @@
+[
+  {
+    "title": "My First Blog Post",
+    "url": "blog/sample-post.html",
+    "content": "This is where your blog content will go. You can write about your projects, share insights from your research, or document your learning journey. Writing is a great way to solidify your knowledge and build a personal brand. Using Markdown Syntax. While this is an HTML file, you can structure your content as if you were writing in Markdown. Use tags like h2 for headings, p for paragraphs, ul and li for lists, code for inline code, and pre for code blocks."
+  },
+  {
+    "title": "About Me",
+    "url": "index.html#about",
+    "content": "I am a strategic AI researcher and developer with a passion for large language models and collaborative innovation. I have experience creating high-performance applications by leveraging state-of-the-art AI techniques and cross-functional collaboration. My primary research interests include Brain-Computer Interfaces, the capabilities of Large Language Models, applying AI for Scientific discovery, and developing Multi-Modal Agents. I am dedicated to continuous learning and contributing to open-source communities."
+  },
+  {
+    "title": "Projects",
+    "url": "index.html#projects",
+    "content": "Vaiage: AI Travel Planner. Intelligent Sleep Medicine Consultation. Online Editor with LLM."
+  },
+  {
+      "title": "Publications",
+      "url": "index.html#publications",
+      "content": "Probing In-Context Learning: Impact of Task Complexity and Model Architecture. Vaiage: A Multi-Agent Solution to Personalized Travel Planning."
+  }
+] 

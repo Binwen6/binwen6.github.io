@@ -1,0 +1,98 @@
+---
+import '../styles/global.css';
+export interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  canonical?: string;
+}
+
+const { title, description = "Personal homepage of Binwen Liu, an AI researcher and developer specializing in large language models and collaborative innovation.", image = "/data/portrait.jpg", canonical } = Astro.props;
+const canonicalURL = canonical || Astro.url.href;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+    <meta name="description" content={description}>
+    <meta name="author" content="Binwen Liu">
+    <link rel="canonical" href={canonicalURL}>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content={canonicalURL}>
+    <meta property="og:title" content={title}>
+    <meta property="og:description" content={description}>
+    <meta property="og:image" content={new URL(image, Astro.url)}>
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content={canonicalURL}>
+    <meta property="twitter:title" content={title}>
+    <meta property="twitter:description" content={description}>
+    <meta property="twitter:image" content={new URL(image, Astro.url)}>
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-inter transition-colors duration-300">
+
+    <div id="highlight-gradient" class="pointer-events-none absolute left-0 top-0 z-0 h-screen w-full opacity-25" style="background-image:linear-gradient(to bottom, #6A5ACD66, transparent);"></div>
+
+    <div class="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <header class="sticky top-4 z-30 mb-12 flex items-center justify-between rounded-xl border border-transparent py-2 px-4 transition-all" id="header">
+            <a class="text-xl font-bold z-30" href="/">Binwen Liu</a>
+            <div class="flex items-center gap-x-2">
+                <nav class="hidden sm:flex items-center gap-x-1 bg-white/70 dark:bg-gray-800/70 backdrop-blur-md rounded-lg p-1 border border-gray-200 dark:border-gray-700">
+                    <a href="/#about" class="px-3 py-1 text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md" data-i18n="nav.about">About</a>
+                    <a href="/blog" class="px-3 py-1 text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md" data-i18n="nav.blog">Blog</a>
+                    <a href="/#projects" class="px-3 py-1 text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md" data-i18n="nav.projects">Projects</a>
+                    <a href="/#publications" class="px-3 py-1 text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md" data-i18n="nav.publications">Publications</a>
+                    <a href="/#contact" class="px-3 py-1 text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md" data-i18n="nav.contact">Contact</a>
+                </nav>
+                <div class="flex items-center gap-x-2">
+                    <a href="/search" title="Search" class="z-30 flex items-center justify-center box-content size-5 rounded-md border border-gray-300 dark:border-gray-600 p-1.5 transition-colors hover:bg-gray-200 dark:hover:bg-gray-700">
+                        <i class="fa-solid fa-search"></i>
+                    </a>
+                    <button id="theme-toggle" class="z-30 flex items-center justify-center box-content size-5 rounded-md border border-gray-300 dark:border-gray-600 p-1.5 transition-colors hover:bg-gray-200 dark:hover:bg-gray-700">
+                        <i class="fa-solid fa-sun block dark:hidden"></i>
+                        <i class="fa-solid fa-moon hidden dark:block"></i>
+                    </button>
+                    <button id="language-toggle" class="z-30 flex items-center justify-center box-content size-5 rounded-md border border-gray-300 dark:border-gray-600 p-1.5 transition-colors hover:bg-gray-200 dark:hover:bg-gray-700" title="Switch Language">
+                        <i class="fa-solid fa-language"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main class="flex w-full flex-col items-center">
+            <slot />
+        </main>
+
+        <footer class="mt-20 mb-10 border-t border-gray-200 dark:border-gray-700 pt-10">
+            <div class="text-center text-sm text-gray-500 dark:text-gray-400">
+                 <p>&copy; 2025 Binwen Liu. All rights reserved.</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="/script.js" is:inline></script>
+</body>
+</html> 

@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@theme {
+  --color-light-bg: #F8F7F4;
+  --color-light-text: #050505;
+  --color-light-accent: #6A5ACD;
+  --color-light-card: #FFFFFF;
+  --color-light-border: #E5E7EB;
+  --color-dark-bg: #111827;
+  --color-dark-text: #E5E7EB;
+  --color-dark-accent: #8B5CF6;
+  --color-dark-card: #1F2937;
+  --color-dark-border: #374151;
+}
+
+/* Custom styles */
+.profile-image {
+  @apply w-32 h-32 rounded-full object-cover mb-6 border-4 border-white dark:border-gray-800 shadow-lg;
+}
+
+.project-card {
+  @apply p-6 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 hover:border-purple-500 dark:hover:border-purple-400 transition-all duration-300;
+}
+
+.publication-item {
+  @apply p-4 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800;
+}
+
+.research-item {
+  @apply p-4 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800;
+}
+
+/* Prose styles for blog content */
+.prose {
+  @apply max-w-none;
+}
+
+.prose h1 {
+  @apply text-3xl font-bold mb-4;
+}
+
+.prose h2 {
+  @apply text-2xl font-bold mb-3 mt-8;
+}
+
+.prose h3 {
+  @apply text-xl font-semibold mb-2 mt-6;
+}
+
+.prose p {
+  @apply mb-4 text-gray-800 dark:text-gray-300;
+}
+
+.prose ul {
+  @apply mb-4 list-disc list-inside;
+}
+
+.prose ol {
+  @apply mb-4 list-decimal list-inside;
+}
+
+.prose li {
+  @apply mb-1;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-purple-500 dark:border-purple-400 pl-4 italic text-gray-600 dark:text-gray-400;
+}
+
+.prose code {
+  @apply bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm;
+}
+
+.prose pre {
+  @apply bg-gray-100 dark:bg-gray-800 p-4 rounded-lg overflow-x-auto mb-4;
+}
+
+.prose pre code {
+  @apply bg-transparent p-0;
+}
+
+.prose a {
+  @apply text-purple-600 dark:text-purple-400 hover:underline;
+}
+
+/* Dark mode prose adjustments */
+.dark .prose {
+  @apply text-gray-300;
+}
+
+.dark .prose h1,
+.dark .prose h2,
+.dark .prose h3 {
+  @apply text-white;
+}

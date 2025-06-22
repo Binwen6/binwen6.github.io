@@ -1,0 +1,130 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Binwen Liu - AI Researcher & Developer">
+    <section class="mb-16 flex flex-col items-center text-center px-6 sm:px-8 lg:px-12" id="hero">
+        <img src="/data/portrait.jpg" alt="Binwen Liu" class="profile-image">
+        <h1 class="text-4xl font-bold text-gray-900 dark:text-white">Binwen Liu</h1>
+        <p class="text-lg text-purple-600 dark:text-purple-400 mt-2" data-i18n="hero.title">AI Researcher & Developer</p>
+        <p class="mt-4 max-w-2xl text-gray-600 dark:text-gray-400" data-i18n="hero.description">
+            Currently a student at Xi'an Jiaotong University, pursuing a degree in Artificial Intelligence. Passionate about LLMs, Brain-Computer Interfaces, and AI for Science.
+        </p>
+        <div class="flex justify-center gap-x-6 mt-6">
+            <a href="mailto:binwenliu.ai@gmail.com" class="text-gray-500 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400 transition-colors"><i class="fas fa-envelope fa-lg"></i></a>
+            <a href="https://linkedin.com/in/binwen-liu" target="_blank" class="text-gray-500 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400 transition-colors"><i class="fab fa-linkedin fa-lg"></i></a>
+            <a href="https://github.com/Binwen6" target="_blank" class="text-gray-500 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400 transition-colors"><i class="fab fa-github fa-lg"></i></a>
+        </div>
+    </section>
+
+    <div id="content" class="flex flex-col gap-y-20 w-full">
+
+        <section id="about" class="flex flex-col gap-y-5 md:flex-row">
+            <h2 class="text-xl font-bold md:min-w-36" data-i18n="sections.about">About</h2>
+            <div class="flex-1 text-gray-800 dark:text-gray-300 space-y-4">
+                <p data-i18n="about.paragraph1">
+                    I am a strategic AI researcher and developer with a passion for large language models and collaborative innovation. I have experience creating high-performance applications by leveraging state-of-the-art AI techniques and cross-functional collaboration.
+                </p>
+                <p data-i18n="about.paragraph2">
+                    My primary research interests include Brain-Computer Interfaces, the capabilities of Large Language Models, applying AI for Scientific discovery, and developing Multi-Modal Agents. I am dedicated to continuous learning and contributing to open-source communities.
+                </p>
+            </div>
+        </section>
+
+        <section id="projects" class="flex flex-col gap-y-5">
+            <div class="flex flex-col gap-y-5 md:flex-row">
+                <h2 class="text-xl font-bold md:min-w-36" data-i18n="sections.projects">Projects</h2>
+                <div class="flex-1 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="project-card">
+                        <h3 class="font-bold text-gray-900 dark:text-white" data-i18n="projects.vaiage.title">Vaiage: AI Travel Planner</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400" data-i18n="projects.vaiage.role">Group Member, CS194 Project</p>
+                        <p class="mt-2 text-sm" data-i18n="projects.vaiage.description">Proposed product concept and integrated techniques like model fine-tuning, RAG, and CoT.</p>
+                    </div>
+                    <div class="project-card">
+                        <h3 class="font-bold text-gray-900 dark:text-white" data-i18n="projects.sleep.title">Intelligent Sleep Medicine Consultation</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400" data-i18n="projects.sleep.role">Group Member, NLP Project</p>
+                        <p class="mt-2 text-sm" data-i18n="projects.sleep.description">Constructed knowledge graphs with Neo4j and used BERT for full-stack development.</p>
+                    </div>
+                     <div class="project-card">
+                        <h3 class="font-bold text-gray-900 dark:text-white" data-i18n="projects.editor.title">Online Editor with LLM</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400" data-i18n="projects.editor.role">Team Member, China Software Cup</p>
+                        <p class="mt-2 text-sm" data-i18n="projects.editor.description">Handled PaddlePaddle & Wenxin LLM API integration and full-stack development.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="publications" class="flex flex-col gap-y-5">
+            <div class="flex flex-col gap-y-5 md:flex-row">
+                <h2 class="text-xl font-bold md:min-w-36" data-i18n="sections.publications">Publications</h2>
+                <ul class="flex-1 flex flex-col gap-y-4">
+                    <li class="publication-item">
+                        <a href="https://arxiv.org/abs/2505.06475" target="_blank" class="font-medium hover:text-purple-600 dark:hover:text-purple-400" data-i18n="publications.icll.title">Probing In-Context Learning: Impact of Task Complexity and Model Architecture</a>
+                        <p class="text-sm text-gray-500 dark:text-gray-400" data-i18n="publications.icll.author">Main Author, May 2025</p>
+                    </li>
+                    <li class="publication-item">
+                        <a href="https://arxiv.org/abs/2505.10922" target="_blank" class="font-medium hover:text-purple-600 dark:hover:text-purple-400" data-i18n="publications.vaiage.title">Vaiage: A Multi-Agent Solution to Personalized Travel Planning</a>
+                        <p class="text-sm text-gray-500 dark:text-gray-400" data-i18n="publications.vaiage.author">Group Member, May 2025 (Project Paper)</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="posts" class="flex flex-col gap-y-5">
+            <div class="flex flex-col gap-y-5 md:flex-row">
+                <h2 class="text-xl font-bold md:min-w-36" data-i18n="sections.posts">Recent Posts</h2>
+                <div class="flex-1 space-y-4">
+                    <a href="/blog/my-first-blog-post" class="block group">
+                        <div class="p-6 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 group-hover:border-purple-500 dark:group-hover:border-purple-400 transition-all duration-300">
+                            <p class="text-sm text-gray-500 dark:text-gray-400">October 26, 2025</p>
+                            <h3 class="text-xl font-bold mt-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors" data-i18n="posts.first.title">My First Blog Post</h3>
+                            <p class="mt-2 text-gray-600 dark:text-gray-300" data-i18n="posts.first.preview">This is a preview of my first blog post. Click to read more about my thoughts on the future of AI...</p>
+                        </div>
+                    </a>
+                     <a href="/blog" class="inline-flex items-center gap-x-1 text-sm text-purple-600 dark:text-purple-400 hover:underline">
+                        <span data-i18n="posts.more">More posts</span> <span>&rarr;</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+         <section id="research" class="flex flex-col gap-y-5 md:flex-row">
+            <h2 class="text-xl font-bold md:min-w-36" data-i18n="sections.research">Research</h2>
+             <div class="flex-1 text-gray-800 dark:text-gray-300 space-y-4">
+                <div class="research-item">
+                    <h3 class="font-semibold text-gray-900 dark:text-white" data-i18n="research.lowlight.title">Generalizable Low-Light Image Enhancement</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400" data-i18n="research.lowlight.role">Special Contributor | Jul 2024 - Jan 2025</p>
+                    <p class="mt-1 text-sm" data-i18n="research.lowlight.description">Designed experimental benchmarks and led ablation study analysis.</p>
+                </div>
+                <div class="research-item">
+                    <h3 class="font-semibold text-gray-900 dark:text-white" data-i18n="research.video.title">Video-Editing-Friendly Text-to-Image</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400" data-i18n="research.video.role">Special Contributor | Feb 2024 - Aug 2024</p>
+                    <p class="mt-1 text-sm" data-i18n="research.video.description">Optimized LoRA fine-tuning strategies and implemented core code.</p>
+                </div>
+             </div>
+        </section>
+
+        <section id="contact" class="flex flex-col gap-y-5 md:flex-row">
+            <h2 class="text-xl font-bold md:min-w-36" data-i18n="sections.contact">Contact</h2>
+            <div class="flex-1 text-gray-800 dark:text-gray-300 space-y-4">
+                <p data-i18n="contact.description">
+                    I'm always interested in hearing about new opportunities, collaborations, or just chatting about AI and technology. Feel free to reach out!
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="mailto:binwenliu.ai@gmail.com" class="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
+                        <i class="fas fa-envelope"></i>
+                        <span>binwenliu.ai@gmail.com</span>
+                    </a>
+                    <a href="https://linkedin.com/in/binwen-liu" target="_blank" class="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/Binwen6" target="_blank" class="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+</Layout>

@@ -375,7 +375,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let searchIndex = [];
 
         // Fetch the search index - search.html is in root, so search-index.json is also in root
-        fetch('./search-index.json')
+        fetch('/search-index.json')
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP ${response.status}: ${response.statusText}`);

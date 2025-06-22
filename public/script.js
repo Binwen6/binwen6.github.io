@@ -263,24 +263,49 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Theme Toggler ---
+    function simpleSetTheme() {
+        let theme = localStorage.getItem('theme');
+        if (!theme || theme === 'system') {
+            theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.classList.toggle('dark', theme === 'dark');
+        document.body.classList.toggle('dark', theme === 'dark');
+        document.body.style.backgroundColor = theme === 'dark' ? '#111827' : '#F8F7F4';
+        document
+            .querySelector('meta[name="theme-color"]')
+            ?.setAttribute('content', theme === 'dark' ? '#0B0B10' : '#FCFCFD');
+        // 让 highlight-gradient 跟随主题
+        const grad = document.getElementById('highlight-gradient');
+        if (grad) {
+            grad.style.backgroundImage = theme === 'dark'
+                ? 'linear-gradient(to bottom, #111827 0%, #232946 60%, transparent 100%)'
+                : 'linear-gradient(to bottom, #6A5ACD66, transparent)';
+        }
+    }
+
+    // 页面加载时立即设置
+    simpleSetTheme();
+
+    // 监听系统主题变化（仅在 system 模式下生效）
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+        if (!localStorage.getItem('theme') || localStorage.getItem('theme') === 'system') {
+            simpleSetTheme();
+        }
+    });
+
+    // 切换按钮逻辑
     const themeToggle = document.getElementById('theme-toggle');
     if (themeToggle) {
-        const htmlEl = document.documentElement;
-
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
-            htmlEl.classList.add(savedTheme);
-        } else {
-            // If no theme is saved, use system preference
-            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                htmlEl.classList.add('dark');
-            }
+        function getNextTheme(current) {
+            if (current === 'system') return 'light';
+            if (current === 'light') return 'dark';
+            return 'system';
         }
-
         themeToggle.addEventListener('click', () => {
-            htmlEl.classList.toggle('dark');
-            const currentTheme = htmlEl.classList.contains('dark') ? 'dark' : 'light';
-            localStorage.setItem('theme', currentTheme);
+            let current = localStorage.getItem('theme') || 'system';
+            let next = getNextTheme(current);
+            localStorage.setItem('theme', next);
+            simpleSetTheme();
         });
     }
 

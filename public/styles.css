@@ -179,4 +179,8 @@
     #hero {
         padding: 4rem 3rem;
     }
+}
+
+body {
+  background-color: transparent !important;
 } 

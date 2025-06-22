@@ -349,44 +349,22 @@ document.addEventListener('DOMContentLoaded', () => {
     if (searchInput && searchResults) {
         let searchIndex = [];
 
-        // Fetch the search index - try different paths
-        const searchIndexPaths = [
-            'search-index.json',
-            '../search-index.json',
-            '/search-index.json'
-        ];
-
-        let currentPathIndex = 0;
-        
-        function tryFetchSearchIndex() {
-            if (currentPathIndex >= searchIndexPaths.length) {
-                console.error('All search index paths failed');
+        // Fetch the search index - search.html is in root, so search-index.json is also in root
+        fetch('./search-index.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                searchIndex = data;
+                console.log('Search index loaded successfully:', data.length, 'items');
+            })
+            .catch(error => {
+                console.error('Failed to fetch search index:', error);
                 searchResults.innerHTML = '<p class="text-center text-red-500">Error loading search index. Please try again later.</p>';
-                return;
-            }
-
-            const path = searchIndexPaths[currentPathIndex];
-            console.log('Trying to fetch search index from:', path);
-            
-            fetch(path)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    searchIndex = data;
-                    console.log('Search index loaded successfully:', data.length, 'items');
-                })
-                .catch(error => {
-                    console.error('Failed to fetch from', path, ':', error);
-                    currentPathIndex++;
-                    tryFetchSearchIndex();
-                });
-        }
-
-        tryFetchSearchIndex();
+            });
 
         searchInput.addEventListener('input', (e) => {
             const query = e.target.value.toLowerCase();

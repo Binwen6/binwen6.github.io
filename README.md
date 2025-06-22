@@ -30,7 +30,7 @@ npm install
 ### 启动开发服务器
 
 ```bash
-npm run dev
+![1750583233167](image/README/1750583233167.png)
 ```
 
 访问 `http://localhost:4321` 查看网站。

@@ -293,22 +293,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 切换按钮逻辑
-    const themeToggle = document.getElementById('theme-toggle');
-    if (themeToggle) {
-        function getNextTheme(current) {
-            if (current === 'system') return 'light';
-            if (current === 'light') return 'dark';
-            return 'system';
-        }
-        themeToggle.addEventListener('click', () => {
-            let current = localStorage.getItem('theme') || 'system';
-            let next = getNextTheme(current);
-            localStorage.setItem('theme', next);
-            simpleSetTheme();
-        });
-    }
-
     // --- Sticky Header ---
     const header = document.getElementById('header');
     if (header) {

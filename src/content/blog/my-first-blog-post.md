@@ -1,7 +1,7 @@
 ---
 title: "My First Blog Post"
 description: "This is a preview of my first blog post. Click to read more about my thoughts on the future of AI..."
-pubDate: "2025-10-26"
+pubDate: "2025-6-22"
 tags: ["AI", "Personal"]
 ---
 

@@ -14,7 +14,7 @@ const searchData = posts.map(post => ({
 ---
 
 <Layout title="Search - Binwen Liu" description="Search through blog posts and content.">
-    <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-12">Search</h1>
+    <h1 class="text-4xl font-bold text-gray-900 mb-12">Search</h1>
     
     <div class="w-full max-w-2xl mx-auto">
         <div class="relative mb-8">
@@ -22,7 +22,7 @@ const searchData = posts.map(post => ({
                 type="text" 
                 id="search-input"
                 placeholder="Search posts..." 
-                class="w-full px-4 py-3 pl-10 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400 focus:border-transparent"
+                class="w-full px-4 py-3 pl-10 border border-gray-300 rounded-lg bg-white text-gray-900 focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
             >
             <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                 <i class="fa-solid fa-search text-gray-400"></i>
@@ -33,7 +33,7 @@ const searchData = posts.map(post => ({
             <!-- Search results will be populated by JavaScript -->
         </div>
         
-        <div id="no-results" class="hidden text-center text-gray-500 dark:text-gray-400 py-8">
+        <div id="no-results" class="hidden text-center text-gray-500 py-8">
             No results found. Try a different search term.
         </div>
     </div>
@@ -64,19 +64,19 @@ const searchData = posts.map(post => ({
             noResults.classList.add('hidden');
             searchResults.innerHTML = results.map(item => `
                 <a href="${item.url}" class="block group">
-                    <div class="p-4 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 group-hover:border-purple-500 dark:group-hover:border-purple-400 transition-all duration-300">
-                        <h3 class="text-lg font-semibold group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                    <div class="p-4 rounded-lg border border-gray-200 group-hover:border-cyan-500 transition-all duration-300">
+                        <h3 class="text-lg font-semibold group-hover:text-cyan-600 transition-colors">
                             ${item.title}
                         </h3>
-                        <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">
+                        <p class="text-sm text-gray-600 mt-1">
                             ${item.description}
                         </p>
                         <div class="flex items-center gap-2 mt-2">
-                            <span class="text-xs text-gray-500 dark:text-gray-400">
+                            <span class="text-xs text-gray-500">
                                 ${new Date(item.date).toLocaleDateString()}
                             </span>
                             ${item.tags.map(tag => `
-                                <span class="px-2 py-1 text-xs bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded">
+                                <span class="px-2 py-1 text-xs bg-gray-100 rounded">
                                     ${tag}
                                 </span>
                             `).join('')}

@@ -3,31 +3,31 @@
 @theme {
   --color-light-bg: #F8F7F4;
   --color-light-text: #050505;
-  --color-light-accent: #6A5ACD;
+  --color-light-accent: #00B5D8;
   --color-light-card: #FFFFFF;
   --color-light-border: #E5E7EB;
   --color-dark-bg: #111827;
   --color-dark-text: #E5E7EB;
-  --color-dark-accent: #8B5CF6;
+  --color-dark-accent: #00B5D8;
   --color-dark-card: #1F2937;
   --color-dark-border: #374151;
 }
 
 /* Custom styles */
 .profile-image {
-  @apply w-32 h-32 rounded-full object-cover mb-6 border-4 border-white dark:border-gray-800 shadow-lg;
+  @apply w-32 h-32 rounded-full object-cover mb-6 border-4 border-white shadow-lg;
 }
 
 .project-card {
-  @apply p-6 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 hover:border-purple-500 dark:hover:border-purple-400 transition-all duration-300;
+  @apply p-6 rounded-lg border border-gray-200 bg-white hover:border-cyan-500 transition-all duration-300;
 }
 
 .publication-item {
-  @apply p-4 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800;
+  @apply p-4 rounded-lg border border-gray-200 bg-white;
 }
 
 .research-item {
-  @apply p-4 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800;
+  @apply p-4 rounded-lg border border-gray-200 bg-white;
 }
 
 /* Prose styles for blog content */
@@ -48,7 +48,7 @@
 }
 
 .prose p {
-  @apply mb-4 text-gray-800 dark:text-gray-300;
+  @apply mb-4 text-gray-800;
 }
 
 .prose ul {
@@ -64,15 +64,15 @@
 }
 
 .prose blockquote {
-  @apply border-l-4 border-purple-500 dark:border-purple-400 pl-4 italic text-gray-600 dark:text-gray-400;
+  @apply border-l-4 border-cyan-500 pl-4 italic text-gray-600;
 }
 
 .prose code {
-  @apply bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm;
+  @apply bg-gray-100 px-1 py-0.5 rounded text-sm;
 }
 
 .prose pre {
-  @apply bg-gray-100 dark:bg-gray-800 p-4 rounded-lg overflow-x-auto mb-4;
+  @apply bg-gray-100 p-4 rounded-lg overflow-x-auto mb-4;
 }
 
 .prose pre code {
@@ -80,16 +80,93 @@
 }
 
 .prose a {
-  @apply text-purple-600 dark:text-purple-400 hover:underline;
+  @apply text-cyan-600 hover:underline;
 }
 
-/* Dark mode prose adjustments */
-.dark .prose {
-  @apply text-gray-300;
+/* CSS Variables for theme colors */
+:root {
+    /* Theme colors */
+    --bg: #F0F4F8;
+    --text: #2C5282;
+    --accent: #00B5D8;
+    --accent-light: #4FD1C5;
+    --card: #FFFFFF;
+    --border: #E6EDF3;
+    --gray: #718096;
+    --gray-light: #A0AEC0;
+    --gray-dark: #4A5568;
+    /* 新的渐变定义 */
+    --gradient-primary: radial-gradient(
+        circle at 50% 0%, 
+        rgba(0, 181, 216, 0.15) 0%, 
+        rgba(79, 209, 197, 0.08) 50%, 
+        rgba(240, 244, 248, 0.02) 100%
+    );
+    --gradient-secondary: linear-gradient(
+        160deg,
+        rgba(0, 181, 216, 0.08) 0%,
+        rgba(79, 209, 197, 0.05) 30%,
+        rgba(240, 244, 248, 0) 100%
+    );
 }
 
-.dark .prose h1,
-.dark .prose h2,
-.dark .prose h3 {
-  @apply text-white;
+/* Base styles */
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    background: 
+        var(--gradient-primary),
+        var(--gradient-secondary),
+        var(--bg);
+    background-attachment: fixed;
+    background-size: 200% 200%, 200% 200%, auto;
+    animation: gradientMove 15s ease-in-out infinite;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 0%, 0% 0%, 0% 0%;
+    }
+    50% {
+        background-position: 100% 20%, 50% 50%, 0% 0%;
+    }
+    100% {
+        background-position: 0% 0%, 0% 0%, 0% 0%;
+    }
+}
+
+/* Hero section gradient */
+#hero {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(
+            circle at top right,
+            rgba(0, 181, 216, 0.12) 0%,
+            rgba(79, 209, 197, 0.08) 45%,
+            transparent 90%
+        ),
+        radial-gradient(
+            circle at bottom left,
+            rgba(79, 209, 197, 0.1) 0%,
+            rgba(0, 181, 216, 0.06) 45%,
+            transparent 90%
+        );
+    opacity: 0.8;
+    z-index: 0;
+}
+
+#hero > * {
+    position: relative;
+    z-index: 1;
 }

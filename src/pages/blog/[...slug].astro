@@ -1,6 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
+import { calculateReadingTime, formatReadingTime, readMarkdownContent } from '../../utils/readingTime';
+import path from 'path';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -12,13 +14,26 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await post.render();
+
+// Read content directly from the markdown file
+const filePath = path.join(process.cwd(), 'src', 'content', 'blog', `${post.slug}.md`);
+const content = readMarkdownContent(filePath);
+const readingTime = calculateReadingTime(content);
 ---
 
 <Layout title={`${post.data.title} - Binwen Liu`} description={post.data.description}>
-    <article class="w-full">
+    <article class="w-full relative">
+        <!-- Reading time badge in top right corner -->
+        <div class="absolute top-0 right-0 z-10">
+            <span class="inline-flex items-center gap-1 px-3 py-1 text-sm bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded-full">
+                <i class="fa-regular fa-clock"></i>
+                {formatReadingTime(readingTime)}
+            </span>
+        </div>
+        
         <div class="prose max-w-none">
             <div class="text-center mb-12">
-                <p class="text-base text-gray-500">
+                <p class="text-base text-gray-500 mb-4">
                     {new Date(post.data.pubDate).toLocaleDateString('en-US', {
                         year: 'numeric',
                         month: 'long',

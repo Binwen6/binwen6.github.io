@@ -1,27 +1,50 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import { calculateReadingTime, formatReadingTime, readMarkdownContent } from '../../utils/readingTime';
+import path from 'path';
 
 // Get all blog posts
 const posts = await getCollection('blog');
 // Sort by date (newest first)
 const sortedPosts = posts.sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime());
+
+// Calculate reading time for each post
+const postsWithReadingTime = await Promise.all(
+  sortedPosts.map(async (post) => {
+    // Read content directly from the markdown file
+    const filePath = path.join(process.cwd(), 'src', 'content', 'blog', `${post.slug}.md`);
+    const content = readMarkdownContent(filePath);
+    console.log(`Post: ${post.slug}, Content length: ${content.length}, Content preview: ${content.substring(0, 100)}`);
+    const readingTime = calculateReadingTime(content);
+    return {
+      ...post,
+      readingTime
+    };
+  })
+);
 ---
 
 <Layout title="Blog - Binwen Liu" description="Blog of Binwen Liu, an AI researcher and developer.">
     <h1 class="text-4xl font-bold text-gray-900 mb-12">Blog</h1>
     
     <div class="w-full space-y-8">
-        {sortedPosts.map((post) => (
+        {postsWithReadingTime.map((post) => (
             <a href={`/blog/${post.slug}`} class="block group">
                 <div class="p-6 rounded-lg border border-gray-200 group-hover:border-cyan-500 transition-all duration-300">
-                    <p class="text-sm text-gray-500">
-                        {new Date(post.data.pubDate).toLocaleDateString('en-US', {
-                            year: 'numeric',
-                            month: 'long',
-                            day: 'numeric'
-                        })}
-                    </p>
+                    <div class="flex items-center gap-4 text-sm text-gray-500">
+                        <p>
+                            {new Date(post.data.pubDate).toLocaleDateString('en-US', {
+                                year: 'numeric',
+                                month: 'long',
+                                day: 'numeric'
+                            })}
+                        </p>
+                        <span class="flex items-center gap-1">
+                            <i class="fa-regular fa-clock"></i>
+                            {formatReadingTime(post.readingTime)}
+                        </span>
+                    </div>
                     <h2 class="text-2xl font-bold mt-2 group-hover:text-cyan-600 transition-colors">
                         {post.data.title}
                     </h2>

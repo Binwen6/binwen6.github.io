@@ -325,10 +325,18 @@ body {
   @apply text-light-accent hover:underline;
 }
 
-/* Dark mode prose styles */
+/* Dark mode prose styles - with higher specificity */
+.dark .prose,
+.dark .prose * {
+  color: var(--dark-text) !important;
+}
+
 .dark .prose h1,
 .dark .prose h2,
-.dark .prose h3 {
+.dark .prose h3,
+.dark .prose h4,
+.dark .prose h5,
+.dark .prose h6 {
   @apply text-dark-text !important;
 }
 
@@ -354,4 +362,70 @@ body {
 
 .dark .prose a {
   @apply text-dark-accent !important;
+}
+
+/* Additional specificity for prose-invert */
+.dark .prose-invert,
+.dark .prose-invert * {
+  color: var(--dark-text) !important;
+}
+
+.dark .prose-invert h1,
+.dark .prose-invert h2,
+.dark .prose-invert h3,
+.dark .prose-invert h4,
+.dark .prose-invert h5,
+.dark .prose-invert h6 {
+  @apply text-dark-text !important;
+}
+
+.dark .prose-invert p {
+  @apply text-dark-text !important;
+}
+
+.dark .prose-invert li {
+  @apply text-dark-text !important;
+}
+
+.dark .prose-invert blockquote {
+  @apply border-dark-accent text-dark-gray-light !important;
+}
+
+.dark .prose-invert code {
+  @apply bg-dark-card text-dark-text !important;
+}
+
+.dark .prose-invert pre {
+  @apply bg-dark-card border-dark-border !important;
+}
+
+.dark .prose-invert a {
+  @apply text-dark-accent !important;
+}
+
+/* Force all text in dark mode to be visible */
+.dark article p,
+.dark article h1,
+.dark article h2,
+.dark article h3,
+.dark article h4,
+.dark article h5,
+.dark article h6,
+.dark article li,
+.dark article span,
+.dark article div {
+  color: var(--dark-text) !important;
+}
+
+/* Ensure any text without specific classes is visible in dark mode */
+.dark body {
+  color: var(--dark-text) !important;
+}
+
+.dark main {
+  color: var(--dark-text) !important;
+}
+
+.dark article {
+  color: var(--dark-text) !important;
 } 

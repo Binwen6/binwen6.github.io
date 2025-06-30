@@ -278,19 +278,19 @@ body {
 }
 
 .prose h1 {
-  @apply text-3xl font-bold mb-4;
+  @apply text-3xl font-bold mb-4 text-light-text;
 }
 
 .prose h2 {
-  @apply text-2xl font-bold mb-3 mt-8;
+  @apply text-2xl font-bold mb-3 mt-8 text-light-text;
 }
 
 .prose h3 {
-  @apply text-xl font-semibold mb-2 mt-6;
+  @apply text-xl font-semibold mb-2 mt-6 text-light-text;
 }
 
 .prose p {
-  @apply mb-4 text-gray-800;
+  @apply mb-4 text-light-text;
 }
 
 .prose ul {
@@ -302,15 +302,15 @@ body {
 }
 
 .prose li {
-  @apply mb-1;
+  @apply mb-1 text-light-text;
 }
 
 .prose blockquote {
-  @apply border-l-4 border-cyan-500 pl-4 italic text-gray-600;
+  @apply border-l-4 border-light-accent pl-4 italic text-gray-600;
 }
 
 .prose code {
-  @apply bg-gray-100 px-1 py-0.5 rounded text-sm;
+  @apply bg-gray-100 px-1 py-0.5 rounded text-sm text-light-text;
 }
 
 .prose pre {
@@ -322,36 +322,36 @@ body {
 }
 
 .prose a {
-  @apply text-cyan-600 hover:underline;
+  @apply text-light-accent hover:underline;
 }
 
 /* Dark mode prose styles */
 .dark .prose h1,
 .dark .prose h2,
 .dark .prose h3 {
-  @apply text-dark-text;
+  @apply text-dark-text !important;
 }
 
 .dark .prose p {
-  @apply text-dark-text;
+  @apply text-dark-text !important;
 }
 
 .dark .prose li {
-  @apply text-dark-text;
+  @apply text-dark-text !important;
 }
 
 .dark .prose blockquote {
-  @apply border-dark-accent text-dark-gray-light;
+  @apply border-dark-accent text-dark-gray-light !important;
 }
 
 .dark .prose code {
-  @apply bg-dark-card text-dark-text;
+  @apply bg-dark-card text-dark-text !important;
 }
 
 .dark .prose pre {
-  @apply bg-dark-card border-dark-border;
+  @apply bg-dark-card border-dark-border !important;
 }
 
 .dark .prose a {
-  @apply text-dark-accent;
+  @apply text-dark-accent !important;
 } 

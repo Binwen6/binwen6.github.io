@@ -46,6 +46,9 @@ const canonicalURL = canonical || Astro.url.href;
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
+    <!-- Prism.js for syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    
     <!-- Styles -->
     <link rel="stylesheet" href="/styles.css">
 </head>
@@ -90,5 +93,8 @@ const canonicalURL = canonical || Astro.url.href;
 
     <!-- Scripts -->
     <script src="/script.js" is:inline></script>
+    <!-- Prism.js for syntax highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
 </body>
 </html> 

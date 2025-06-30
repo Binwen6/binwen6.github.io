@@ -83,6 +83,29 @@
   @apply text-cyan-600 hover:underline;
 }
 
+/* Code block styling for Prism.js */
+.prose pre[class*="language-"] {
+  @apply bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto mb-4 border border-gray-700;
+}
+
+.prose code[class*="language-"] {
+  @apply bg-transparent p-0 text-sm font-mono;
+}
+
+/* Inline code styling */
+.prose :not(pre) > code {
+  @apply bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono text-gray-800 dark:text-gray-200;
+}
+
+/* Dark mode adjustments for code blocks */
+.dark .prose pre[class*="language-"] {
+  @apply bg-gray-800 border-gray-600;
+}
+
+.dark .prose :not(pre) > code {
+  @apply bg-gray-800 text-gray-200;
+}
+
 /* CSS Variables for theme colors */
 :root {
     /* Theme colors */

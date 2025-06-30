@@ -11,36 +11,48 @@
     --light-gray-dark: #374151;
     
     /* Dark theme colors - these will be overridden when .dark class is present */
-    --dark-bg: #111827;
-    --dark-text: #F9FAFB;
+    --dark-bg: #0F172A;
+    --dark-text: #F8FAFC;
     --dark-accent: #8B5CF6;
-    --dark-card: #1F2937;
-    --dark-border: #374151;
-    --dark-gray: #9CA3AF;
-    --dark-gray-light: #6B7280;
-    --dark-gray-dark: #D1D5DB;
+    --dark-card: #1E293B;
+    --dark-border: #334155;
+    --dark-gray: #94A3B8;
+    --dark-gray-light: #64748B;
+    --dark-gray-dark: #CBD5E1;
 }
 
 /* Dark theme colors - applied when .dark class is present */
 .dark {
-    --light-bg: #111827;
-    --light-text: #F9FAFB;
+    --light-bg: #0F172A;
+    --light-text: #F8FAFC;
     --light-accent: #8B5CF6;
-    --light-card: #1F2937;
-    --light-border: #374151;
-    --light-gray: #9CA3AF;
-    --light-gray-light: #6B7280;
-    --light-gray-dark: #D1D5DB;
+    --light-card: #1E293B;
+    --light-border: #334155;
+    --light-gray: #94A3B8;
+    --light-gray-light: #64748B;
+    --light-gray-dark: #CBD5E1;
     
     /* Also update dark theme variables for consistency */
-    --dark-bg: #111827;
-    --dark-text: #F9FAFB;
+    --dark-bg: #0F172A;
+    --dark-text: #F8FAFC;
     --dark-accent: #8B5CF6;
-    --dark-card: #1F2937;
-    --dark-border: #374151;
-    --dark-gray: #9CA3AF;
-    --dark-gray-light: #6B7280;
-    --dark-gray-dark: #D1D5DB;
+    --dark-card: #1E293B;
+    --dark-border: #334155;
+    --dark-gray: #94A3B8;
+    --dark-gray-light: #64748B;
+    --dark-gray-dark: #CBD5E1;
+}
+
+/* Base body styles */
+body {
+    background-color: var(--light-bg) !important;
+    color: var(--light-text);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark body {
+    background-color: var(--dark-bg) !important;
+    color: var(--dark-text);
 }
 
 /* Custom scrollbar for a more refined look */
@@ -58,15 +70,27 @@
     background: var(--light-gray);
 }
 
+.dark ::-webkit-scrollbar-track {
+    background: var(--dark-bg);
+}
+.dark ::-webkit-scrollbar-thumb {
+    background: var(--dark-gray-light);
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: var(--dark-gray);
+}
+
 /* Styling for the header to become opaque on scroll */
 #header.not-top {
-    background-color: rgba(248, 247, 244, 0.7); /* Light theme header background */
+    background-color: rgba(248, 247, 244, 0.8); /* Light theme header background */
     border-color: var(--light-border);
+    backdrop-filter: blur(12px);
 }
 
 .dark #header.not-top {
-    background-color: rgba(17, 24, 39, 0.7); /* Dark theme header background */
-    border-color: var(--light-border);
+    background-color: rgba(15, 23, 42, 0.8); /* Dark theme header background */
+    border-color: var(--dark-border);
+    backdrop-filter: blur(12px);
 }
 
 /* Base styles for cards */
@@ -75,22 +99,31 @@
     border: 1px solid var(--light-border);
     border-radius: 0.75rem;
     padding: 1.5rem;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.dark .project-card, .dark .research-item, .dark .education-item, .dark .publication-item {
+    background-color: var(--dark-card);
+    border-color: var(--dark-border);
 }
 
 .project-card:hover, .research-item:hover, .education-item:hover, .publication-item:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 .dark .project-card:hover, .dark .research-item:hover, .dark .education-item:hover, .dark .publication-item:hover {
-    box-shadow: 0 10px 15px -3px rgba(255, 255, 255, 0.03), 0 4px 6px -2px rgba(255, 255, 255, 0.03);
+    box-shadow: 0 10px 15px -3px rgba(139, 92, 246, 0.1), 0 4px 6px -2px rgba(139, 92, 246, 0.05);
 }
 
 /* Specific item paddings */
 .publication-item {
     padding-bottom: 1rem;
     border-left: 3px solid var(--light-accent);
+}
+
+.dark .publication-item {
+    border-left-color: var(--dark-accent);
 }
 
 /* Skill tags styling */
@@ -110,12 +143,12 @@
 }
 
 .dark .skill-tag {
-    background-color: var(--light-gray-dark);
-    color: var(--light-text);
+    background-color: #334155; /* dark gray */
+    color: var(--dark-text);
 }
 
 .dark .skill-tag:hover {
-    background-color: var(--light-gray);
+    background-color: #475569;
 }
 
 /* Profile image styling to prevent distortion */
@@ -129,12 +162,13 @@
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     margin-bottom: 1.5rem;
     background-color: #f3f4f6;
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out, border-color 0.3s ease;
 }
 
 .dark .profile-image {
-    border-color: var(--light-card);
-    background-color: var(--light-gray);
+    border-color: var(--dark-card);
+    background-color: var(--dark-gray-light);
+    box-shadow: 0 10px 15px -3px rgba(139, 92, 246, 0.1), 0 4px 6px -2px rgba(139, 92, 246, 0.05);
 }
 
 .profile-image:hover {
@@ -181,6 +215,59 @@
     }
 }
 
-body {
-  background-color: transparent !important;
+/* Theme toggle button styling */
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--light-border);
+    background-color: var(--light-card);
+    color: var(--light-text);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.dark .theme-toggle {
+    border-color: var(--dark-border);
+    background-color: var(--dark-card);
+    color: var(--dark-text);
+}
+
+.theme-toggle:hover {
+    background-color: var(--light-gray-light);
+    transform: scale(1.05);
+}
+
+.dark .theme-toggle:hover {
+    background-color: var(--dark-gray-light);
+}
+
+/* Text color adjustments for dark mode */
+.dark .text-gray-500 {
+    color: var(--dark-gray) !important;
+}
+
+.dark .text-gray-600 {
+    color: var(--dark-gray-light) !important;
+}
+
+.dark .text-gray-800 {
+    color: var(--dark-text) !important;
+}
+
+/* Link hover effects for dark mode */
+.dark a:hover {
+    color: var(--dark-accent) !important;
+}
+
+/* Footer styling for dark mode */
+.dark footer {
+    border-color: var(--dark-border);
+}
+
+.dark footer .text-gray-500 {
+    color: var(--dark-gray) !important;
 } 

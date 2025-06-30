@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
-  darkMode: false,
+  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
@@ -14,11 +14,17 @@ export default {
         'light-accent': '#6A5ACD',
         'light-card': '#FFFFFF',
         'light-border': '#E5E7EB',
-        'dark-bg': '#111827',
-        'dark-text': '#E5E7EB',
+        'light-gray': '#6B7280',
+        'light-gray-light': '#9CA3AF',
+        'light-gray-dark': '#374151',
+        'dark-bg': '#0F172A',
+        'dark-text': '#F8FAFC',
         'dark-accent': '#8B5CF6',
-        'dark-card': '#1F2937',
-        'dark-border': '#374151',
+        'dark-card': '#1E293B',
+        'dark-border': '#334155',
+        'dark-gray': '#94A3B8',
+        'dark-gray-light': '#64748B',
+        'dark-gray-dark': '#CBD5E1',
       }
     }
   },

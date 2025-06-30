@@ -54,18 +54,24 @@
                         'light-accent': '#6A5ACD',
                         'light-card': '#FFFFFF',
                         'light-border': '#E5E7EB',
-                        'dark-bg': '#111827',
-                        'dark-text': '#F9FAFB',
+                        'light-gray': '#6B7280',
+                        'light-gray-light': '#9CA3AF',
+                        'light-gray-dark': '#374151',
+                        'dark-bg': '#0F172A',
+                        'dark-text': '#F8FAFC',
                         'dark-accent': '#8B5CF6',
-                        'dark-card': '#1F2937',
-                        'dark-border': '#374151',
+                        'dark-card': '#1E293B',
+                        'dark-border': '#334155',
+                        'dark-gray': '#94A3B8',
+                        'dark-gray-light': '#64748B',
+                        'dark-gray-dark': '#CBD5E1',
                     }
                 }
             }
         }
     </script>
 </head>
-<body class="text-light-text font-inter transition-colors duration-300">
+<body class="text-light-text dark:text-dark-text font-inter transition-colors duration-300">
 
     <div id="highlight-gradient" class="pointer-events-none absolute left-0 top-0 z-0 h-screen w-full opacity-25" style="background-image:linear-gradient(to bottom, #6A5ACD66, transparent);"></div>
 
@@ -74,18 +80,21 @@
         <header class="sticky top-4 z-30 mb-12 flex items-center justify-between rounded-xl border border-transparent py-2 px-4 transition-all" id="header">
             <a class="text-xl font-bold font-sora z-30" href="#">Binwen Liu</a>
             <div class="flex items-center gap-x-2">
-                <nav class="hidden sm:flex items-center gap-x-1 bg-white/70 backdrop-blur-md rounded-lg p-1 border border-gray-200">
-                    <a href="#about" class="px-3 py-1 text-sm font-medium hover:bg-gray-100 rounded-md" data-i18n="nav.about">About</a>
-                    <a href="blog.html" class="px-3 py-1 text-sm font-medium hover:bg-gray-100 rounded-md" data-i18n="nav.blog">Blog</a>
-                    <a href="#projects" class="px-3 py-1 text-sm font-medium hover:bg-gray-100 rounded-md" data-i18n="nav.projects">Projects</a>
-                    <a href="#publications" class="px-3 py-1 text-sm font-medium hover:bg-gray-100 rounded-md" data-i18n="nav.publications">Publications</a>
-                    <a href="#contact" class="px-3 py-1 text-sm font-medium hover:bg-gray-100 rounded-md" data-i18n="nav.contact">Contact</a>
+                <nav class="hidden sm:flex items-center gap-x-1 bg-white/70 dark:bg-dark-card/70 backdrop-blur-md rounded-lg p-1 border border-gray-200 dark:border-dark-border">
+                    <a href="#about" class="px-3 py-1 text-sm font-medium hover:bg-gray-100 dark:hover:bg-dark-gray-light rounded-md" data-i18n="nav.about">About</a>
+                    <a href="blog.html" class="px-3 py-1 text-sm font-medium hover:bg-gray-100 dark:hover:bg-dark-gray-light rounded-md" data-i18n="nav.blog">Blog</a>
+                    <a href="#projects" class="px-3 py-1 text-sm font-medium hover:bg-gray-100 dark:hover:bg-dark-gray-light rounded-md" data-i18n="nav.projects">Projects</a>
+                    <a href="#publications" class="px-3 py-1 text-sm font-medium hover:bg-gray-100 dark:hover:bg-dark-gray-light rounded-md" data-i18n="nav.publications">Publications</a>
+                    <a href="#contact" class="px-3 py-1 text-sm font-medium hover:bg-gray-100 dark:hover:bg-dark-gray-light rounded-md" data-i18n="nav.contact">Contact</a>
                 </nav>
                 <div class="flex items-center gap-x-2">
-                    <a href="search.html" title="Search" class="z-30 flex items-center justify-center box-content size-5 rounded-md border border-gray-300 p-1.5 transition-colors hover:bg-gray-200">
+                    <a href="search.html" title="Search" class="z-30 flex items-center justify-center box-content size-5 rounded-md border border-gray-300 dark:border-dark-border p-1.5 transition-colors hover:bg-gray-200 dark:hover:bg-dark-gray-light">
                         <i class="fa-solid fa-search"></i>
                     </a>
-                    <button id="language-toggle" class="z-30 flex items-center justify-center box-content size-5 rounded-md border border-gray-300 p-1.5 transition-colors hover:bg-gray-200" title="Switch Language">
+                    <button id="theme-toggle" class="theme-toggle z-30" title="Toggle Theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button id="language-toggle" class="z-30 flex items-center justify-center box-content size-5 rounded-md border border-gray-300 dark:border-dark-border p-1.5 transition-colors hover:bg-gray-200 dark:hover:bg-dark-gray-light" title="Switch Language">
                         <i class="fa-solid fa-language"></i>
                     </button>
                 </div>
@@ -243,14 +252,14 @@
             </div>
         </main>
 
-        <footer id="contact" class="mt-20 mb-10 border-t border-gray-200 pt-10">
-            <div class="text-center text-sm text-gray-500">
-                <h2 class="text-xl font-bold font-sora text-light-text mb-4" data-i18n="sections.contact">Contact</h2>
+        <footer id="contact" class="mt-20 mb-10 border-t border-gray-200 dark:border-dark-border pt-10">
+            <div class="text-center text-sm text-gray-500 dark:text-dark-gray">
+                <h2 class="text-xl font-bold font-sora text-light-text dark:text-dark-text mb-4" data-i18n="sections.contact">Contact</h2>
                 <p data-i18n="contact.description">Feel free to reach out. I'm always open to discussing new projects and opportunities.</p>
-                <a href="mailto:binwenliu.ai@gmail.com" class="block my-4 text-light-accent font-medium hover:underline">binwenliu.ai@gmail.com</a>
+                <a href="mailto:binwenliu.ai@gmail.com" class="block my-4 text-light-accent dark:text-dark-accent font-medium hover:underline">binwenliu.ai@gmail.com</a>
                 <div class="flex justify-center gap-x-6 mt-6">
-                    <a href="https://linkedin.com/in/binwen-liu" target="_blank" class="text-gray-500 hover:text-light-accent transition-colors"><i class="fab fa-linkedin fa-lg"></i></a>
-                    <a href="https://github.com/Binwen6" target="_blank" class="text-gray-500 hover:text-light-accent transition-colors"><i class="fab fa-github fa-lg"></i></a>
+                    <a href="https://linkedin.com/in/binwen-liu" target="_blank" class="text-gray-500 dark:text-dark-gray hover:text-light-accent dark:hover:text-dark-accent transition-colors"><i class="fab fa-linkedin fa-lg"></i></a>
+                    <a href="https://github.com/Binwen6" target="_blank" class="text-gray-500 dark:text-dark-gray hover:text-light-accent dark:hover:text-dark-accent transition-colors"><i class="fab fa-github fa-lg"></i></a>
                 </div>
                  <p class="mt-8">&copy; 2025 Binwen Liu. All rights reserved.</p>
             </div>

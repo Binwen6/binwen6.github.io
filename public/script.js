@@ -270,17 +270,47 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         document.documentElement.classList.toggle('dark', theme === 'dark');
         document.body.classList.toggle('dark', theme === 'dark');
-        document.body.style.backgroundColor = theme === 'dark' ? '#111827' : '#F8F7F4';
+        document.body.style.backgroundColor = theme === 'dark' ? '#0F172A' : '#F8F7F4';
         document
             .querySelector('meta[name="theme-color"]')
-            ?.setAttribute('content', theme === 'dark' ? '#0B0B10' : '#FCFCFD');
+            ?.setAttribute('content', theme === 'dark' ? '#0F172A' : '#F8F7F4');
         // 让 highlight-gradient 跟随主题
         const grad = document.getElementById('highlight-gradient');
         if (grad) {
             grad.style.backgroundImage = theme === 'dark'
-                ? 'linear-gradient(to bottom, #111827 0%, #232946 60%, transparent 100%)'
+                ? 'linear-gradient(to bottom, #0F172A 0%, #1E293B 60%, transparent 100%)'
                 : 'linear-gradient(to bottom, #6A5ACD66, transparent)';
         }
+        
+        // 更新主题切换按钮图标
+        updateThemeToggleIcon(theme);
+    }
+
+    function updateThemeToggleIcon(theme) {
+        const themeToggle = document.getElementById('theme-toggle');
+        if (themeToggle) {
+            const icon = themeToggle.querySelector('i');
+            if (icon) {
+                icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+            }
+        }
+    }
+
+    function toggleTheme() {
+        const currentTheme = localStorage.getItem('theme');
+        let newTheme;
+        
+        if (currentTheme === 'dark') {
+            newTheme = 'light';
+        } else if (currentTheme === 'light') {
+            newTheme = 'dark';
+        } else {
+            // 如果是 system 模式，根据当前系统主题切换
+            newTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'light' : 'dark';
+        }
+        
+        localStorage.setItem('theme', newTheme);
+        simpleSetTheme();
     }
 
     // 页面加载时立即设置
@@ -292,6 +322,12 @@ document.addEventListener('DOMContentLoaded', () => {
             simpleSetTheme();
         }
     });
+
+    // 添加主题切换按钮事件监听
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+    }
 
     // --- Sticky Header ---
     const header = document.getElementById('header');

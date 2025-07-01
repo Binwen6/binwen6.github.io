@@ -22,12 +22,43 @@
   @apply p-6 rounded-lg border border-gray-200 bg-white hover:border-cyan-500 transition-all duration-300;
 }
 
+.dark .project-card {
+  @apply bg-gray-800 border-gray-600 hover:border-cyan-400;
+}
+
 .publication-item {
   @apply p-4 rounded-lg border border-gray-200 bg-white;
 }
 
+.dark .publication-item {
+  @apply bg-gray-800 border-gray-600;
+}
+
 .research-item {
   @apply p-4 rounded-lg border border-gray-200 bg-white;
+}
+
+.dark .research-item {
+  @apply bg-gray-800 border-gray-600;
+}
+
+/* Project and research titles in dark mode */
+.dark .project-card h3,
+.dark .publication-item h3,
+.dark .research-item h3 {
+  @apply text-gray-100;
+}
+
+.dark .project-card h4,
+.dark .publication-item h4,
+.dark .research-item h4 {
+  @apply text-gray-200;
+}
+
+.dark .project-card p,
+.dark .publication-item p,
+.dark .research-item p {
+  @apply text-gray-300;
 }
 
 /* Prose styles for blog content */

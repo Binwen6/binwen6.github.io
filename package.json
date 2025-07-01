@@ -8,7 +8,9 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "new-post": "node scripts/new-post.js"
+    "new-post": "node scripts/new-post.js",
+    "generate-search": "node scripts/generate-search-index.js",
+    "build-with-search": "npm run generate-search && astro build"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.0",

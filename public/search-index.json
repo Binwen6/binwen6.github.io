@@ -1,47 +1,73 @@
 [
   {
+    "title": "6.16-6.22",
+    "url": "/blog/616-622",
+    "content": "我的第一篇周记 从开始搭建个人网页，到开始落笔写下第一篇周记，这期间经历了不少波折。 但，我认为这都是值得的。因为一旦开始着手于一项恢弘浩大的工程，不可或缺的必然是前期的准备工作。而在这个数字化的年代，一个值得信赖的框架便是一切的基石。而我之所以选择Astro，或者说第一次听闻，也得益于一位大佬给我带来的启发…… 自己何时也能成为这样的大佬呢？ 时间线 回顾6.16-6.22这一周，大体可以分为三个阶段。 第一阶段是临行前的周一，翻了翻日历，我发现当天的日程安排中只有一个时间段是占用的，即研修间自习。回想起来前一天把这件事情忘得一干二净，第二天自然就没有刻意早起。我还记得这一天钱院告知了出国交流返校资助材料的具体事宜，接到通知后，我就顺手把当下能收集到的材料都整理好了。 第二阶段是周二至周五，准确来讲，其中三天半的时间都是在成都或者往返成都的路上度过的。值得一提的是，周二上午我只花了半小时的时间就把行李整理好了——刷新了个人整理行李的最快纪录。这次成都之行，主要目的是随课题组一起与华西医院神经外科方面的医生进行脑机接口辅助治疗方面的方案探讨。其中重要的一环便是，现场观摩听觉神经肿瘤的摘除过程，因为这一手术与我们脑机接口的植入路线息息相关。由于肿瘤所在的位置血管密集、神经交错，很难“毫发无损”地剥离开，很容易造成听觉神经的不可逆损伤。以往采取的“保听”的策略在很大程度上也加大了医生手术的难度。现在，脑机接口技术的成熟为我们带来了契机——不妨通过对听觉回路进行重建，来恢复因手术而破坏掉的神经的功能。而正是这次手术观摩，让我重塑了以往对于外科手术的认知，也很大程度上领悟了理论与实践结合的魅力。倘若没有现场高清屏幕的实时传放，医生的细致解说，我是无论如何也无法想象到听觉回路的真实构造，也很难在这么短的时间里对于听觉脑机接口这一概念获得客观而较为准确的把握。 第三阶段是返校后的周末，主要在恢复身体方面花了些时间。由于低估了川渝味道的威力，我在成都期间的饮食放得很开。虽然不是自己第一次去成都（上次是参加23年的世界科幻大会），但却是第一次到成都市区，也是第一次品尝正宗的成都风味，所以不把经典美食尝一个遍是不会善罢甘休的。老火锅、川菜、麻辣兔肉、老麻抄手、甜水面、老妈蹄花、腊排锅……都给安排上了。奈何河南人天生不怎么能吃辣的debuff加持，我只能戴着镣铐跳舞。吃的时候越开心，吃完后的肠胃越会让你尝尽苦头，连续三天的腹泻与肠胃炎便是成都给我留下的礼物。 里程碑 由于今日已经是6月24日，上周的成果总结也就延拓到此刻为止。 科研方面，主要进行的工作是： - 选用三种不同的分割模型对于腹腔手术视频帧进行靶器官分割，在前期调研的基础上，到目前为止已成功复现了nnUNet、TransUNet以及UNet3+这三种UNet架构的不同变体。虽然数据采集工作还未完成，但在目前已经采集的部分数据集上训练，已能够取得接近85%的Dice Score，可见效果还是不错的。 - 音乐脑机的benchmark设计这一课题，目前主要进行的工作是分类/重建方法以及评估手段的调研以及具体模型方案的确定，并在此基础上进行相关代码的整合。我在前期关于音乐质量评估的文献调研基础上，快速完成了对几种主客观评估方法的整理和流程代码的整合测试，并开发了一些方便后期进行批量测试的小工具。 - 昆虫分类大模型的任务目前尚未得到完整数据，进展暂缓。 - 关于听力重建的脑机接口设计，正处于起步阶段，有待进一步调研。 结语 > 天亮的日子还多着呢，太阳只是一颗晓星。 --- This post was created using the automated script.",
+    "tags": [
+      "Journel"
+    ],
+    "pubDate": "2025-06-24",
+    "description": "我的第一篇周记"
+  },
+  {
+    "title": "6.23-6.29",
+    "url": "/blog/623-629",
+    "content": "时间线 在过去的第二周，工作中心主要放在科研日常上。从成都回来后，拾起暂时搁置的任务，主要在手术视频帧分割任务以及音乐脑机benchmark的工作上做出一些推进。 本科生的期末周已临近尾声，空闲教室也变得随处可见，于是就可以把实验随地大小跑(bushi)。对不同版本的模型代码进行反复尝试后，终于筛选出了三个适合横向比较的分割模型，且性能上足够跑出一个客观的dice score。于是开始进行data prep -> training -> evaluation -> predicting一整套pipeline，并最终把结果以ppt的形式可视化地呈现出来。这周脑解码的组会上，也是大家的第一次组会，聆听了博士师兄们的汇报后，感到大有可为。对我而言印象最深刻的点，一个是模型流程框图的设计和公式的构造，还有就是导师的拷打了(lol)。领到了下一周的任务后，便开始讨论分工，对eeg信号的解码及其下游任务上开展新近顶会论文的调研。 上周还和女朋友一起探索了一家超大的网红书店和省图书馆(之前我们都没去过)，感受比较好的应该是省图了。在自助检索机器上找到了我挚爱的侯世达先生的《我是个怪圈》以及《表象与本质》这两部作品。一下午的时间主要用于阅读前者，随手记下了一些阅读思考： !image.png !image.png !image.png 技术问题 得益于大佬的推荐，订阅了Cursor的月度会员准备浅浅尝试一下效果。不过在使用免费版时，我也摸索出了一些规律：比如使用Cursor（尤其是在连接的服务器上）优先使用Command+K的上下文代码补全功能，速度比对话框提问快很多（虽然缺乏多轮交互），但只要你的描述足够精细，效果会喜出望外。 结语 > “Meaning is not a thing that one can look up, but rather something that arises only in a complex web of associations.” > —— Douglas Hofstadter --- This post was created using the automated script.",
+    "tags": [
+      "Journel"
+    ],
+    "pubDate": "2025-06-30",
+    "description": "我的第二篇周记"
+  },
+  {
     "title": "My First Blog Post",
-    "url": "blog/sample-post.html",
-    "content": "This is where your blog content will go. You can write about your projects, share insights from your research, or document your learning journey. Writing is a great way to solidify your knowledge and build a personal brand. Using Markdown Syntax. While this is an HTML file, you can structure your content as if you were writing in Markdown. Use tags like h2 for headings, p for paragraphs, ul and li for lists, code for inline code, and pre for code blocks."
+    "url": "/blog/my-first-blog-post",
+    "content": "My First Blog Post This is where your blog content will go. You can write about your projects, share insights from your research, or document your learning journey. Writing is a great way to solidify your knowledge and build a personal brand. Using Markdown Syntax While this is a Markdown file, you can structure your content easily. Use # for headings, regular text for paragraphs, and various Markdown features for rich content. Code Examples Here's an example of a Python code block: `python Example of a Python code block def hello_world(): print(\"Hello, world!\") ` Lists and Links You can create lists easily: - First item - Second item - Third item And add links: GitHub Blockquotes > \"The beautiful thing about learning is that nobody can take it away from you.\" - B.B. King Future Topics I plan to write about: 1. AI Research: My experiences with large language models and brain-computer interfaces 2. Project Updates: Progress on my various AI projects 3. Learning Journey: Insights from my studies and research 4. Technology Trends: Thoughts on emerging AI technologies Happy writing!",
+    "tags": [
+      "AI",
+      "Personal"
+    ],
+    "pubDate": "2025-6-22",
+    "description": "This is a preview of my first blog post. Click to read more about my thoughts on the future of AI..."
   },
   {
     "title": "About Me",
-    "url": "index.html#about",
+    "url": "/#about",
     "content": "I am a strategic AI researcher and developer with a passion for large language models and collaborative innovation. I have experience creating high-performance applications by leveraging state-of-the-art AI techniques and cross-functional collaboration. My primary research interests include Brain-Computer Interfaces, the capabilities of Large Language Models, applying AI for Scientific discovery, and developing Multi-Modal Agents. I am dedicated to continuous learning and contributing to open-source communities."
   },
   {
     "title": "Projects",
-    "url": "index.html#projects",
+    "url": "/#projects",
     "content": "Vaiage: AI Travel Planner. Intelligent Sleep Medicine Consultation. Online Editor with LLM."
   },
   {
     "title": "Publications",
-    "url": "index.html#publications",
+    "url": "/#publications",
     "content": "Probing In-Context Learning: Impact of Task Complexity and Model Architecture. Vaiage: A Multi-Agent Solution to Personalized Travel Planning."
   },
   {
     "title": "Research",
-    "url": "index.html#research",
+    "url": "/#research",
     "content": "Generalizable Low-Light Image Enhancement. Video-Editing-Friendly Text-to-Image."
   },
   {
     "title": "Education",
-    "url": "index.html#education",
+    "url": "/#education",
     "content": "University of California, Berkeley. Xi'an Jiaotong University."
   },
   {
     "title": "Skills",
-    "url": "index.html#skills",
+    "url": "/#skills",
     "content": "Python, PyTorch, TensorFlow, JavaScript, React, Node.js, Git, Docker, AWS, Google Cloud."
   },
   {
     "title": "Awards",
-    "url": "index.html#awards",
+    "url": "/#awards",
     "content": "13th China Software Cup National Finals Third Prize. Mathematical Contest in Modeling H Prize. FLTRP Cup National English Ability Competition Silver Award."
   },
   {
     "title": "Contact",
-    "url": "index.html#contact",
+    "url": "/#contact",
     "content": "Feel free to reach out. I'm always open to discussing new projects and opportunities."
   }
-] 
+]

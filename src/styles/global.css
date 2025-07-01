@@ -114,9 +114,9 @@
   @apply text-cyan-600 hover:underline;
 }
 
-/* Code block styling for Prism.js - Light theme */
+/* Code block styling for Prism.js */
 .prose pre[class*="language-"] {
-  @apply bg-gray-50 text-gray-800 p-4 rounded-lg overflow-x-auto mb-4 border border-gray-200;
+  @apply p-4 rounded-lg overflow-x-auto mb-4 border;
 }
 
 .prose code[class*="language-"] {
@@ -128,144 +128,14 @@
   @apply bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono text-gray-800 dark:text-gray-200;
 }
 
-/* Dark mode adjustments for code blocks */
+/* Light theme code block adjustments */
+.prose pre[class*="language-"] {
+  @apply bg-gray-50 border-gray-200;
+}
+
+/* Dark theme code block adjustments */
 .dark .prose pre[class*="language-"] {
-  @apply bg-gray-800 border-gray-600;
-}
-
-.dark .prose :not(pre) > code {
-  @apply bg-gray-800 text-gray-200;
-}
-
-/* Prism.js syntax highlighting overrides for light theme */
-.prose .token.comment,
-.prose .token.prolog,
-.prose .token.doctype,
-.prose .token.cdata {
-  @apply text-gray-500;
-}
-
-.prose .token.punctuation {
-  @apply text-gray-700;
-}
-
-.prose .token.namespace {
-  @apply opacity-70;
-}
-
-.prose .token.property,
-.prose .token.tag,
-.prose .token.boolean,
-.prose .token.number,
-.prose .token.constant,
-.prose .token.symbol,
-.prose .token.deleted {
-  @apply text-blue-600;
-}
-
-.prose .token.selector,
-.prose .token.attr-name,
-.prose .token.string,
-.prose .token.char,
-.prose .token.builtin,
-.prose .token.inserted {
-  @apply text-green-600;
-}
-
-.prose .token.operator,
-.prose .token.entity,
-.prose .token.url,
-.language-css .token.string,
-.language-scss .token.string,
-.style .token.string {
-  @apply text-orange-600;
-}
-
-.prose .token.atrule,
-.prose .token.attr-value,
-.prose .token.keyword {
-  @apply text-purple-600;
-}
-
-.prose .token.function,
-.prose .token.class-name {
-  @apply text-yellow-600;
-}
-
-.prose .token.regex,
-.prose .token.important,
-.prose .token.variable {
-  @apply text-red-600;
-}
-
-.prose .token.important,
-.prose .token.bold {
-  @apply font-bold;
-}
-
-.prose .token.italic {
-  @apply italic;
-}
-
-.prose .token.entity {
-  @apply cursor-help;
-}
-
-/* Dark theme syntax highlighting overrides */
-.dark .prose .token.comment,
-.dark .prose .token.prolog,
-.dark .prose .token.doctype,
-.dark .prose .token.cdata {
-  @apply text-gray-400;
-}
-
-.dark .prose .token.punctuation {
-  @apply text-gray-300;
-}
-
-.dark .prose .token.property,
-.dark .prose .token.tag,
-.dark .prose .token.boolean,
-.dark .prose .token.number,
-.dark .prose .token.constant,
-.dark .prose .token.symbol,
-.dark .prose .token.deleted {
-  @apply text-blue-400;
-}
-
-.dark .prose .token.selector,
-.dark .prose .token.attr-name,
-.dark .prose .token.string,
-.dark .prose .token.char,
-.dark .prose .token.builtin,
-.dark .prose .token.inserted {
-  @apply text-green-400;
-}
-
-.dark .prose .token.operator,
-.dark .prose .token.entity,
-.dark .prose .token.url,
-.dark .language-css .token.string,
-.dark .language-scss .token.string,
-.dark .style .token.string {
-  @apply text-orange-400;
-}
-
-.dark .prose .token.atrule,
-.dark .prose .token.attr-value,
-.dark .prose .token.keyword {
-  @apply text-purple-400;
-}
-
-.dark .prose .token.function,
-.dark .prose .token.class-name {
-  @apply text-yellow-400;
-}
-
-.dark .prose .token.regex,
-.dark .prose .token.important,
-.dark .prose .token.variable {
-  @apply text-red-400;
+  @apply border-gray-600;
 }
 
 /* CSS Variables for theme colors */

@@ -1,0 +1,1278 @@
+<!DOCTYPE html><html lang="en" class="scroll-smooth"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Binwen Liu - AI Researcher &amp; Developer</title><meta name="description" content="Personal homepage of Binwen Liu, an AI researcher and developer specializing in large language models and collaborative innovation."><meta name="author" content="Binwen Liu"><link rel="canonical" href="http://localhost:4321/"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="http://localhost:4321/"><meta property="og:title" content="Binwen Liu - AI Researcher &#38; Developer"><meta property="og:description" content="Personal homepage of Binwen Liu, an AI researcher and developer specializing in large language models and collaborative innovation."><meta property="og:image" content="http://localhost:4321/data/portrait.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="http://localhost:4321/"><meta property="twitter:title" content="Binwen Liu - AI Researcher &#38; Developer"><meta property="twitter:description" content="Personal homepage of Binwen Liu, an AI researcher and developer specializing in large language models and collaborative innovation."><meta property="twitter:image" content="http://localhost:4321/data/portrait.jpg"><!-- Favicon --><link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>"><!-- Scripts --><script type="module" src="/src/layouts/Layout.astro?astro&type=script&index=0&lang.ts"></script><script src="/script.js" defer></script><!-- Styles --><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"><!-- Google Fonts --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"><script type="module" src="/src/layouts/Layout.astro?astro&type=script&index=1&lang.ts"></script><style data-vite-dev-id="/Users/eureka/VSCodeProjects/binwen6.github.io/src/styles/global.css">/*! tailwindcss v4.1.10 | MIT License | https://tailwindcss.com */
+@layer properties;
+@layer theme, base, components, utilities;
+@layer theme {
+  :root, :host {
+    --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+      "Courier New", monospace;
+    --color-red-500: oklch(63.7% 0.237 25.331);
+    --color-cyan-400: oklch(78.9% 0.154 211.53);
+    --color-cyan-500: oklch(71.5% 0.143 215.221);
+    --color-cyan-600: oklch(60.9% 0.126 221.723);
+    --color-gray-50: oklch(98.5% 0.002 247.839);
+    --color-gray-100: oklch(96.7% 0.003 264.542);
+    --color-gray-200: oklch(92.8% 0.006 264.531);
+    --color-gray-300: oklch(87.2% 0.01 258.338);
+    --color-gray-400: oklch(70.7% 0.022 261.325);
+    --color-gray-500: oklch(55.1% 0.027 264.364);
+    --color-gray-600: oklch(44.6% 0.03 256.802);
+    --color-gray-800: oklch(27.8% 0.033 256.848);
+    --color-gray-900: oklch(21% 0.034 264.665);
+    --color-white: #fff;
+    --spacing: 0.25rem;
+    --container-md: 28rem;
+    --container-2xl: 42rem;
+    --container-4xl: 56rem;
+    --text-xs: 0.75rem;
+    --text-xs--line-height: calc(1 / 0.75);
+    --text-sm: 0.875rem;
+    --text-sm--line-height: calc(1.25 / 0.875);
+    --text-base: 1rem;
+    --text-base--line-height: calc(1.5 / 1);
+    --text-lg: 1.125rem;
+    --text-lg--line-height: calc(1.75 / 1.125);
+    --text-xl: 1.25rem;
+    --text-xl--line-height: calc(1.75 / 1.25);
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: calc(2 / 1.5);
+    --text-3xl: 1.875rem;
+    --text-3xl--line-height: calc(2.25 / 1.875);
+    --text-4xl: 2.25rem;
+    --text-4xl--line-height: calc(2.5 / 2.25);
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --radius-md: 0.375rem;
+    --radius-lg: 0.5rem;
+    --radius-xl: 0.75rem;
+    --blur-md: 12px;
+    --default-transition-duration: 150ms;
+    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    --default-font-family: var(--font-sans);
+    --default-mono-font-family: var(--font-mono);
+    --color-light-text: #050505;
+    --color-light-accent: #00B5D8;
+    --color-light-card: #FFFFFF;
+    --color-light-border: #E5E7EB;
+    --color-dark-text: #E5E7EB;
+    --color-dark-accent: #00B5D8;
+    --color-dark-card: #1F2937;
+    --color-dark-border: #374151;
+  }
+}
+@layer base {
+  *, ::after, ::before, ::backdrop, ::file-selector-button {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0 solid;
+  }
+  html, :host {
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    tab-size: 4;
+    font-family: var(--default-font-family, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
+    font-feature-settings: var(--default-font-feature-settings, normal);
+    font-variation-settings: var(--default-font-variation-settings, normal);
+    -webkit-tap-highlight-color: transparent;
+  }
+  hr {
+    height: 0;
+    color: inherit;
+    border-top-width: 1px;
+  }
+  abbr:where([title]) {
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  a {
+    color: inherit;
+    -webkit-text-decoration: inherit;
+    text-decoration: inherit;
+  }
+  b, strong {
+    font-weight: bolder;
+  }
+  code, kbd, samp, pre {
+    font-family: var(--default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);
+    font-feature-settings: var(--default-mono-font-feature-settings, normal);
+    font-variation-settings: var(--default-mono-font-variation-settings, normal);
+    font-size: 1em;
+  }
+  small {
+    font-size: 80%;
+  }
+  sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  sub {
+    bottom: -0.25em;
+  }
+  sup {
+    top: -0.5em;
+  }
+  table {
+    text-indent: 0;
+    border-color: inherit;
+    border-collapse: collapse;
+  }
+  :-moz-focusring {
+    outline: auto;
+  }
+  progress {
+    vertical-align: baseline;
+  }
+  summary {
+    display: list-item;
+  }
+  ol, ul, menu {
+    list-style: none;
+  }
+  img, svg, video, canvas, audio, iframe, embed, object {
+    display: block;
+    vertical-align: middle;
+  }
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+  button, input, select, optgroup, textarea, ::file-selector-button {
+    font: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    border-radius: 0;
+    background-color: transparent;
+    opacity: 1;
+  }
+  :where(select:is([multiple], [size])) optgroup {
+    font-weight: bolder;
+  }
+  :where(select:is([multiple], [size])) optgroup option {
+    padding-inline-start: 20px;
+  }
+  ::file-selector-button {
+    margin-inline-end: 4px;
+  }
+  ::placeholder {
+    opacity: 1;
+  }
+  @supports (not (-webkit-appearance: -apple-pay-button))  or (contain-intrinsic-size: 1px) {
+    ::placeholder {
+      color: currentcolor;
+      @supports (color: color-mix(in lab, red, red)) {
+        color: color-mix(in oklab, currentcolor 50%, transparent);
+      }
+    }
+  }
+  textarea {
+    resize: vertical;
+  }
+  ::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+  ::-webkit-date-and-time-value {
+    min-height: 1lh;
+    text-align: inherit;
+  }
+  ::-webkit-datetime-edit {
+    display: inline-flex;
+  }
+  ::-webkit-datetime-edit-fields-wrapper {
+    padding: 0;
+  }
+  ::-webkit-datetime-edit, ::-webkit-datetime-edit-year-field, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute-field, ::-webkit-datetime-edit-second-field, ::-webkit-datetime-edit-millisecond-field, ::-webkit-datetime-edit-meridiem-field {
+    padding-block: 0;
+  }
+  :-moz-ui-invalid {
+    box-shadow: none;
+  }
+  button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-selector-button {
+    appearance: button;
+  }
+  ::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
+    height: auto;
+  }
+  [hidden]:where(:not([hidden="until-found"])) {
+    display: none !important;
+  }
+}
+@layer utilities {
+  .pointer-events-none {
+    pointer-events: none;
+  }
+  .absolute {
+    position: absolute;
+  }
+  .relative {
+    position: relative;
+  }
+  .static {
+    position: static;
+  }
+  .sticky {
+    position: sticky;
+  }
+  .inset-y-0 {
+    inset-block: calc(var(--spacing) * 0);
+  }
+  .top-0 {
+    top: calc(var(--spacing) * 0);
+  }
+  .top-4 {
+    top: calc(var(--spacing) * 4);
+  }
+  .right-0 {
+    right: calc(var(--spacing) * 0);
+  }
+  .left-0 {
+    left: calc(var(--spacing) * 0);
+  }
+  .z-0 {
+    z-index: 0;
+  }
+  .z-10 {
+    z-index: 10;
+  }
+  .z-30 {
+    z-index: 30;
+  }
+  .mx-auto {
+    margin-inline: auto;
+  }
+  .my-4 {
+    margin-block: calc(var(--spacing) * 4);
+  }
+  .my-8 {
+    margin-block: calc(var(--spacing) * 8);
+  }
+  .mt-1 {
+    margin-top: calc(var(--spacing) * 1);
+  }
+  .mt-2 {
+    margin-top: calc(var(--spacing) * 2);
+  }
+  .mt-3 {
+    margin-top: calc(var(--spacing) * 3);
+  }
+  .mt-4 {
+    margin-top: calc(var(--spacing) * 4);
+  }
+  .mt-6 {
+    margin-top: calc(var(--spacing) * 6);
+  }
+  .mt-8 {
+    margin-top: calc(var(--spacing) * 8);
+  }
+  .mt-20 {
+    margin-top: calc(var(--spacing) * 20);
+  }
+  .\!mb-4 {
+    margin-bottom: calc(var(--spacing) * 4) !important;
+  }
+  .mb-2 {
+    margin-bottom: calc(var(--spacing) * 2);
+  }
+  .mb-4 {
+    margin-bottom: calc(var(--spacing) * 4);
+  }
+  .mb-8 {
+    margin-bottom: calc(var(--spacing) * 8);
+  }
+  .mb-10 {
+    margin-bottom: calc(var(--spacing) * 10);
+  }
+  .mb-12 {
+    margin-bottom: calc(var(--spacing) * 12);
+  }
+  .mb-16 {
+    margin-bottom: calc(var(--spacing) * 16);
+  }
+  .box-content {
+    box-sizing: content-box;
+  }
+  .block {
+    display: block;
+  }
+  .contents {
+    display: contents;
+  }
+  .flex {
+    display: flex;
+  }
+  .grid {
+    display: grid;
+  }
+  .hidden {
+    display: none;
+  }
+  .inline {
+    display: inline;
+  }
+  .inline-block {
+    display: inline-block;
+  }
+  .inline-flex {
+    display: inline-flex;
+  }
+  .table {
+    display: table;
+  }
+  .size-5 {
+    width: calc(var(--spacing) * 5);
+    height: calc(var(--spacing) * 5);
+  }
+  .h-screen {
+    height: 100vh;
+  }
+  .w-full {
+    width: 100%;
+  }
+  .max-w-2xl {
+    max-width: var(--container-2xl);
+  }
+  .max-w-4xl {
+    max-width: var(--container-4xl);
+  }
+  .max-w-md {
+    max-width: var(--container-md);
+  }
+  .max-w-none {
+    max-width: none;
+  }
+  .flex-1 {
+    flex: 1;
+  }
+  .border-collapse {
+    border-collapse: collapse;
+  }
+  .list-inside {
+    list-style-position: inside;
+  }
+  .list-disc {
+    list-style-type: disc;
+  }
+  .grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .flex-col {
+    flex-direction: column;
+  }
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .justify-between {
+    justify-content: space-between;
+  }
+  .justify-center {
+    justify-content: center;
+  }
+  .gap-1 {
+    gap: calc(var(--spacing) * 1);
+  }
+  .gap-2 {
+    gap: calc(var(--spacing) * 2);
+  }
+  .gap-4 {
+    gap: calc(var(--spacing) * 4);
+  }
+  .gap-6 {
+    gap: calc(var(--spacing) * 6);
+  }
+  .space-y-2 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 2) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .space-y-4 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 4) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .space-y-6 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 6) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 6) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .space-y-8 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 8) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 8) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .gap-x-1 {
+    column-gap: calc(var(--spacing) * 1);
+  }
+  .gap-x-2 {
+    column-gap: calc(var(--spacing) * 2);
+  }
+  .gap-x-6 {
+    column-gap: calc(var(--spacing) * 6);
+  }
+  .gap-y-4 {
+    row-gap: calc(var(--spacing) * 4);
+  }
+  .gap-y-5 {
+    row-gap: calc(var(--spacing) * 5);
+  }
+  .gap-y-20 {
+    row-gap: calc(var(--spacing) * 20);
+  }
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
+  .rounded {
+    border-radius: 0.25rem;
+  }
+  .rounded-full {
+    border-radius: calc(infinity * 1px);
+  }
+  .rounded-lg {
+    border-radius: var(--radius-lg);
+  }
+  .rounded-md {
+    border-radius: var(--radius-md);
+  }
+  .rounded-xl {
+    border-radius: var(--radius-xl);
+  }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
+  .border-t {
+    border-top-style: var(--tw-border-style);
+    border-top-width: 1px;
+  }
+  .border-l-4 {
+    border-left-style: var(--tw-border-style);
+    border-left-width: 4px;
+  }
+  .border-gray-200 {
+    border-color: var(--color-gray-200);
+  }
+  .border-gray-300 {
+    border-color: var(--color-gray-300);
+  }
+  .border-light-accent {
+    border-color: var(--color-light-accent);
+  }
+  .border-light-border {
+    border-color: var(--color-light-border);
+  }
+  .border-transparent {
+    border-color: transparent;
+  }
+  .bg-gray-100 {
+    background-color: var(--color-gray-100);
+  }
+  .bg-light-card {
+    background-color: var(--color-light-card);
+  }
+  .bg-white {
+    background-color: var(--color-white);
+  }
+  .bg-white\/70 {
+    background-color: color-mix(in srgb, #fff 70%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-white) 70%, transparent);
+    }
+  }
+  .p-1 {
+    padding: calc(var(--spacing) * 1);
+  }
+  .p-1\.5 {
+    padding: calc(var(--spacing) * 1.5);
+  }
+  .p-4 {
+    padding: calc(var(--spacing) * 4);
+  }
+  .p-6 {
+    padding: calc(var(--spacing) * 6);
+  }
+  .px-2 {
+    padding-inline: calc(var(--spacing) * 2);
+  }
+  .px-3 {
+    padding-inline: calc(var(--spacing) * 3);
+  }
+  .px-4 {
+    padding-inline: calc(var(--spacing) * 4);
+  }
+  .px-6 {
+    padding-inline: calc(var(--spacing) * 6);
+  }
+  .py-1 {
+    padding-block: calc(var(--spacing) * 1);
+  }
+  .py-2 {
+    padding-block: calc(var(--spacing) * 2);
+  }
+  .py-3 {
+    padding-block: calc(var(--spacing) * 3);
+  }
+  .py-8 {
+    padding-block: calc(var(--spacing) * 8);
+  }
+  .pt-10 {
+    padding-top: calc(var(--spacing) * 10);
+  }
+  .pl-3 {
+    padding-left: calc(var(--spacing) * 3);
+  }
+  .pl-4 {
+    padding-left: calc(var(--spacing) * 4);
+  }
+  .pl-10 {
+    padding-left: calc(var(--spacing) * 10);
+  }
+  .text-center {
+    text-align: center;
+  }
+  .text-2xl {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
+  .text-4xl {
+    font-size: var(--text-4xl);
+    line-height: var(--tw-leading, var(--text-4xl--line-height));
+  }
+  .text-base {
+    font-size: var(--text-base);
+    line-height: var(--tw-leading, var(--text-base--line-height));
+  }
+  .text-lg {
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
+  }
+  .text-sm {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
+  }
+  .text-xl {
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
+  }
+  .text-xs {
+    font-size: var(--text-xs);
+    line-height: var(--tw-leading, var(--text-xs--line-height));
+  }
+  .font-bold {
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+  }
+  .font-medium {
+    --tw-font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-medium);
+  }
+  .font-semibold {
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
+  }
+  .text-cyan-600 {
+    color: var(--color-cyan-600);
+  }
+  .text-gray-400 {
+    color: var(--color-gray-400);
+  }
+  .text-gray-500 {
+    color: var(--color-gray-500);
+  }
+  .text-gray-600 {
+    color: var(--color-gray-600);
+  }
+  .text-gray-800 {
+    color: var(--color-gray-800);
+  }
+  .text-gray-900 {
+    color: var(--color-gray-900);
+  }
+  .text-light-accent {
+    color: var(--color-light-accent);
+  }
+  .text-light-text {
+    color: var(--color-light-text);
+  }
+  .text-red-500 {
+    color: var(--color-red-500);
+  }
+  .italic {
+    font-style: italic;
+  }
+  .opacity-25 {
+    opacity: 25%;
+  }
+  .shadow-lg {
+    --tw-shadow: 0 10px 15px -3px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 4px 6px -4px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
+  }
+  .backdrop-blur-md {
+    --tw-backdrop-blur: blur(var(--blur-md));
+    -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+    backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+  }
+  .transition {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, visibility, content-visibility, overlay, pointer-events;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .transition-all {
+    transition-property: all;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .transition-colors {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .duration-300 {
+    --tw-duration: 300ms;
+    transition-duration: 300ms;
+  }
+  .group-hover\:border-cyan-500 {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        border-color: var(--color-cyan-500);
+      }
+    }
+  }
+  .group-hover\:border-light-accent {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        border-color: var(--color-light-accent);
+      }
+    }
+  }
+  .group-hover\:text-cyan-600 {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        color: var(--color-cyan-600);
+      }
+    }
+  }
+  .group-hover\:text-light-accent {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        color: var(--color-light-accent);
+      }
+    }
+  }
+  .hover\:border-light-accent {
+    &:hover {
+      @media (hover: hover) {
+        border-color: var(--color-light-accent);
+      }
+    }
+  }
+  .hover\:bg-gray-100 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-gray-100);
+      }
+    }
+  }
+  .hover\:bg-gray-200 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-gray-200);
+      }
+    }
+  }
+  .hover\:text-light-accent {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-light-accent);
+      }
+    }
+  }
+  .hover\:underline {
+    &:hover {
+      @media (hover: hover) {
+        text-decoration-line: underline;
+      }
+    }
+  }
+  .focus\:border-transparent {
+    &:focus {
+      border-color: transparent;
+    }
+  }
+  .focus\:ring-2 {
+    &:focus {
+      --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    }
+  }
+  .focus\:ring-cyan-500 {
+    &:focus {
+      --tw-ring-color: var(--color-cyan-500);
+    }
+  }
+  .sm\:flex {
+    @media (width >= 40rem) {
+      display: flex;
+    }
+  }
+  .sm\:px-6 {
+    @media (width >= 40rem) {
+      padding-inline: calc(var(--spacing) * 6);
+    }
+  }
+  .sm\:px-8 {
+    @media (width >= 40rem) {
+      padding-inline: calc(var(--spacing) * 8);
+    }
+  }
+  .md\:min-w-36 {
+    @media (width >= 48rem) {
+      min-width: calc(var(--spacing) * 36);
+    }
+  }
+  .md\:grid-cols-2 {
+    @media (width >= 48rem) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  .md\:flex-row {
+    @media (width >= 48rem) {
+      flex-direction: row;
+    }
+  }
+  .lg\:px-8 {
+    @media (width >= 64rem) {
+      padding-inline: calc(var(--spacing) * 8);
+    }
+  }
+  .lg\:px-12 {
+    @media (width >= 64rem) {
+      padding-inline: calc(var(--spacing) * 12);
+    }
+  }
+  .dark\:border-dark-accent {
+    @media (prefers-color-scheme: dark) {
+      border-color: var(--color-dark-accent);
+    }
+  }
+  .dark\:border-dark-border {
+    @media (prefers-color-scheme: dark) {
+      border-color: var(--color-dark-border);
+    }
+  }
+  .dark\:bg-dark-card {
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--color-dark-card);
+    }
+  }
+  .dark\:bg-dark-card\/70 {
+    @media (prefers-color-scheme: dark) {
+      background-color: color-mix(in srgb, #1F2937 70%, transparent);
+      @supports (color: color-mix(in lab, red, red)) {
+        background-color: color-mix(in oklab, var(--color-dark-card) 70%, transparent);
+      }
+    }
+  }
+  .dark\:bg-gray-800 {
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--color-gray-800);
+    }
+  }
+  .dark\:text-dark-accent {
+    @media (prefers-color-scheme: dark) {
+      color: var(--color-dark-accent);
+    }
+  }
+  .dark\:text-dark-text {
+    @media (prefers-color-scheme: dark) {
+      color: var(--color-dark-text);
+    }
+  }
+  .dark\:text-gray-400 {
+    @media (prefers-color-scheme: dark) {
+      color: var(--color-gray-400);
+    }
+  }
+  .dark\:text-white {
+    @media (prefers-color-scheme: dark) {
+      color: var(--color-white);
+    }
+  }
+  .dark\:group-hover\:border-dark-accent {
+    @media (prefers-color-scheme: dark) {
+      &:is(:where(.group):hover *) {
+        @media (hover: hover) {
+          border-color: var(--color-dark-accent);
+        }
+      }
+    }
+  }
+  .dark\:group-hover\:text-dark-accent {
+    @media (prefers-color-scheme: dark) {
+      &:is(:where(.group):hover *) {
+        @media (hover: hover) {
+          color: var(--color-dark-accent);
+        }
+      }
+    }
+  }
+  .dark\:hover\:border-dark-accent {
+    @media (prefers-color-scheme: dark) {
+      &:hover {
+        @media (hover: hover) {
+          border-color: var(--color-dark-accent);
+        }
+      }
+    }
+  }
+  .dark\:hover\:text-dark-accent {
+    @media (prefers-color-scheme: dark) {
+      &:hover {
+        @media (hover: hover) {
+          color: var(--color-dark-accent);
+        }
+      }
+    }
+  }
+}
+.profile-image {
+  margin-bottom: calc(var(--spacing) * 6);
+  height: calc(var(--spacing) * 32);
+  width: calc(var(--spacing) * 32);
+  border-radius: calc(infinity * 1px);
+  border-style: var(--tw-border-style);
+  border-width: 4px;
+  border-color: var(--color-white);
+  object-fit: cover;
+  --tw-shadow: 0 10px 15px -3px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 4px 6px -4px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+  box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+}
+.project-card {
+  border-radius: var(--radius-lg);
+  border-style: var(--tw-border-style);
+  border-width: 1px;
+  border-color: var(--color-gray-200);
+  background-color: var(--color-white);
+  padding: calc(var(--spacing) * 6);
+  transition-property: all;
+  transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+  transition-duration: var(--tw-duration, var(--default-transition-duration));
+  --tw-duration: 300ms;
+  transition-duration: 300ms;
+  &:hover {
+    @media (hover: hover) {
+      border-color: var(--color-cyan-500);
+    }
+  }
+}
+.dark .project-card {
+  border-color: var(--color-gray-600);
+  background-color: var(--color-gray-800);
+  &:hover {
+    @media (hover: hover) {
+      border-color: var(--color-cyan-400);
+    }
+  }
+}
+.publication-item {
+  border-radius: var(--radius-lg);
+  border-style: var(--tw-border-style);
+  border-width: 1px;
+  border-color: var(--color-gray-200);
+  background-color: var(--color-white);
+  padding: calc(var(--spacing) * 4);
+}
+.dark .publication-item {
+  border-color: var(--color-gray-600);
+  background-color: var(--color-gray-800);
+}
+.research-item {
+  border-radius: var(--radius-lg);
+  border-style: var(--tw-border-style);
+  border-width: 1px;
+  border-color: var(--color-gray-200);
+  background-color: var(--color-white);
+  padding: calc(var(--spacing) * 4);
+}
+.dark .research-item {
+  border-color: var(--color-gray-600);
+  background-color: var(--color-gray-800);
+}
+.dark .project-card h3, .dark .publication-item h3, .dark .research-item h3 {
+  color: var(--color-gray-100);
+}
+.dark .project-card h4, .dark .publication-item h4, .dark .research-item h4 {
+  color: var(--color-gray-200);
+}
+.dark .project-card p, .dark .publication-item p, .dark .research-item p {
+  color: var(--color-gray-300);
+}
+.prose {
+  max-width: none;
+}
+.prose h1 {
+  margin-bottom: calc(var(--spacing) * 4);
+  font-size: var(--text-3xl);
+  line-height: var(--tw-leading, var(--text-3xl--line-height));
+  --tw-font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-bold);
+}
+.prose h2 {
+  margin-top: calc(var(--spacing) * 8);
+  margin-bottom: calc(var(--spacing) * 3);
+  font-size: var(--text-2xl);
+  line-height: var(--tw-leading, var(--text-2xl--line-height));
+  --tw-font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-bold);
+}
+.prose h3 {
+  margin-top: calc(var(--spacing) * 6);
+  margin-bottom: calc(var(--spacing) * 2);
+  font-size: var(--text-xl);
+  line-height: var(--tw-leading, var(--text-xl--line-height));
+  --tw-font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-semibold);
+}
+.prose p {
+  margin-bottom: calc(var(--spacing) * 4);
+  color: var(--color-gray-800);
+}
+.prose ul {
+  margin-bottom: calc(var(--spacing) * 4);
+  list-style-position: inside;
+  list-style-type: disc;
+}
+.prose ol {
+  margin-bottom: calc(var(--spacing) * 4);
+  list-style-position: inside;
+  list-style-type: decimal;
+}
+.prose li {
+  margin-bottom: calc(var(--spacing) * 1);
+}
+.prose blockquote {
+  border-left-style: var(--tw-border-style);
+  border-left-width: 4px;
+  border-color: var(--color-cyan-500);
+  padding-left: calc(var(--spacing) * 4);
+  color: var(--color-gray-600);
+  font-style: italic;
+}
+.prose code {
+  border-radius: 0.25rem;
+  background-color: var(--color-gray-100);
+  padding-inline: calc(var(--spacing) * 1);
+  padding-block: calc(var(--spacing) * 0.5);
+  font-size: var(--text-sm);
+  line-height: var(--tw-leading, var(--text-sm--line-height));
+}
+.prose pre {
+  margin-bottom: calc(var(--spacing) * 4);
+  overflow-x: auto;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-gray-100);
+  padding: calc(var(--spacing) * 4);
+}
+.prose pre code {
+  background-color: transparent;
+  padding: calc(var(--spacing) * 0);
+}
+.prose a {
+  color: var(--color-cyan-600);
+  &:hover {
+    @media (hover: hover) {
+      text-decoration-line: underline;
+    }
+  }
+}
+.prose pre[class*="language-"] {
+  margin-bottom: calc(var(--spacing) * 4);
+  overflow-x: auto;
+  border-radius: var(--radius-lg);
+  border-style: var(--tw-border-style);
+  border-width: 1px;
+  padding: calc(var(--spacing) * 4);
+}
+.prose code[class*="language-"] {
+  background-color: transparent;
+  padding: calc(var(--spacing) * 0);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  line-height: var(--tw-leading, var(--text-sm--line-height));
+}
+.prose :not(pre) > code {
+  border-radius: 0.25rem;
+  background-color: var(--color-gray-100);
+  padding-inline: calc(var(--spacing) * 1);
+  padding-block: calc(var(--spacing) * 0.5);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  line-height: var(--tw-leading, var(--text-sm--line-height));
+  color: var(--color-gray-800);
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--color-gray-800);
+  }
+  @media (prefers-color-scheme: dark) {
+    color: var(--color-gray-200);
+  }
+}
+.prose pre[class*="language-"] {
+  border-color: var(--color-gray-200);
+  background-color: var(--color-gray-50);
+}
+.dark .prose pre[class*="language-"] {
+  border-color: var(--color-gray-600);
+}
+:root {
+  --bg: #F0F4F8;
+  --text: #2C5282;
+  --accent: #00B5D8;
+  --accent-light: #4FD1C5;
+  --card: #FFFFFF;
+  --border: #E6EDF3;
+  --gray: #718096;
+  --gray-light: #A0AEC0;
+  --gray-dark: #4A5568;
+  --gradient-primary: radial-gradient(
+        circle at 50% 0%, 
+        rgba(0, 181, 216, 0.15) 0%, 
+        rgba(79, 209, 197, 0.08) 50%, 
+        rgba(240, 244, 248, 0.02) 100%
+    );
+  --gradient-secondary: linear-gradient(
+        160deg,
+        rgba(0, 181, 216, 0.08) 0%,
+        rgba(79, 209, 197, 0.05) 30%,
+        rgba(240, 244, 248, 0) 100%
+    );
+}
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  background: var(--gradient-primary), var(--gradient-secondary), var(--bg);
+  background-attachment: fixed;
+  background-size: 200% 200%, 200% 200%, auto;
+  animation: gradientMove 15s ease-in-out infinite;
+}
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 0%, 0% 0%, 0% 0%;
+  }
+  50% {
+    background-position: 100% 20%, 50% 50%, 0% 0%;
+  }
+  100% {
+    background-position: 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+#hero {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+#hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient( circle at top right, rgba(0, 181, 216, 0.12) 0%, rgba(79, 209, 197, 0.08) 45%, transparent 90% ), radial-gradient( circle at bottom left, rgba(79, 209, 197, 0.1) 0%, rgba(0, 181, 216, 0.06) 45%, transparent 90% );
+  opacity: 0.8;
+  z-index: 0;
+}
+#hero > * {
+  position: relative;
+  z-index: 1;
+}
+@property --tw-space-y-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-inset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-ring-inset {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-offset-width {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@property --tw-ring-offset-color {
+  syntax: "*";
+  inherits: false;
+  initial-value: #fff;
+}
+@property --tw-ring-offset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-backdrop-blur {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-brightness {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-contrast {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-grayscale {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-hue-rotate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-invert {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-opacity {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-saturate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-sepia {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-duration {
+  syntax: "*";
+  inherits: false;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-space-y-reverse: 0;
+      --tw-border-style: solid;
+      --tw-font-weight: initial;
+      --tw-shadow: 0 0 #0000;
+      --tw-shadow-color: initial;
+      --tw-shadow-alpha: 100%;
+      --tw-inset-shadow: 0 0 #0000;
+      --tw-inset-shadow-color: initial;
+      --tw-inset-shadow-alpha: 100%;
+      --tw-ring-color: initial;
+      --tw-ring-shadow: 0 0 #0000;
+      --tw-inset-ring-color: initial;
+      --tw-inset-ring-shadow: 0 0 #0000;
+      --tw-ring-inset: initial;
+      --tw-ring-offset-width: 0px;
+      --tw-ring-offset-color: #fff;
+      --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-outline-style: solid;
+      --tw-backdrop-blur: initial;
+      --tw-backdrop-brightness: initial;
+      --tw-backdrop-contrast: initial;
+      --tw-backdrop-grayscale: initial;
+      --tw-backdrop-hue-rotate: initial;
+      --tw-backdrop-invert: initial;
+      --tw-backdrop-opacity: initial;
+      --tw-backdrop-saturate: initial;
+      --tw-backdrop-sepia: initial;
+      --tw-duration: initial;
+    }
+  }
+}
+</style><script type="module" src="/@vite/client"></script>
+<script type="module" src="/@fs/Users/eureka/VSCodeProjects/binwen6.github.io/node_modules/astro/dist/runtime/client/dev-toolbar/entrypoint.js?v=dd503815"></script>
+<script>window.__astro_dev_toolbar__ = {"root":"/Users/eureka/VSCodeProjects/binwen6.github.io/","version":"5.10.0","debugInfo":"Astro                    v5.10.0\nNode                     v23.5.0\nSystem                   macOS (arm64)\nPackage Manager          npm\nOutput                   static\nAdapter                  none\nIntegrations             @astrojs/mdx\n                         @astrojs/sitemap"}</script>
+<script type="module" src="/src/styles/global.css"></script></head> <body class="text-light-text dark:text-dark-text font-inter transition-colors duration-300" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/layouts/Layout.astro" data-astro-source-loc="87:93"> <div id="highlight-gradient" class="pointer-events-none absolute left-0 top-0 z-0 h-screen w-full opacity-25" style="background-image:linear-gradient(to bottom, #6A5ACD66, transparent);" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/layouts/Layout.astro" data-astro-source-loc="89:6"></div> <div class="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/layouts/Layout.astro" data-astro-source-loc="91:64"> <header class="sticky top-4 z-30 mb-12 flex items-center justify-between rounded-xl border border-transparent py-2 px-4 transition-all" id="header" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/layouts/Layout.astro" data-astro-source-loc="93:157"> <a class="text-xl font-bold font-sora z-30" href="/" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/layouts/Layout.astro" data-astro-source-loc="94:66">Binwen Liu</a> <div class="flex items-center gap-x-2" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/layouts/Layout.astro" data-astro-source-loc="95:52"> <nav class="hidden sm:flex items-center gap-x-1 bg-white/70 dark:bg-dark-card/70 backdrop-blur-md rounded-lg p-1 border border-gray-200 dark:border-dark-border" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/layouts/Layout.astro" data-astro-source-loc="96:178"> <a href="/#about" class="px-3 py-1 text-sm font-medium hover:bg-gray-100 dark:hover:bg-dark-gray-light rounded-md" data-i18n="nav.about" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/layouts/Layout.astro" data-astro-source-loc="97:158">About</a> <a href="/blog" class="px-3 py-1 text-sm font-medium hover:bg-gray-100 dark:hover:bg-dark-gray-light rounded-md" data-i18n="nav.blog" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/layouts/Layout.astro" data-astro-source-loc="98:155">Blog</a> <a href="/#projects" class="px-3 py-1 text-sm font-medium hover:bg-gray-100 dark:hover:bg-dark-gray-light rounded-md" data-i18n="nav.projects" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/layouts/Layout.astro" data-astro-source-loc="99:164">Projects</a> <a href="/#publications" class="px-3 py-1 text-sm font-medium hover:bg-gray-100 dark:hover:bg-dark-gray-light rounded-md" data-i18n="nav.publications" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/layouts/Layout.astro" data-astro-source-loc="100:172">Publications</a> <a href="/#contact" class="px-3 py-1 text-sm font-medium hover:bg-gray-100 dark:hover:bg-dark-gray-light rounded-md" data-i18n="nav.contact" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/layouts/Layout.astro" data-astro-source-loc="101:162">Contact</a> </nav> <div class="flex items-center gap-x-2" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/layouts/Layout.astro" data-astro-source-loc="103:56"> <a href="/search" title="Search" class="z-30 flex items-center justify-center box-content size-5 rounded-md border border-gray-300 dark:border-dark-border p-1.5 transition-colors hover:bg-gray-200 dark:hover:bg-dark-gray-light" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/layouts/Layout.astro" data-astro-source-loc="104:249"> <i class="fa-solid fa-search" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/layouts/Layout.astro" data-astro-source-loc="105:26"></i> </a> <button id="theme-toggle" class="theme-toggle z-30" title="Toggle Theme" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/layouts/Layout.astro" data-astro-source-loc="107:94"> <i class="fas fa-moon" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/layouts/Layout.astro" data-astro-source-loc="108:26"></i> </button> <button id="language-toggle" class="z-30 flex items-center justify-center box-content size-5 rounded-md border border-gray-300 dark:border-dark-border p-1.5 transition-colors hover:bg-gray-200 dark:hover:bg-dark-gray-light" title="Switch Language" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/layouts/Layout.astro" data-astro-source-loc="110:269"> <i class="fa-solid fa-language" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/layouts/Layout.astro" data-astro-source-loc="111:26"></i> </button> </div> </div> </header> <main class="flex w-full flex-col items-center" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/layouts/Layout.astro" data-astro-source-loc="117:57">  <section class="mb-16 flex flex-col items-center text-center px-6 sm:px-8 lg:px-12" id="hero" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="6:99"> <img src="/data/portrait.jpg" alt="Binwen Liu" class="profile-image" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="7:10"> <h1 class="text-4xl font-bold font-sora text-light-text dark:text-dark-text" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="8:86">Binwen Liu</h1> <p class="text-lg text-light-accent dark:text-dark-accent mt-2" data-i18n="hero.title" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="9:96">AI Researcher & Developer</p> <p class="mt-4 max-w-2xl text-gray-600 dark:text-dark-gray-light" data-i18n="hero.description" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="10:104">
+Currently a student at Xi'an Jiaotong University, pursuing a degree in Artificial Intelligence. Passionate about LLMs, Brain-Computer Interfaces, and AI for Science.
+</p> <div class="flex justify-center gap-x-6 mt-6" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="13:55"> <a href="mailto:binwenliu.ai@gmail.com" class="text-gray-500 dark:text-dark-gray hover:text-light-accent dark:hover:text-dark-accent transition-colors" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="14:166"><i class="fas fa-envelope fa-lg" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="14:166"></i></a> <a href="https://linkedin.com/in/binwen-liu" target="_blank" class="text-gray-500 dark:text-dark-gray hover:text-light-accent dark:hover:text-dark-accent transition-colors" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="15:187"><i class="fab fa-linkedin fa-lg" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="15:187"></i></a> <a href="https://github.com/Binwen6" target="_blank" class="text-gray-500 dark:text-dark-gray hover:text-light-accent dark:hover:text-dark-accent transition-colors" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="16:179"><i class="fab fa-github fa-lg" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="16:179"></i></a> </div> </section> <div id="content" class="flex flex-col gap-y-20 w-full" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="20:61"> <section id="about" class="flex flex-col gap-y-5 md:flex-row" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="22:71"> <h2 class="text-xl font-bold font-sora md:min-w-36 text-light-text dark:text-dark-text" data-i18n="sections.about" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="23:128">About</h2> <div class="flex-1 text-gray-800 dark:text-dark-text space-y-4" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="24:77"> <p data-i18n="about.paragraph1" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="25:49">
+I am a strategic AI researcher and developer with a passion for large language models and collaborative innovation. I have experience creating high-performance applications by leveraging state-of-the-art AI techniques and cross-functional collaboration.
+</p> <p data-i18n="about.paragraph2" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="28:49">
+My primary research interests include Brain-Computer Interfaces, the capabilities of Large Language Models, applying AI for Scientific discovery, and developing Multi-Modal Agents. I am dedicated to continuous learning and contributing to open-source communities.
+</p> </div> </section> <section id="projects" class="flex flex-col gap-y-5" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="34:62"> <div class="flex flex-col gap-y-5 md:flex-row" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="35:60"> <h2 class="text-xl font-bold font-sora md:min-w-36 text-light-text dark:text-dark-text" data-i18n="sections.projects" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="36:135">Projects</h2> <div class="flex-1 grid grid-cols-1 md:grid-cols-2 gap-6" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="37:75"> <div class="project-card" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="38:47"> <h3 class="font-bold text-light-text dark:text-dark-text" data-i18n="projects.vaiage.title" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="39:117">Vaiage: AI Travel Planner</h3> <p class="text-sm text-gray-500 dark:text-dark-gray" data-i18n="projects.vaiage.role" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="40:111">Group Member, CS194 Project</p> <p class="mt-2 text-sm text-light-text dark:text-dark-text" data-i18n="projects.vaiage.description" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="41:125">Proposed product concept and integrated techniques like model fine-tuning, RAG, and CoT.</p> </div> <div class="project-card" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="43:47"> <h3 class="font-bold text-light-text dark:text-dark-text" data-i18n="projects.sleep.title" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="44:116">Intelligent Sleep Medicine Consultation</h3> <p class="text-sm text-gray-500 dark:text-dark-gray" data-i18n="projects.sleep.role" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="45:110">Group Member, NLP Project</p> <p class="mt-2 text-sm text-light-text dark:text-dark-text" data-i18n="projects.sleep.description" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="46:124">Constructed knowledge graphs with Neo4j and used BERT for full-stack development.</p> </div> <div class="project-card" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="48:48"> <h3 class="font-bold text-light-text dark:text-dark-text" data-i18n="projects.editor.title" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="49:117">Online Editor with LLM</h3> <p class="text-sm text-gray-500 dark:text-dark-gray" data-i18n="projects.editor.role" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="50:111">Team Member, China Software Cup</p> <p class="mt-2 text-sm text-light-text dark:text-dark-text" data-i18n="projects.editor.description" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="51:125">Handled PaddlePaddle & Wenxin LLM API integration and full-stack development.</p> </div> </div> </div> </section> <section id="publications" class="flex flex-col gap-y-5" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="57:66"> <div class="flex flex-col gap-y-5 md:flex-row" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="58:60"> <h2 class="text-xl font-bold font-sora md:min-w-36 text-light-text dark:text-dark-text" data-i18n="sections.publications" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="59:139">Publications</h2> <ul class="flex-1 flex flex-col gap-y-4" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="60:58"> <li class="publication-item" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="61:50"> <a href="https://arxiv.org/abs/2505.06475" target="_blank" class="font-medium hover:text-light-accent dark:hover:text-dark-accent" data-i18n="publications.icll.title" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="62:192">Probing In-Context Learning: Impact of Task Complexity and Model Architecture</a> <p class="text-sm text-gray-500 dark:text-dark-gray" data-i18n="publications.icll.author" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="63:115">Main Author, May 2025</p> </li> <li class="publication-item" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="65:50"> <a href="https://arxiv.org/abs/2505.10922" target="_blank" class="font-medium hover:text-light-accent dark:hover:text-dark-accent" data-i18n="publications.vaiage.title" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="66:194">Vaiage: A Multi-Agent Solution to Personalized Travel Planning</a> <p class="text-sm text-gray-500 dark:text-dark-gray" data-i18n="publications.vaiage.author" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="67:117">Group Member, May 2025 (Project Paper)</p> </li> </ul> </div> </section> <section id="posts" class="flex flex-col gap-y-5" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="73:59"> <div class="flex flex-col gap-y-5 md:flex-row" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="74:60"> <h2 class="text-xl font-bold font-sora md:min-w-36 text-light-text dark:text-dark-text" data-i18n="sections.posts" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="75:132">Recent Posts</h2> <div class="flex-1 space-y-4" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="76:47"> <a href="/blog/my-first-blog-post" class="block group" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="77:76"> <div class="p-6 rounded-lg border border-light-border dark:border-dark-border group-hover:border-light-accent dark:group-hover:border-dark-accent transition-all duration-300" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="78:200"> <p class="text-sm text-gray-500 dark:text-dark-gray" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="79:82">October 26, 2025</p> <h3 class="text-xl font-bold font-sora mt-2 group-hover:text-light-accent dark:group-hover:text-dark-accent transition-colors text-light-text dark:text-dark-text" data-i18n="posts.first.title" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="80:222">My First Blog Post</h3> <p class="mt-2 text-gray-600 dark:text-dark-gray-light" data-i18n="posts.first.preview" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="81:117">This is a preview of my first blog post. Click to read more about my thoughts on the future of AI...</p> </div> </a> <a href="/blog" class="inline-flex items-center gap-x-1 text-sm text-light-accent dark:text-dark-accent hover:underline" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="84:143"> <span data-i18n="posts.more" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="85:54">More posts</span> <span data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="85:78">&rarr;</span> </a> </div> </div> </section> <section id="research" class="flex flex-col gap-y-5 md:flex-row" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="91:75"> <h2 class="text-xl font-bold font-sora md:min-w-36 text-light-text dark:text-dark-text" data-i18n="sections.research" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="92:131">Research</h2> <div class="flex-1 text-gray-800 dark:text-dark-text space-y-4" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="93:78"> <div class="research-item" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="94:44"> <h3 class="font-semibold text-light-text dark:text-dark-text" data-i18n="research.lowlight.title" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="95:119">Generalizable Low-Light Image Enhancement</h3> <p class="text-sm text-gray-500 dark:text-dark-gray" data-i18n="research.lowlight.role" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="96:109">Special Contributor | Jul 2024 - Jan 2025</p> <p class="mt-1 text-sm text-light-text dark:text-dark-text" data-i18n="research.lowlight.description" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="97:123">Designed experimental benchmarks and led ablation study analysis.</p> </div> <div class="research-item" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="99:44"> <h3 class="font-semibold text-light-text dark:text-dark-text" data-i18n="research.video.title" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="100:116">Video-Editing-Friendly Text-to-Image</h3> <p class="text-sm text-gray-500 dark:text-dark-gray" data-i18n="research.video.role" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="101:106">Special Contributor | Feb 2024 - Aug 2024</p> <p class="mt-1 text-sm text-light-text dark:text-dark-text" data-i18n="research.video.description" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="102:120">Optimized LoRA fine-tuning strategies and implemented core code.</p> </div> </div> </section> <section id="education" class="flex flex-col gap-y-5 md:flex-row" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="107:75"> <h2 class="text-xl font-bold font-sora md:min-w-36 text-light-text dark:text-dark-text" data-i18n="sections.education" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="108:132">Education</h2> <div class="flex-1 space-y-6" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="109:43"> <div class="education-item" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="110:45"> <h3 class="font-semibold text-light-text dark:text-dark-text" data-i18n="education.berkeley.school" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="111:121">University of California, Berkeley</h3> <p class="text-sm text-gray-500 dark:text-dark-gray" data-i18n="education.berkeley.degree" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="112:112">Visiting Undergraduate Student | Jan 2025 - May 2025</p> <p class="mt-1 text-sm text-light-text dark:text-dark-text" data-i18n="education.berkeley.courses" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="113:120">Courses: Deep Learning, Advanced LLM Agents, Internet Architecture.</p> </div> <div class="education-item" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="115:45"> <h3 class="font-semibold text-light-text dark:text-dark-text" data-i18n="education.xjtu.school" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="116:117">Xi'an Jiaotong University</h3> <p class="text-sm text-gray-500 dark:text-dark-gray" data-i18n="education.xjtu.degree" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="117:108">B.Eng, Artificial Intelligence | Sep 2022 - Jun 2026</p> <p class="mt-1 text-sm text-light-text dark:text-dark-text" data-i18n="education.xjtu.courses" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="118:116">Courses: Machine Learning, Computer Vision, NLP, Data Structures.</p> </div> </div> </section> <section id="skills" class="flex flex-col gap-y-5 md:flex-row" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="123:72"> <h2 class="text-xl font-bold font-sora md:min-w-36 text-light-text dark:text-dark-text" data-i18n="sections.skills" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="124:129">Skills</h2> <div class="flex-1 space-y-4" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="125:43"> <div data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="126:22"> <h3 class="font-medium mb-2 text-light-text dark:text-dark-text" data-i18n="skills.hard.title" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="127:116">Hard Skills</h3> <div class="flex flex-wrap gap-2" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="128:55"> <span class="skill-tag" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="129:49">Python</span><span class="skill-tag" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="129:86">C++</span><span class="skill-tag" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="129:120">Rust</span><span class="skill-tag" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="129:155">PyTorch</span><span class="skill-tag" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="129:193">OpenCV</span><span class="skill-tag" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="129:230">Git</span><span class="skill-tag" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="129:264">LangChain</span><span class="skill-tag" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="129:304">Hugging Face</span><span class="skill-tag" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="129:347">Flask</span><span class="skill-tag" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="129:383">HTML/CSS/JS</span> </div> </div> <div data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="132:22"> <h3 class="font-medium mb-2 text-light-text dark:text-dark-text" data-i18n="skills.languages.title" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="133:121">Languages</h3> <div class="flex flex-wrap gap-2" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="134:55"> <span class="skill-tag" data-i18n="skills.languages.english" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="135:86">English (Fluent)</span><span class="skill-tag" data-i18n="skills.languages.chinese" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="135:170">Chinese (Native)</span> </div> </div> </div> </section> <section id="awards" class="flex flex-col gap-y-5 md:flex-row" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="141:73"> <h2 class="text-xl font-bold font-sora md:min-w-36 text-light-text dark:text-dark-text" data-i18n="sections.awards" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="142:129">Awards</h2> <div class="flex-1 text-gray-800 dark:text-dark-text" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="143:68"> <ul class="list-disc list-inside space-y-2 text-sm" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="144:70"> <li data-i18n="awards.software" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="145:54">13th "China Software Cup", National Finals Third Prize</li> <li data-i18n="awards.mcm" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="146:49">Mathematical Contest in Modeling (MCM), H Prize</li> <li data-i18n="awards.fltrp" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/pages/index.astro" data-astro-source-loc="147:51">FLTRP Cup National English Ability Competition, Silver Award</li> </ul> </div> </section> </div>  </main> <footer id="contact" class="mt-20 mb-10 border-t border-gray-200 dark:border-dark-border pt-10" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/layouts/Layout.astro" data-astro-source-loc="121:105"> <div class="text-center text-sm text-gray-500 dark:text-dark-gray" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/layouts/Layout.astro" data-astro-source-loc="122:80"> <h2 class="text-xl font-bold font-sora text-light-text dark:text-dark-text mb-4" data-i18n="sections.contact" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/layouts/Layout.astro" data-astro-source-loc="123:127">Contact</h2> <p data-i18n="contact.description" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/layouts/Layout.astro" data-astro-source-loc="124:52">Feel free to reach out. I'm always open to discussing new projects and opportunities.</p> <a href="mailto:binwenliu.ai@gmail.com" class="block my-4 text-light-accent dark:text-dark-accent font-medium hover:underline" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/layouts/Layout.astro" data-astro-source-loc="125:144">binwenliu.ai@gmail.com</a> <div class="flex justify-center gap-x-6 mt-6" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/layouts/Layout.astro" data-astro-source-loc="126:63"> <a href="https://linkedin.com/in/binwen-liu" target="_blank" class="text-gray-500 dark:text-dark-gray hover:text-light-accent dark:hover:text-dark-accent transition-colors" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/layouts/Layout.astro" data-astro-source-loc="127:195"><i class="fab fa-linkedin fa-lg" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/layouts/Layout.astro" data-astro-source-loc="127:195"></i></a> <a href="https://github.com/Binwen6" target="_blank" class="text-gray-500 dark:text-dark-gray hover:text-light-accent dark:hover:text-dark-accent transition-colors" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/layouts/Layout.astro" data-astro-source-loc="128:187"><i class="fab fa-github fa-lg" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/layouts/Layout.astro" data-astro-source-loc="128:187"></i></a> </div> <p class="mt-8" data-astro-source-file="/Users/eureka/VSCodeProjects/binwen6.github.io/src/layouts/Layout.astro" data-astro-source-loc="130:34">&copy; 2025 Binwen Liu. All rights reserved.</p> </div> </footer> </div> <!-- Prism.js for syntax highlighting --> <script type="module" src="/src/layouts/Layout.astro?astro&type=script&index=2&lang.ts"></script> <script type="module" src="/src/layouts/Layout.astro?astro&type=script&index=3&lang.ts"></script> </body> </html>

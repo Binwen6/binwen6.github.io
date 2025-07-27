@@ -38,44 +38,76 @@ const canonicalURL = canonical || Astro.url.href;
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
     
+    <!-- Scripts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/script.js" defer></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- Prism.js for syntax highlighting -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css">
+
+    <script>
+        // Set up Tailwind dark mode
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sora': ['Sora', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'light-bg': '#F8F7F4',
+                        'light-text': '#050505',
+                        'light-accent': '#6A5ACD',
+                        'light-card': '#FFFFFF',
+                        'light-border': '#E5E7EB',
+                        'light-gray': '#6B7280',
+                        'light-gray-light': '#9CA3AF',
+                        'light-gray-dark': '#374151',
+                        'dark-bg': '#0F172A',
+                        'dark-text': '#F8FAFC',
+                        'dark-accent': '#8B5CF6',
+                        'dark-card': '#1E293B',
+                        'dark-border': '#334155',
+                        'dark-gray': '#94A3B8',
+                        'dark-gray-light': '#64748B',
+                        'dark-gray-dark': '#CBD5E1',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-inter transition-colors duration-300">
+<body class="text-light-text dark:text-dark-text font-inter transition-colors duration-300">
 
     <div id="highlight-gradient" class="pointer-events-none absolute left-0 top-0 z-0 h-screen w-full opacity-25" style="background-image:linear-gradient(to bottom, #6A5ACD66, transparent);"></div>
 
     <div class="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <header class="sticky top-4 z-30 mb-12 flex items-center justify-between rounded-xl border border-transparent py-2 px-4 transition-all" id="header">
-            <a class="text-xl font-bold z-30" href="/">Binwen Liu</a>
+            <a class="text-xl font-bold font-sora z-30" href="/">Binwen Liu</a>
             <div class="flex items-center gap-x-2">
-                <nav class="hidden sm:flex items-center gap-x-1 bg-white/70 dark:bg-gray-800/70 backdrop-blur-md rounded-lg p-1 border border-gray-200 dark:border-gray-700">
-                    <a href="/#about" class="px-3 py-1 text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md" data-i18n="nav.about">About</a>
-                    <a href="/blog" class="px-3 py-1 text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md" data-i18n="nav.blog">Blog</a>
-                    <a href="/#projects" class="px-3 py-1 text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md" data-i18n="nav.projects">Projects</a>
-                    <a href="/#publications" class="px-3 py-1 text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md" data-i18n="nav.publications">Publications</a>
-                    <a href="/#contact" class="px-3 py-1 text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md" data-i18n="nav.contact">Contact</a>
+                <nav class="hidden sm:flex items-center gap-x-1 bg-white/70 dark:bg-dark-card/70 backdrop-blur-md rounded-lg p-1 border border-gray-200 dark:border-dark-border">
+                    <a href="/#about" class="px-3 py-1 text-sm font-medium hover:bg-gray-100 dark:hover:bg-dark-gray-light rounded-md" data-i18n="nav.about">About</a>
+                    <a href="/blog" class="px-3 py-1 text-sm font-medium hover:bg-gray-100 dark:hover:bg-dark-gray-light rounded-md" data-i18n="nav.blog">Blog</a>
+                    <a href="/#projects" class="px-3 py-1 text-sm font-medium hover:bg-gray-100 dark:hover:bg-dark-gray-light rounded-md" data-i18n="nav.projects">Projects</a>
+                    <a href="/#publications" class="px-3 py-1 text-sm font-medium hover:bg-gray-100 dark:hover:bg-dark-gray-light rounded-md" data-i18n="nav.publications">Publications</a>
+                    <a href="/#contact" class="px-3 py-1 text-sm font-medium hover:bg-gray-100 dark:hover:bg-dark-gray-light rounded-md" data-i18n="nav.contact">Contact</a>
                 </nav>
                 <div class="flex items-center gap-x-2">
-                    <a href="/search" title="Search" class="z-30 flex items-center justify-center box-content size-5 rounded-md border border-gray-300 p-1.5 transition-colors hover:bg-gray-200">
+                    <a href="/search" title="Search" class="z-30 flex items-center justify-center box-content size-5 rounded-md border border-gray-300 dark:border-dark-border p-1.5 transition-colors hover:bg-gray-200 dark:hover:bg-dark-gray-light">
                         <i class="fa-solid fa-search"></i>
                     </a>
-                    <button id="theme-toggle" class="z-30 flex items-center justify-center box-content size-5 rounded-md border border-gray-300 p-1.5 transition-colors hover:bg-gray-200" title="Toggle Theme">
+                    <button id="theme-toggle" class="theme-toggle z-30" title="Toggle Theme">
                         <i class="fas fa-moon"></i>
                     </button>
-                    <button id="language-toggle" class="z-30 flex items-center justify-center box-content size-5 rounded-md border border-gray-300 p-1.5 transition-colors hover:bg-gray-200" title="Switch Language">
+                    <button id="language-toggle" class="z-30 flex items-center justify-center box-content size-5 rounded-md border border-gray-300 dark:border-dark-border p-1.5 transition-colors hover:bg-gray-200 dark:hover:bg-dark-gray-light" title="Switch Language">
                         <i class="fa-solid fa-language"></i>
                     </button>
                 </div>
@@ -86,16 +118,21 @@ const canonicalURL = canonical || Astro.url.href;
             <slot />
         </main>
 
-        <footer class="mt-20 mb-10 border-t border-gray-200 dark:border-gray-700 pt-10">
-            <div class="text-center text-sm text-gray-500 dark:text-gray-400">
-                 <p>&copy; 2025 Binwen Liu. All rights reserved.</p>
+        <footer id="contact" class="mt-20 mb-10 border-t border-gray-200 dark:border-dark-border pt-10">
+            <div class="text-center text-sm text-gray-500 dark:text-dark-gray">
+                <h2 class="text-xl font-bold font-sora text-light-text dark:text-dark-text mb-4" data-i18n="sections.contact">Contact</h2>
+                <p data-i18n="contact.description">Feel free to reach out. I'm always open to discussing new projects and opportunities.</p>
+                <a href="mailto:binwenliu.ai@gmail.com" class="block my-4 text-light-accent dark:text-dark-accent font-medium hover:underline">binwenliu.ai@gmail.com</a>
+                <div class="flex justify-center gap-x-6 mt-6">
+                    <a href="https://linkedin.com/in/binwen-liu" target="_blank" class="text-gray-500 dark:text-dark-gray hover:text-light-accent dark:hover:text-dark-accent transition-colors"><i class="fab fa-linkedin fa-lg"></i></a>
+                    <a href="https://github.com/Binwen6" target="_blank" class="text-gray-500 dark:text-dark-gray hover:text-light-accent dark:hover:text-dark-accent transition-colors"><i class="fab fa-github fa-lg"></i></a>
+                </div>
+                 <p class="mt-8">&copy; 2025 Binwen Liu. All rights reserved.</p>
             </div>
         </footer>
 
     </div>
 
-    <!-- Scripts -->
-    <script src="/script.js" is:inline></script>
     <!-- Prism.js for syntax highlighting -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

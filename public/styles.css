@@ -116,6 +116,38 @@ body {
     box-shadow: 0 10px 15px -3px rgba(139, 92, 246, 0.1), 0 4px 6px -2px rgba(139, 92, 246, 0.05);
 }
 
+/* Bullet point styling for project and research cards */
+.project-card ul, .research-item ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.project-card li, .research-item li {
+    position: relative;
+    padding-left: 1.25rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+.project-card li:before, .research-item li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--light-accent);
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.dark .project-card li:before, .dark .research-item li:before {
+    color: var(--dark-accent);
+}
+
+.project-card li:last-child, .research-item li:last-child {
+    margin-bottom: 0;
+}
+
 /* Specific item paddings */
 .publication-item {
     padding-bottom: 1rem;

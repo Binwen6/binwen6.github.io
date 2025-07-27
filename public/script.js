@@ -36,21 +36,57 @@ document.addEventListener('DOMContentLoaded', () => {
                     paragraph2: "My primary research interests include Brain-Computer Interfaces, the capabilities of Large Language Models, applying AI for Scientific discovery, and developing Multi-Modal Agents. I am dedicated to continuous learning and contributing to open-source communities."
                 },
                 projects: {
-                    vaiage: {
-                        title: "Vaiage: AI Travel Planner",
-                        role: "Group Member, CS194 Project",
-                        description: "Proposed product concept and integrated techniques like model fine-tuning, RAG, and CoT."
-                    },
-                    sleep: {
-                        title: "Intelligent Sleep Medicine Consultation",
-                        role: "Group Member, NLP Project",
-                        description: "Constructed knowledge graphs with Neo4j and used BERT for full-stack development."
-                    },
-                    editor: {
-                        title: "Online Editor with LLM",
-                        role: "Team Member, China Software Cup",
-                        description: "Handled PaddlePaddle & Wenxin LLM API integration and full-stack development."
-                    }
+                    telecom: {
+                        title: "Smart PPT Generator with Deep Semantic Fusion",
+                        role: "Intern, China Telecom Shaanxi | Jun 2025 – Jul 2025",
+                        point1: "Implemented key speech-information extraction module: local deployment of Whisper-v3‑large‑turbo and SenseVoice‑small",
+                        point2: "Introduced long‑audio slicing and parallel inference to boost efficiency by 30–50%",
+                        point3: "Integrated text‑correction API to enhance content quality, with accuracy over 97%, supporting PPT extraction"
+                      },
+                      vaiage: {
+                        title: "Vaiage: A Multi‑Agent Solution to Personalized Travel Planning",
+                        role: "CS194: Advanced LLM Agents, Core Member | Feb 2025 – May 2025",
+                        point1: "Proposed product concept and reviewed over 20 related publications to analyze challenges in intent recognition, constraint planning, and context maintenance",
+                        point2: "Developed itinerary engine and intelligent Q&A using LangChain RAG, CoT reasoning, and multi‑turn memory",
+                        point3: "Integrated OpenAI Function Calling for weather, routing, and schedule tools",
+                        point4: "Demo received Grade A and invitations from AGI Inc. and Nanjing University to join IJCAI‑2025 Travel Planning Challenge"
+                      },
+                      sleep: {
+                        title: "Intelligent Knowledge‑Graph‑Based Sleep‑Medicine Consultation System",
+                        role: "NLP Course Project, Member | Nov 2024 – Jan 2025",
+                        point1: "Built Neo4j medical knowledge graph covering causes, symptoms, and treatments enabling multi‑hop QA and semantic inference",
+                        point2: "Used BERT for intent classification and slot filling, combined subgraph retrieval and template mapping for response generation",
+                        point3: "Deployed full‑stack Flask UI supporting multi‑turn interaction and symptom follow‑up"
+                      },
+                      speaker: {
+                        title: "Content‑Independent Multifeature Speaker Recognition System",
+                        role: "Digital Signal Processing Course, Core Member | Nov 2024 – Dec 2024",
+                        point1: "Designed speaker‑recognition system using time‑domain features (zero‑crossing rate, energy entropy), frequency‑domain (spectral centroid, roll‑off, entropy), and dynamic MFCC features to enhance discriminability",
+                        point2: "Implemented framing, windowing, FFT and Mel filters to extract over 50 multiscale features",
+                        point3: "Combined SVM, KNN, random forest with voting strategy to reach 95% accuracy; created UI for visualization"
+                      },
+                      underwater: {
+                        title: "Underwater Image Enhancement Framework Combining Statistical Analysis, Physical Modeling, and GAN",
+                        role: "2024 Asia‑Pacific University MCM, Team Leader | Nov 2024",
+                        point1: "Built statistical metrics based on color, sharpness, contrast to classify underwater degradation scenes",
+                        point2: "Integrated Jaffe‑McGlamery physical model for light attenuation and scattering",
+                        point3: "Developed three scenario-specific enhancement algorithms evaluated via PSNR/UCIQE/UIQM; combined deep learning and physical modeling into a cross‑scenario GAN framework, won Third Prize"
+                      },
+                      editor: {
+                        title: "Online Smart Editor with Hybrid Model Collaboration",
+                        role: "13th China Software Cup, Core Member | May 2024 – Aug 2024",
+                        point1: "Led front‑end/back‑end development with Vue + Flask to support concurrent responsive editing",
+                        point2: "Integrated Wenxin AI and Paddle APIs for text rewriting, summarization, style transfer, OCR, polishing",
+                        point3: "Designed 'small‑model local + large‑model cloud' collaboration mechanism",
+                        point4: "Won National Third Prize and open‑sourced complete code"
+                      },
+                      mcm: {
+                        title: "ARIMA‑LSTM Based Tennis Match Dynamic Analysis & Comeback Prediction",
+                        role: "2024 US University MCM, Team Leader | Feb 2024",
+                        point1: "Used Spearman correlation and Gaussian decay weighting to quantify match dynamics",
+                        point2: "Built ARIMA + LSTM time‑series model with CUSUM detection and label smoothing for robust prediction",
+                        point3: "Applied run‑test and cross‑correlation to assess temporal significance and provided tactical recommendation; submitted full English paper and won H‑Prize"
+                      }
                 },
                 publications: {
                     icll: {
@@ -70,15 +106,21 @@ document.addEventListener('DOMContentLoaded', () => {
                     more: "More posts"
                 },
                 research: {
-                    lowlight: {
-                        title: "Generalizable Low-Light Image Enhancement",
-                        role: "Special Contributor | Jul 2024 - Jan 2025",
-                        description: "Designed experimental benchmarks and led ablation study analysis."
+                    surgery: {
+                        title: "AI-Guided Surgery: Ureter Segmentation from Laparoscopic Video Frames",
+                        role: "AI Medical Image Segmentation Research | Jun 2025 - Aug 2025",
+                        point1: "Built a dataset of 11,758 surgical video frames from real-world laparoscopic colorectal surgeries",
+                        point2: "Reproduced and compared UNet3+, TransUNet, and nnU-Net on ureter recognition",
+                        point3: "Evaluated segmentation quality using Dice, IoU, HD95, and analyzed failures via GradCAM and visualization",
+                        point4: "Drafted a medical AI segmentation paper for submission to a peer-reviewed journal"
                     },
-                    video: {
-                        title: "Video-Editing-Friendly Text-to-Image",
-                        role: "Special Contributor | Feb 2024 - Aug 2024",
-                        description: "Optimized LoRA fine-tuning strategies and implemented core code."
+                    music: {
+                        title: "Brain-Music Interface: Reconstructing Music from EEG Signals",
+                        role: "Brain-Computer Interface & Music Reconstruction Research | May 2025 - Sep 2025",
+                        point1: "Collected 32-channel EEG responses under 22050Hz music stimuli using clinical-grade setup",
+                        point2: "Aligned EEG-audio pairs with validation pipeline to build a high-quality dataset",
+                        point3: "Reproduced 9 EEG2Music models (Autoencoder, GAN, Diffusion, Attention-based)",
+                        point4: "Evaluated perceptual quality using PEAQ, FAD, and LSD; explored imagined music decoding"
                     }
                 },
                 education: {
@@ -90,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     xjtu: {
                         school: "Xi'an Jiaotong University",
                         degree: "B.Eng, Artificial Intelligence | Sep 2022 - Jun 2026",
-                        courses: "Courses: Machine Learning, Computer Vision, NLP, Data Structures."
+                        courses: "Courses: Machine Learning, Computer Vision & Pattern Recognition, NLP, Digital Signal Processing."
                     }
                 },
                 skills: {
@@ -104,13 +146,23 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 },
                 awards: {
-                    software: "13th \"China Software Cup\", National Finals Third Prize",
-                    mcm: "Mathematical Contest in Modeling (MCM), H Prize",
-                    fltrp: "FLTRP Cup National English Ability Competition, Silver Award"
-                },
-                contact: {
-                    description: "Feel free to reach out. I'm always open to discussing new projects and opportunities."
-                }
+                    apmcm: "2024 Asia-Pacific Mathematical Contest in Modeling – Third Prize (Team Leader)",
+                    fltrp2024: {
+                      comp: "2024 FLTRP Cup – School-level English Comprehensive Silver Award",
+                      trans: "2024 FLTRP Cup – School-level English Translation Silver Award"
+                    },
+                    softwarecup: "13th China Software Cup – National Finals Third Prize",
+                    cumcm: "2024 China Undergraduate Mathematical Contest in Modeling – School Third Prize (Team Leader)",
+                    mcm: "2024 MCM/ICM – H Prize (Team Leader)",
+                    fltrp2023: {
+                      write: "2023 FLTRP Cup – Provincial Writing Silver Award",
+                      writing_special: "2023 FLTRP Cup – School Writing Special Prize",
+                      reading: "2023 FLTRP Cup – School Reading First Prize"
+                    }
+                  },
+                  contact: {
+                    description: "Feel free to reach out anytime. I'm always open to discussing new projects and opportunities."
+                  }
             },
             zh: {
                 title: "刘滨闻 - AI研究员与开发者",
@@ -137,25 +189,61 @@ document.addEventListener('DOMContentLoaded', () => {
                     contact: "联系"
                 },
                 about: {
-                    paragraph1: "我是一名战略AI研究员和开发者，热衷于大语言模型和协作创新。我拥有通过利用最先进的AI技术和跨职能协作创建高性能应用程序的经验。",
+                    paragraph1: "我是一名有策略的AI研究员和开发者，热衷于大语言模型和协作创新。我拥有通过利用最先进的AI技术和跨职能协作创建高性能应用程序的经验。",
                     paragraph2: "我的主要研究兴趣包括脑机接口、大语言模型的能力、AI在科学发现中的应用以及多模态智能体的开发。我致力于持续学习并为开源社区做出贡献。"
                 },
                 projects: {
-                    vaiage: {
-                        title: "Vaiage: AI旅行规划师",
-                        role: "小组成员，CS194项目",
-                        description: "提出产品概念并集成模型微调、RAG和CoT等技术。"
-                    },
-                    sleep: {
-                        title: "智能睡眠医学咨询",
-                        role: "小组成员，NLP项目",
-                        description: "使用Neo4j构建知识图谱，并使用BERT进行全栈开发。"
-                    },
-                    editor: {
-                        title: "集成LLM的在线编辑器",
-                        role: "团队成员，中国软件杯",
-                        description: "处理PaddlePaddle和文心LLM API集成以及全栈开发。"
-                    }
+                    telecom: {
+                        title: "言影智绘：基于深度语义理解的智慧内容融合与多模态生成平台",
+                        role: "中国电信陕西公司实习项目 | 2025年6月 – 2025年7月",
+                        point1: "负责语音关键信息提取模块实施，本地部署 Whisper‑v3‑large‑turbo 与 SenseVoice‑small 模型",
+                        point2: "引入长音频切片与并行处理机制，效率提升 30–50 %",
+                        point3: "集成文本纠错 API 实现内容增强，准确率达 97 % 以上，适配下游 PPT 内容抽取"
+                      },
+                      vaiage: {
+                        title: "Vaiage: A Multi‑Agent Solution to Personalized Travel Planning",
+                        role: "《CS194: Advanced LLM Agents》课程项目，核心成员 | 2025年2月 – 2025年5月",
+                        point1: "提出创新性产品构想，深度调研 20 余篇文献，分析用户意图识别、约束规划与上下文保持的关键难点",
+                        point2: "负责开发行程推荐引擎与智能问答模块，结合 LangChain RAG、CoT 推理与多轮记忆机制实现动态规划",
+                        point3: "引入 OpenAI Function Calling 支持天气查询、路线生成与日程调整",
+                        point4: "项目 Poster 获 Grade A，论文载于 arXiv，并受 AGI Inc. 与南京大学 LAMDA 课题组邀请参加 IJCAI‑2025 Travel Planning Challenge"
+                      },
+                      sleep: {
+                        title: "基于知识图谱的智能睡眠医学问诊系统",
+                        role: "《自然语言处理》课程项目，成员 | 2024年11月 – 2025年1月",
+                        point1: "利用 Neo4j 构建覆盖病因、症状与治疗的医学知识图谱，实现多跳问答与语义关联推理",
+                        point2: "使用 BERT 对用户意图分类及槽位抽取，结合子图检索与模板映射生成医学回复",
+                        point3: "集成 Flask 前后端界面，完成支持多轮交互与症状追问的医疗对话系统原型，项目获课程奖学金"
+                      },
+                      speaker: {
+                        title: "独立于内容的多特征说话人识别系统",
+                        role: "《数字信号处理》课程项目，核心成员 | 2024年11月 – 2024年12月",
+                        point1: "构建内容无关的说话人识别系统，融合零交叉率、能量熵、谱质心、谱滚降点、谱熵及 MFCC 动态特征，提升识别区分度",
+                        point2: "实现分帧加窗、FFT 与 Mel 滤波器组处理，提取 50 余维多尺度音频特征并归一化",
+                        point3: "集成 SVM、KNN、随机森林等分类器，采用多数投票策略优化识别准确率至 95 %，并实现可视化 UI 测试界面"
+                      },
+                      underwater: {
+                        title: "融合多维统计分析、物理建模与 GAN 的多场景水下图像增强系统",
+                        role: "2024 年亚太地区大学生数学建模竞赛，队长 | 2024年11月",
+                        point1: "基于图像颜色、清晰度、对比度构建统计指标体系，完成多标签软分类并分析典型水下退化场景",
+                        point2: "引入 Jaffe‑McGlamery 物理模型建模光照衰减与散射，设计三类增强算法并用 PSNR／UCIQE／UIQM 指标评估",
+                        point3: "结合深度学习与物理建模设计跨场景 GAN 框架，实现多场景水下图像增强，获三等奖"
+                      },
+                      editor: {
+                        title: "基于大小模型协同的在线智能编辑器",
+                        role: "第十三届'中国软件杯'大赛项目，核心成员 | 2024年5月 – 2024年8月",
+                        point1: "主导前后端开发，基于 Vue 与 Flask 构建网页端在线编辑器",
+                        point2: "调用文心一言与飞桨 API 实现文本扩写、摘要提取、风格转换、OCR 识别与润色功能",
+                        point3: "搭建'大小模型协同'机制，结合本地轻量模型与云端大模型实现快速响应与高质量生成",
+                        point4: "项目获全国总决赛三等奖，代码已开源"
+                      },
+                      mcm: {
+                        title: "ARIMA‑LSTM 联合建模的网球比赛动态分析与局势逆转预测",
+                        role: "2024 年美国大学生数学建模竞赛（MCM），队长 | 2024年2月",
+                        point1: "采用 Spearman 分析与高斯衰减赋权构建比赛动态量化指标，结合模糊综合评价法实现连续评分系统",
+                        point2: "构建 ARIMA＋LSTM 联合模型进行时间序列建模与局势逆转预测，并辅以 CUSUM 检测与标签平滑回归提高鲁棒性",
+                        point3: "应用游程检验和互相关分析验证时间显著性，提出战术建议；成果撰写英文论文并获 H 奖"
+                      }
                 },
                 publications: {
                     icll: {
@@ -175,15 +263,21 @@ document.addEventListener('DOMContentLoaded', () => {
                     more: "更多文章"
                 },
                 research: {
-                    lowlight: {
-                        title: "通用低光照图像增强",
-                        role: "特别贡献者 | 2024年7月 - 2025年1月",
-                        description: "设计实验基准并主导消融研究分析。"
+                    surgery: {
+                      title: "用于术中引导的人工智能：在腹腔镜直肠切除术中识别手术解剖结构——输尿管",
+                      role: "AI医学图像分割研究 | 2025.06 – 2025.08",
+                      point1: "基于真实术中腹腔镜视频构建11758张手术帧图像数据集",
+                      point2: "对比并复现UNet3+、TransUNet、nnU-Net等模型，开展空洞结构识别",
+                      point3: "评估Dice、IoU、HD95等指标，结合GradCAM与实例可视化剖析识别失误",
+                      point4: "研究成果撰写为AI医学图像分割方向论文，拟投稿于专业SCI期刊"
                     },
-                    video: {
-                        title: "视频编辑友好的文本到图像",
-                        role: "特别贡献者 | 2024年2月 - 2024年8月",
-                        description: "优化LoRA微调策略并实现核心代码。"
+                    music: {
+                      title: "基于EEG信号的音乐重建与脑机接口研究",
+                      role: "脑机接口与音乐重建研究 | 2025.05 – 2025.09",
+                      point1: "使用32通道脑电设备采集22050Hz音乐刺激下的EEG响应",
+                      point2: "实现EEG与音频数据对齐及配对验证，构建高质量音乐脑机数据集",
+                      point3: "复现9类EEG2Music模型，包括Autoencoder、Diffusion、GAN与注意力机制",
+                      point4: "综合PEAQ、FAD、LSD等指标评估重建音质，探索音乐想象重建可能性"
                     }
                 },
                 education: {
@@ -195,7 +289,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     xjtu: {
                         school: "西安交通大学",
                         degree: "工学学士，人工智能 | 2022年9月 - 2026年6月",
-                        courses: "课程：机器学习、计算机视觉、自然语言处理、数据结构。"
+                        courses: "课程：机器学习、计算机视觉与模式识别、自然语言处理、数字信号处理。"
                     }
                 },
                 skills: {
@@ -209,10 +303,20 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 },
                 awards: {
-                    software: "第十三届\"中国软件杯\"，全国总决赛三等奖",
-                    mcm: "美国大学生数学建模竞赛，H奖",
-                    fltrp: "外研社杯全国英语能力竞赛，银奖"
-                },
+                    apmcm: "2024 亚太地区大学生数学建模竞赛 – 三等奖（队长）",
+                    fltrp2024: {
+                      comp: "2024 外研社国才杯校赛 – 英语综合能力赛项银奖",
+                      trans: "2024 外研社国才杯校赛 – 英语笔译赛项银奖"
+                    },
+                    softwarecup: "第十三届“中国软件杯”全国总决赛 – 三等奖",
+                    cumcm: "2024 全国大学生数学建模竞赛 – 校赛三等奖（队长）",
+                    mcm: "2024 美国大学生数学建模竞赛（MCM）– H奖（队长）",
+                    fltrp2023: {
+                      write: "2023 外研社国才杯省赛 – 英语写作赛项银奖",
+                      writing_special: "2023 外研社国才杯校赛 – 写作赛项特等奖",
+                      reading: "2023 外研社国才杯校赛 – 阅读赛项一等奖"
+                    }
+                  },
                 contact: {
                     description: "欢迎随时联系。我总是乐于讨论新项目和机会。"
                 }

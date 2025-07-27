@@ -32,27 +32,101 @@ import Layout from '../layouts/Layout.astro';
             </div>
         </section>
 
-        <section id="projects" class="flex flex-col gap-y-5">
-            <div class="flex flex-col gap-y-5 md:flex-row">
-                <h2 class="text-xl font-bold font-sora md:min-w-36 text-light-text dark:text-dark-text" data-i18n="sections.projects">Projects</h2>
-                <div class="flex-1 grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="project-card">
-                        <h3 class="font-bold text-light-text dark:text-dark-text" data-i18n="projects.vaiage.title">Vaiage: AI Travel Planner</h3>
-                        <p class="text-sm text-gray-500 dark:text-dark-gray" data-i18n="projects.vaiage.role">Group Member, CS194 Project</p>
-                        <p class="mt-2 text-sm text-light-text dark:text-dark-text" data-i18n="projects.vaiage.description">Proposed product concept and integrated techniques like model fine-tuning, RAG, and CoT.</p>
-                    </div>
-                    <div class="project-card">
-                        <h3 class="font-bold text-light-text dark:text-dark-text" data-i18n="projects.sleep.title">Intelligent Sleep Medicine Consultation</h3>
-                        <p class="text-sm text-gray-500 dark:text-dark-gray" data-i18n="projects.sleep.role">Group Member, NLP Project</p>
-                        <p class="mt-2 text-sm text-light-text dark:text-dark-text" data-i18n="projects.sleep.description">Constructed knowledge graphs with Neo4j and used BERT for full-stack development.</p>
-                    </div>
-                     <div class="project-card">
-                        <h3 class="font-bold text-light-text dark:text-dark-text" data-i18n="projects.editor.title">Online Editor with LLM</h3>
-                        <p class="text-sm text-gray-500 dark:text-dark-gray" data-i18n="projects.editor.role">Team Member, China Software Cup</p>
-                        <p class="mt-2 text-sm text-light-text dark:text-dark-text" data-i18n="projects.editor.description">Handled PaddlePaddle & Wenxin LLM API integration and full-stack development.</p>
-                    </div>
+        <section id="education" class="flex flex-col gap-y-5 md:flex-row">
+            <h2 class="text-xl font-bold font-sora md:min-w-36 text-light-text dark:text-dark-text" data-i18n="sections.education">Education</h2>
+            <div class="flex-1 space-y-6">
+                <div class="education-item">
+                    <h3 class="font-semibold text-light-text dark:text-dark-text" data-i18n="education.berkeley.school">University of California, Berkeley</h3>
+                    <p class="text-sm text-gray-500 dark:text-dark-gray" data-i18n="education.berkeley.degree">Visiting Undergraduate Student | Jan 2025 - May 2025</p>
+                    <p class="mt-1 text-sm text-light-text dark:text-dark-text" data-i18n="education.berkeley.courses">Courses: Deep Learning, Advanced LLM Agents, Internet Architecture.</p>
+                </div>
+                <div class="education-item">
+                    <h3 class="font-semibold text-light-text dark:text-dark-text" data-i18n="education.xjtu.school">Xi'an Jiaotong University</h3>
+                    <p class="text-sm text-gray-500 dark:text-dark-gray" data-i18n="education.xjtu.degree">B.Eng, Artificial Intelligence | Sep 2022 - Jun 2026</p>
+                    <p class="mt-1 text-sm text-light-text dark:text-dark-text" data-i18n="education.xjtu.courses">Courses: Machine Learning, Computer Vision & Pattern Recognition, NLP, Digital Signal Processing.</p>
                 </div>
             </div>
+        </section>
+
+        <section id="projects" class="flex flex-col gap-y-5">
+        <div class="flex flex-col gap-y-5 md:flex-row">
+            <h2 class="text-xl font-bold font-sora md:min-w-36 text-light-text dark:text-dark-text" data-i18n="sections.projects">Projects</h2>
+            <div class="flex-1 grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <div class="project-card">
+                <h3 class="font-bold text-light-text dark:text-dark-text" data-i18n="projects.telecom.title">言影智绘：基于深度语义理解的智慧内容融合与多模态生成平台</h3>
+                <p class="text-sm text-gray-500 dark:text-dark-gray" data-i18n="projects.telecom.role">中国电信陕西公司实习项目 | 2025.06 – 2025.07</p>
+                <ul class="mt-2 text-sm text-light-text dark:text-dark-text space-y-1">
+                    <li data-i18n="projects.telecom.point1">负责语音关键信息提取模块的实现，本地部署 Whisper‑v3‑large‑turbo 与 SenseVoice‑small 模型</li>
+                    <li data-i18n="projects.telecom.point2">引入长音频切片与并行处理机制，实现 30 %–50 % 的效率提升</li>
+                    <li data-i18n="projects.telecom.point3">通过集成文本纠错 API 实现内容增强，准确率达到 97 % 以上，适配下游 PPT 内容抽取需求</li>
+                </ul>
+            </div>
+
+            <div class="project-card">
+                <h3 class="font-bold text-light-text dark:text-dark-text" data-i18n="projects.vaiage.title">Vaiage: A Multi‑Agent Solution to Personalized Travel Planning</h3>
+                <p class="text-sm text-gray-500 dark:text-dark-gray" data-i18n="projects.vaiage.role">核心成员，《CS194: Advanced LLM Agents》课程项目 | 2025.02 – 2025.05</p>
+                <ul class="mt-2 text-sm text-light-text dark:text-dark-text space-y-1">
+                    <li data-i18n="projects.vaiage.point1">提出创新性产品构想，深入调研 20 余篇相关文献，分析用户意图识别、约束规划与上下文保持等关键难点</li>
+                    <li data-i18n="projects.vaiage.point2">负责行程推荐引擎与智能问答模块开发，结合 LangChain 检索增强生成（RAG）、Chain‑of‑Thought（CoT）推理与多轮记忆机制实现用户动态规划</li>
+                    <li data-i18n="projects.vaiage.point3">引入 OpenAI Function Calling 与工具调用接口，支持天气查询、交通路线生成与日程调整，完成端到端演示原型</li>
+                    <li data-i18n="projects.vaiage.point4">在项目 Poster 展示中获评 Grade A，项目论文挂载于 arXiv 平台，收到硅谷 AI 初创公司 AGI Inc. 创始人 Div 的合作邀请，并受南京大学 LAMDA 课题组郭兰哲教授邀请参加 IJCAI‑2025 Travel Planning Challenge</li>
+                </ul>
+            </div>
+
+            <div class="project-card">
+                <h3 class="font-bold text-light-text dark:text-dark-text" data-i18n="projects.sleep.title">基于知识图谱的智能睡眠医学问诊系统</h3>
+                <p class="text-sm text-gray-500 dark:text-dark-gray" data-i18n="projects.sleep.role">成员，《自然语言处理》课程项目 | 2024.11 – 2025.01</p>
+                <ul class="mt-2 text-sm text-light-text dark:text-dark-text space-y-1">
+                    <li data-i18n="projects.sleep.point1">利用 Neo4j 构建覆盖病因、症状与治疗的医学知识图谱，实现多跳问答与语义关联推理</li>
+                    <li data-i18n="projects.sleep.point2">使用 BERT 对用户意图进行分类并完成槽位抽取，结合图谱子图检索与模板映射生成医学回复</li>
+                    <li data-i18n="projects.sleep.point3">集成 Flask 前后端界面，完成医疗对话系统原型开发，系统支持多轮交互与症状追问，项目获课程奖学金</li>
+                </ul>
+            </div>
+
+            <div class="project-card">
+                <h3 class="font-bold text-light-text dark:text-dark-text" data-i18n="projects.speaker.title">独立于内容的多特征说话人识别系统</h3>
+                <p class="text-sm text-gray-500 dark:text-dark-gray" data-i18n="projects.speaker.role">核心成员，《数字信号处理》课程项目 | 2024.11 – 2024.12</p>
+                <ul class="mt-2 text-sm text-light-text dark:text-dark-text space-y-1">
+                    <li data-i18n="projects.speaker.point1">构建内容无关的说话人识别系统，融合时域特征（零交叉率、能量熵）、频域特征（谱质心、谱滚降点、谱熵等）与 MFCC 动态特征，提升模型区分度</li>
+                    <li data-i18n="projects.speaker.point2">实现信号分帧加窗、FFT 与 Mel 滤波器组处理，完成 50 余维多尺度音频特征提取及归一化</li>
+                    <li data-i18n="projects.speaker.point3">集成 SVM、KNN、随机森林等分类器，使用多模型投票策略优化识别效果，最终识别准确率达 95 %，并设计 UI 界面实现可视化测试与展示</li>
+                </ul>
+            </div>
+
+            <div class="project-card">
+                <h3 class="font-bold text-light-text dark:text-dark-text" data-i18n="projects.underwater.title">多场景水下图像增强系统（统计分析＋物理建模＋GAN）</h3>
+                <p class="text-sm text-gray-500 dark:text-dark-gray" data-i18n="projects.underwater.role">队长，2024 亚太地区大学生数学建模竞赛 | 2024.11</p>
+                <ul class="mt-2 text-sm text-light-text dark:text-dark-text space-y-1">
+                    <li data-i18n="projects.underwater.point1">基于图像颜色、清晰度、对比度等特征构建统计指标体系，完成多标签软分类并分析典型水下退化场景</li>
+                    <li data-i18n="projects.underwater.point2">引入 Jaffe‑McGlamery 物理模型建模光照衰减与散射过程，设计三类针对性增强算法并使用 PSNR/UCIQE/UIQM 等指标进行评价</li>
+                    <li data-i18n="projects.underwater.point3">结合深度学习与物理建模原理设计跨场景 GAN 增强框架，实现多场景水下图像增强，成果形成完整论文提交赛事评审，获评三等奖</li>
+                </ul>
+            </div>
+
+            <div class="project-card">
+                <h3 class="font-bold text-light-text dark:text-dark-text" data-i18n="projects.editor.title">基于大小模型协同的在线智能编辑器</h3>
+                <p class="text-sm text-gray-500 dark:text-dark-gray" data-i18n="projects.editor.role">核心成员，第十三届"中国软件杯"大赛项目 | 2024.05 – 2024.08</p>
+                <ul class="mt-2 text-sm text-light-text dark:text-dark-text space-y-1">
+                    <li data-i18n="projects.editor.point1">主导前后端开发，基于 Vue 与 Flask 构建网页端在线编辑器，支持多任务高并发访问与响应式排版</li>
+                    <li data-i18n="projects.editor.point2">调用文心一言与飞桨 API，实现文本扩写缩写、摘要提取、风格转化、OCR 识别与润色等 AI 增强功能</li>
+                    <li data-i18n="projects.editor.point3">构建"大小模型协同"机制，使用轻量本地模型进行快速响应与纠错，结合云端大模型保证复杂任务效果</li>
+                    <li data-i18n="projects.editor.point4">项目在全国总决赛中获评三等奖，完整代码已开源</li>
+                </ul>
+            </div>
+
+            <div class="project-card">
+                <h3 class="font-bold text-light-text dark:text-dark-text" data-i18n="projects.mcm.title">ARIMA‑LSTM 联合建模的网球比赛动态分析与局势逆转预测</h3>
+                <p class="text-sm text-gray-500 dark:text-dark-gray" data-i18n="projects.mcm.role">队长，2024 年美国大学生数学建模竞赛（MCM） | 2024.02</p>
+                <ul class="mt-2 text-sm text-light-text dark:text-dark-text space-y-1">
+                    <li data-i18n="projects.mcm.point1">利用 Spearman 分析与高斯衰减赋权，构建比赛动态量化指标，结合模糊综合评价法完成连续评分系统</li>
+                    <li data-i18n="projects.mcm.point2">搭建 ARIMA+LSTM 组合模型进行时间序列建模与局势逆转预测，辅以 CUSUM 检测与标签平滑回归改进模型鲁棒性</li>
+                    <li data-i18n="projects.mcm.point3">应用游程检验与互相关分析检验动态显著性，并提出战术应用建议，成果完整撰写为英文论文提交赛事评审，获评 H 奖</li>
+                </ul>
+            </div>
+
+            </div>
+        </div>
         </section>
 
         <section id="publications" class="flex flex-col gap-y-5">
@@ -89,37 +163,33 @@ import Layout from '../layouts/Layout.astro';
             </div>
         </section>
         
-         <section id="research" class="flex flex-col gap-y-5 md:flex-row">
+        <section id="research" class="flex flex-col gap-y-5 md:flex-row">
             <h2 class="text-xl font-bold font-sora md:min-w-36 text-light-text dark:text-dark-text" data-i18n="sections.research">Research</h2>
-             <div class="flex-1 text-gray-800 dark:text-dark-text space-y-4">
-                <div class="research-item">
-                    <h3 class="font-semibold text-light-text dark:text-dark-text" data-i18n="research.lowlight.title">Generalizable Low-Light Image Enhancement</h3>
-                    <p class="text-sm text-gray-500 dark:text-dark-gray" data-i18n="research.lowlight.role">Special Contributor | Jul 2024 - Jan 2025</p>
-                    <p class="mt-1 text-sm text-light-text dark:text-dark-text" data-i18n="research.lowlight.description">Designed experimental benchmarks and led ablation study analysis.</p>
+            <div class="flex-1 grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="project-card">
+                    <h3 class="font-bold text-light-text dark:text-dark-text" data-i18n="research.surgery.title">用于术中引导的人工智能：在腹腔镜直肠切除术中识别手术解剖结构——输尿管</h3>
+                    <p class="text-sm text-gray-500 dark:text-dark-gray" data-i18n="research.surgery.role">AI医学图像分割研究 | 2025.06 – 2025.08</p>
+                    <ul class="mt-2 text-sm text-light-text dark:text-dark-text space-y-1">
+                        <li data-i18n="research.surgery.point1">基于真实术中腹腔镜视频构建11758张手术帧图像数据集</li>
+                        <li data-i18n="research.surgery.point2">对比并复现UNet3+、TransUNet、nnU-Net等模型，开展空洞结构识别</li>
+                        <li data-i18n="research.surgery.point3">评估Dice、IoU、HD95等指标，结合GradCAM与实例可视化剖析识别失误</li>
+                        <li data-i18n="research.surgery.point4">研究成果撰写为AI医学图像分割方向论文，拟投稿于专业SCI期刊</li>
+                    </ul>
                 </div>
-                <div class="research-item">
-                    <h3 class="font-semibold text-light-text dark:text-dark-text" data-i18n="research.video.title">Video-Editing-Friendly Text-to-Image</h3>
-                    <p class="text-sm text-gray-500 dark:text-dark-gray" data-i18n="research.video.role">Special Contributor | Feb 2024 - Aug 2024</p>
-                    <p class="mt-1 text-sm text-light-text dark:text-dark-text" data-i18n="research.video.description">Optimized LoRA fine-tuning strategies and implemented core code.</p>
-                </div>
-             </div>
-        </section>
-
-        <section id="education" class="flex flex-col gap-y-5 md:flex-row">
-            <h2 class="text-xl font-bold font-sora md:min-w-36 text-light-text dark:text-dark-text" data-i18n="sections.education">Education</h2>
-            <div class="flex-1 space-y-6">
-                <div class="education-item">
-                    <h3 class="font-semibold text-light-text dark:text-dark-text" data-i18n="education.berkeley.school">University of California, Berkeley</h3>
-                    <p class="text-sm text-gray-500 dark:text-dark-gray" data-i18n="education.berkeley.degree">Visiting Undergraduate Student | Jan 2025 - May 2025</p>
-                    <p class="mt-1 text-sm text-light-text dark:text-dark-text" data-i18n="education.berkeley.courses">Courses: Deep Learning, Advanced LLM Agents, Internet Architecture.</p>
-                </div>
-                <div class="education-item">
-                    <h3 class="font-semibold text-light-text dark:text-dark-text" data-i18n="education.xjtu.school">Xi'an Jiaotong University</h3>
-                    <p class="text-sm text-gray-500 dark:text-dark-gray" data-i18n="education.xjtu.degree">B.Eng, Artificial Intelligence | Sep 2022 - Jun 2026</p>
-                    <p class="mt-1 text-sm text-light-text dark:text-dark-text" data-i18n="education.xjtu.courses">Courses: Machine Learning, Computer Vision, NLP, Data Structures.</p>
+                <div class="project-card">
+                    <h3 class="font-bold text-light-text dark:text-dark-text" data-i18n="research.music.title">基于EEG信号的音乐重建与脑机接口研究</h3>
+                    <p class="text-sm text-gray-500 dark:text-dark-gray" data-i18n="research.music.role">脑机接口与音乐重建研究 | 2025.05 – 2025.09</p>
+                    <ul class="mt-2 text-sm text-light-text dark:text-dark-text space-y-1">
+                        <li data-i18n="research.music.point1">使用32通道脑电设备采集22050Hz音乐刺激下的EEG响应</li>
+                        <li data-i18n="research.music.point2">实现EEG与音频数据对齐及配对验证，构建高质量音乐脑机数据集</li>
+                        <li data-i18n="research.music.point3">复现9类EEG2Music模型，包括Autoencoder、Diffusion、GAN与注意力机制</li>
+                        <li data-i18n="research.music.point4">综合PEAQ、FAD、LSD等指标评估重建音质，探索音乐想象重建可能性</li>
+                    </ul>
                 </div>
             </div>
         </section>
+
+
         
         <section id="skills" class="flex flex-col gap-y-5 md:flex-row">
             <h2 class="text-xl font-bold font-sora md:min-w-36 text-light-text dark:text-dark-text" data-i18n="sections.skills">Skills</h2>
@@ -139,15 +209,21 @@ import Layout from '../layouts/Layout.astro';
             </div>
         </section>
 
-         <section id="awards" class="flex flex-col gap-y-5 md:flex-row">
-            <h2 class="text-xl font-bold font-sora md:min-w-36 text-light-text dark:text-dark-text" data-i18n="sections.awards">Awards</h2>
-             <div class="flex-1 text-gray-800 dark:text-dark-text">
-                 <ul class="list-disc list-inside space-y-2 text-sm">
-                     <li data-i18n="awards.software">13th "China Software Cup", National Finals Third Prize</li>
-                     <li data-i18n="awards.mcm">Mathematical Contest in Modeling (MCM), H Prize</li>
-                     <li data-i18n="awards.fltrp">FLTRP Cup National English Ability Competition, Silver Award</li>
-                 </ul>
-             </div>
+        <section id="awards" class="flex flex-col gap-y-5 md:flex-row">
+        <h2 class="text-xl font-bold font-sora md:min-w-36 text-light-text dark:text-dark-text" data-i18n="sections.awards">Awards</h2>
+        <div class="flex-1 text-gray-800 dark:text-dark-text">
+            <ul class="list-disc list-inside space-y-2 text-sm">
+            <li data-i18n="awards.apmcm">2024 Asia-Pacific Mathematical Contest in Modeling – Third Prize (Team Leader)</li>
+            <li data-i18n="awards.fltrp2024.comp">2024 FLTRP Cup – School-level English Comprehensive Silver Award</li>
+            <li data-i18n="awards.fltrp2024.trans">2024 FLTRP Cup – School-level English Translation Silver Award</li>
+            <li data-i18n="awards.softwarecup">13th China Software Cup – National Finals Third Prize</li>
+            <li data-i18n="awards.cumcm">2024 China Undergraduate Mathematical Contest in Modeling – School Third Prize (Team Leader)</li>
+            <li data-i18n="awards.mcm">2024 MCM/ICM – H Prize (Team Leader)</li>
+            <li data-i18n="awards.fltrp2023.write">2023 FLTRP Cup – Provincial Writing Silver Award</li>
+            <li data-i18n="awards.fltrp2023.writing_special">2023 FLTRP Cup – School Writing Special Prize</li>
+            <li data-i18n="awards.fltrp2023.reading">2023 FLTRP Cup – School Reading First Prize</li>
+            </ul>
+        </div>
         </section>
 
     </div>

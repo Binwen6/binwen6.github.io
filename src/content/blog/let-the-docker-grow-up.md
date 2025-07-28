@@ -1,6 +1,6 @@
 ---
 title: "Let the docker grow up!"
-description: "Add your description here..."
+description: "这是我的第一篇学习笔记"
 pubDate: "2025-07-28"
 tags: []
 ---
@@ -9,6 +9,13 @@ tags: []
 太好了，现在我们进入 Docker 实战进阶阶段！我来先带你掌握：
 
 ---
+
+
+## Network
+
+- [与docker有关的网络配置](./docker/network.md)
+
+
 
 ## ✅ 第一部分：命令行中最常用的 Docker 命令（附示例）
 
@@ -108,7 +115,6 @@ CMD ["flask", "run", "--host=0.0.0.0", "--port=5000"]
 * 构建多阶段镜像以减小体积
 * 运行带定时任务 / 多进程的容器
 
-你对哪个方向感兴趣？我可以为你定制任务！
 
 
 ---

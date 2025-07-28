@@ -14,9 +14,11 @@ tags: ["Notes"]
 ## Network
 
 <!-- - [与docker有关的网络配置](./docker/network.md) -->
-[与 docker 有关的网络配置](/blog/docker/network)
+[与 docker 有关的网络配置](/blog/docker/Network)
 
-
+## Log
+[关于docker的第一次探索记录…](/blog/docker/log)
+[顺便探索了一下MCP](blog/MCP/log)
 
 ## ✅ 第一部分：命令行中最常用的 Docker 命令（附示例）
 

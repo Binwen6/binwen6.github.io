@@ -1,6 +1,6 @@
 ---
-title: "network"
-slug: "docker/network"
+title: "Network"
+slug: "docker/Network"
 description: "《Let the docker grow up!》的子知识库"
 pubDate: "2025-07-28"
 tags: ["Notes"]

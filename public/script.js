@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     contact: "Contact"
                 },
                 about: {
-                    paragraph1: "I am a strategic AI researcher and developer with a passion for large language models and collaborative innovation. I have experience creating high-performance applications by leveraging state-of-the-art AI techniques and cross-functional collaboration.",
+                    paragraph1: "I am a growing AI researcher and developer with a passion for large language models and collaborative innovation. I have experience creating high-performance applications by leveraging state-of-the-art AI techniques and cross-functional collaboration.",
                     paragraph2: "My primary research interests include Brain-Computer Interfaces, the capabilities of Large Language Models, applying AI for Scientific discovery, and developing Multi-Modal Agents. I am dedicated to continuous learning and contributing to open-source communities."
                 },
                 projects: {
@@ -46,24 +46,24 @@ document.addEventListener('DOMContentLoaded', () => {
                       vaiage: {
                         title: "Vaiage: A Multi‑Agent Solution to Personalized Travel Planning",
                         role: "CS194: Advanced LLM Agents, Core Member | Feb 2025 – May 2025",
-                        point1: "Proposed product concept and reviewed over 20 related publications to analyze challenges in intent recognition, constraint planning, and context maintenance",
-                        point2: "Developed itinerary engine and intelligent Q&A using LangChain RAG, CoT reasoning, and multi‑turn memory",
-                        point3: "Integrated OpenAI Function Calling for weather, routing, and schedule tools",
-                        point4: "Demo received Grade A and invitations from AGI Inc. and Nanjing University to join IJCAI‑2025 Travel Planning Challenge"
+                        point1: "Proposed innovative product concept and reviewed over 20 related publications to analyze challenges in intent recognition, constraint planning, and context maintenance",
+                        point2: "Developed itinerary engine and intelligent Q&A using LangChain RAG, CoT reasoning, and multi‑turn memory for dynamic planning",
+                        point3: "Integrated OpenAI Function Calling and tool calling interfaces for weather queries, route generation, and schedule adjustments",
+                        point4: "Project poster received Grade A, paper published on arXiv, received collaboration invitation from AGI Inc. founder Div, and invited by Nanjing University LAMDA group to join IJCAI‑2025 Travel Planning Challenge"
                       },
                       sleep: {
                         title: "Intelligent Knowledge‑Graph‑Based Sleep‑Medicine Consultation System",
                         role: "NLP Course Project, Member | Nov 2024 – Jan 2025",
                         point1: "Built Neo4j medical knowledge graph covering causes, symptoms, and treatments enabling multi‑hop QA and semantic inference",
                         point2: "Used BERT for intent classification and slot filling, combined subgraph retrieval and template mapping for response generation",
-                        point3: "Deployed full‑stack Flask UI supporting multi‑turn interaction and symptom follow‑up"
+                        point3: "Deployed full‑stack Flask UI supporting multi‑turn interaction and symptom follow‑up, project received course scholarship"
                       },
                       speaker: {
                         title: "Content‑Independent Multifeature Speaker Recognition System",
                         role: "Digital Signal Processing Course, Core Member | Nov 2024 – Dec 2024",
-                        point1: "Designed speaker‑recognition system using time‑domain features (zero‑crossing rate, energy entropy), frequency‑domain (spectral centroid, roll‑off, entropy), and dynamic MFCC features to enhance discriminability",
-                        point2: "Implemented framing, windowing, FFT and Mel filters to extract over 50 multiscale features",
-                        point3: "Combined SVM, KNN, random forest with voting strategy to reach 95% accuracy; created UI for visualization"
+                        point1: "Designed content-independent speaker recognition system using time-domain features (zero-crossing rate, energy entropy), frequency-domain features (spectral centroid, roll-off, entropy), and dynamic MFCC features to enhance discriminability",
+                        point2: "Implemented signal framing, windowing, FFT and Mel filter processing to extract over 50 multiscale features and normalization",
+                        point3: "Combined SVM, KNN, random forest with voting strategy to reach 95% accuracy; designed UI interface for visualization and testing"
                       },
                       underwater: {
                         title: "Underwater Image Enhancement Framework Combining Statistical Analysis, Physical Modeling, and GAN",
@@ -189,60 +189,60 @@ document.addEventListener('DOMContentLoaded', () => {
                     contact: "联系"
                 },
                 about: {
-                    paragraph1: "我是一名有策略的AI研究员和开发者，热衷于大语言模型和协作创新。我拥有通过利用最先进的AI技术和跨职能协作创建高性能应用程序的经验。",
+                    paragraph1: "我是一名正在成长的AI研究员和开发者，热衷于大语言模型和协作创新。我拥有通过利用最先进的AI技术和跨职能协作创建高性能应用程序的经验。",
                     paragraph2: "我的主要研究兴趣包括脑机接口、大语言模型的能力、AI在科学发现中的应用以及多模态智能体的开发。我致力于持续学习并为开源社区做出贡献。"
                 },
                 projects: {
                     telecom: {
                         title: "言影智绘：基于深度语义理解的智慧内容融合与多模态生成平台",
-                        role: "中国电信陕西公司实习项目 | 2025年6月 – 2025年7月",
-                        point1: "负责语音关键信息提取模块实施，本地部署 Whisper‑v3‑large‑turbo 与 SenseVoice‑small 模型",
-                        point2: "引入长音频切片与并行处理机制，效率提升 30–50 %",
-                        point3: "集成文本纠错 API 实现内容增强，准确率达 97 % 以上，适配下游 PPT 内容抽取"
+                        role: "中国电信陕西公司实习项目 | 2025.06 – 2025.07",
+                        point1: "负责语音关键信息提取模块的实现，本地部署 Whisper‑v3‑large‑turbo 与 SenseVoice‑small 模型",
+                        point2: "引入长音频切片与并行处理机制，实现 30 %–50 % 的效率提升",
+                        point3: "通过集成文本纠错 API 实现内容增强，准确率达到 97 % 以上，适配下游 PPT 内容抽取需求"
                       },
                       vaiage: {
                         title: "Vaiage: A Multi‑Agent Solution to Personalized Travel Planning",
-                        role: "《CS194: Advanced LLM Agents》课程项目，核心成员 | 2025年2月 – 2025年5月",
-                        point1: "提出创新性产品构想，深度调研 20 余篇文献，分析用户意图识别、约束规划与上下文保持的关键难点",
-                        point2: "负责开发行程推荐引擎与智能问答模块，结合 LangChain RAG、CoT 推理与多轮记忆机制实现动态规划",
-                        point3: "引入 OpenAI Function Calling 支持天气查询、路线生成与日程调整",
-                        point4: "项目 Poster 获 Grade A，论文载于 arXiv，并受 AGI Inc. 与南京大学 LAMDA 课题组邀请参加 IJCAI‑2025 Travel Planning Challenge"
+                        role: "《CS194: Advanced LLM Agents》课程项目，核心成员 | 2025.02 – 2025.05",
+                        point1: "提出创新性产品构想，深入调研 20 余篇相关文献，分析用户意图识别、约束规划与上下文保持的关键难点",
+                        point2: "负责行程推荐引擎与智能问答模块开发，结合 LangChain 检索增强生成（RAG）、Chain‑of‑Thought（CoT）推理与多轮记忆机制实现用户动态规划",
+                        point3: "引入 OpenAI Function Calling 与工具调用接口，支持天气查询、交通路线生成与日程调整，完成端到端演示原型",
+                        point4: "在项目 Poster 展示中获评 Grade A，项目论文挂载于 arXiv 平台，收到硅谷 AI 初创公司 AGI Inc. 创始人 Div 的合作邀请，并受南京大学 LAMDA 课题组郭兰哲教授邀请参加 IJCAI‑2025 Travel Planning Challenge"
                       },
                       sleep: {
                         title: "基于知识图谱的智能睡眠医学问诊系统",
-                        role: "《自然语言处理》课程项目，成员 | 2024年11月 – 2025年1月",
+                        role: "《自然语言处理》课程项目，成员 | 2024.11 – 2025.01",
                         point1: "利用 Neo4j 构建覆盖病因、症状与治疗的医学知识图谱，实现多跳问答与语义关联推理",
-                        point2: "使用 BERT 对用户意图分类及槽位抽取，结合子图检索与模板映射生成医学回复",
-                        point3: "集成 Flask 前后端界面，完成支持多轮交互与症状追问的医疗对话系统原型，项目获课程奖学金"
+                        point2: "使用 BERT 对用户意图进行分类并完成槽位抽取，结合图谱子图检索与模板映射生成医学回复",
+                        point3: "集成 Flask 前后端界面，完成医疗对话系统原型开发，系统支持多轮交互与症状追问，项目获课程奖学金"
                       },
                       speaker: {
                         title: "独立于内容的多特征说话人识别系统",
-                        role: "《数字信号处理》课程项目，核心成员 | 2024年11月 – 2024年12月",
-                        point1: "构建内容无关的说话人识别系统，融合零交叉率、能量熵、谱质心、谱滚降点、谱熵及 MFCC 动态特征，提升识别区分度",
-                        point2: "实现分帧加窗、FFT 与 Mel 滤波器组处理，提取 50 余维多尺度音频特征并归一化",
-                        point3: "集成 SVM、KNN、随机森林等分类器，采用多数投票策略优化识别准确率至 95 %，并实现可视化 UI 测试界面"
+                        role: "《数字信号处理》课程项目，核心成员 | 2024.11 – 2024.12",
+                        point1: "构建内容无关的说话人识别系统，融合时域特征（零交叉率、能量熵）、频域特征（谱质心、谱滚降点、谱熵等）与 MFCC 动态特征，提升模型区分度",
+                        point2: "实现信号分帧加窗、FFT 与 Mel 滤波器组处理，完成 50 余维多尺度音频特征提取及归一化",
+                        point3: "集成 SVM、KNN、随机森林等分类器，使用多模型投票策略优化识别效果，最终识别准确率达 95 %，并设计 UI 界面实现可视化测试与展示"
                       },
                       underwater: {
-                        title: "融合多维统计分析、物理建模与 GAN 的多场景水下图像增强系统",
-                        role: "2024 年亚太地区大学生数学建模竞赛，队长 | 2024年11月",
-                        point1: "基于图像颜色、清晰度、对比度构建统计指标体系，完成多标签软分类并分析典型水下退化场景",
-                        point2: "引入 Jaffe‑McGlamery 物理模型建模光照衰减与散射，设计三类增强算法并用 PSNR／UCIQE／UIQM 指标评估",
-                        point3: "结合深度学习与物理建模设计跨场景 GAN 框架，实现多场景水下图像增强，获三等奖"
+                        title: "多场景水下图像增强系统（统计分析＋物理建模＋GAN）",
+                        role: "队长，2024 亚太地区大学生数学建模竞赛 | 2024.11",
+                        point1: "基于图像颜色、清晰度、对比度等特征构建统计指标体系，完成多标签软分类并分析典型水下退化场景",
+                        point2: "引入 Jaffe‑McGlamery 物理模型建模光照衰减与散射过程，设计三类针对性增强算法并使用 PSNR/UCIQE/UIQM 等指标进行评价",
+                        point3: "结合深度学习与物理建模原理设计跨场景 GAN 增强框架，实现多场景水下图像增强，成果形成完整论文提交赛事评审，获评三等奖"
                       },
                       editor: {
                         title: "基于大小模型协同的在线智能编辑器",
-                        role: "第十三届'中国软件杯'大赛项目，核心成员 | 2024年5月 – 2024年8月",
-                        point1: "主导前后端开发，基于 Vue 与 Flask 构建网页端在线编辑器",
-                        point2: "调用文心一言与飞桨 API 实现文本扩写、摘要提取、风格转换、OCR 识别与润色功能",
-                        point3: "搭建'大小模型协同'机制，结合本地轻量模型与云端大模型实现快速响应与高质量生成",
-                        point4: "项目获全国总决赛三等奖，代码已开源"
+                        role: "核心成员，第十三届'中国软件杯'大赛项目 | 2024.05 – 2024.08",
+                        point1: "主导前后端开发，基于 Vue 与 Flask 构建网页端在线编辑器，支持多任务高并发访问与响应式排版",
+                        point2: "调用文心一言与飞桨 API，实现文本扩写缩写、摘要提取、风格转化、OCR 识别与润色等 AI 增强功能",
+                        point3: "构建'大小模型协同'机制，使用轻量本地模型进行快速响应与纠错，结合云端大模型保证复杂任务效果",
+                        point4: "项目在全国总决赛中获评三等奖，完整代码已开源"
                       },
                       mcm: {
                         title: "ARIMA‑LSTM 联合建模的网球比赛动态分析与局势逆转预测",
-                        role: "2024 年美国大学生数学建模竞赛（MCM），队长 | 2024年2月",
-                        point1: "采用 Spearman 分析与高斯衰减赋权构建比赛动态量化指标，结合模糊综合评价法实现连续评分系统",
-                        point2: "构建 ARIMA＋LSTM 联合模型进行时间序列建模与局势逆转预测，并辅以 CUSUM 检测与标签平滑回归提高鲁棒性",
-                        point3: "应用游程检验和互相关分析验证时间显著性，提出战术建议；成果撰写英文论文并获 H 奖"
+                        role: "队长，2024 年美国大学生数学建模竞赛（MCM） | 2024.02",
+                        point1: "利用 Spearman 分析与高斯衰减赋权，构建比赛动态量化指标，结合模糊综合评价法完成连续评分系统",
+                        point2: "搭建 ARIMA+LSTM 组合模型进行时间序列建模与局势逆转预测，辅以 CUSUM 检测与标签平滑回归改进模型鲁棒性",
+                        point3: "应用游程检验与互相关分析检验动态显著性，并提出战术应用建议，成果完整撰写为英文论文提交赛事评审，获评 H 奖"
                       }
                 },
                 publications: {
@@ -308,7 +308,7 @@ document.addEventListener('DOMContentLoaded', () => {
                       comp: "2024 外研社国才杯校赛 – 英语综合能力赛项银奖",
                       trans: "2024 外研社国才杯校赛 – 英语笔译赛项银奖"
                     },
-                    softwarecup: "第十三届“中国软件杯”全国总决赛 – 三等奖",
+                    softwarecup: "第十三届'中国软件杯'全国总决赛 – 三等奖",
                     cumcm: "2024 全国大学生数学建模竞赛 – 校赛三等奖（队长）",
                     mcm: "2024 美国大学生数学建模竞赛（MCM）– H奖（队长）",
                     fltrp2023: {

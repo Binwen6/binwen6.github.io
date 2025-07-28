@@ -19,7 +19,7 @@ tags: ["Notes"]
 ## Log
 [关于docker的第一次探索记录…](/blog/docker/log)
 
-[顺便探索了一下MCP](/blog/MCP/log)
+[顺便探索了一下MCP](/blog/mcp/log)
 
 ## ✅ 第一部分：命令行中最常用的 Docker 命令（附示例）
 

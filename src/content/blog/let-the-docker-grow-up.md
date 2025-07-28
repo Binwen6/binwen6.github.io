@@ -2,7 +2,7 @@
 title: "Let the docker grow up!"
 description: "这是我的第一篇学习笔记"
 pubDate: "2025-07-28"
-tags: []
+tags: ["Notes"]
 ---
 
 # Let the docker grow up!
@@ -13,7 +13,8 @@ tags: []
 
 ## Network
 
-- [与docker有关的网络配置](./docker/network.md)
+<!-- - [与docker有关的网络配置](./docker/network.md) -->
+[与 docker 有关的网络配置](/blog/docker/network)
 
 
 

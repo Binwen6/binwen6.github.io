@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Translation data
         const translations = {
             en: {
-                title: "Binwen Liu - AI Researcher & Developer",
+                title: "Binwen Liu's Homepage",
                 nav: {
                     about: "About",
                     blog: "Blog",
@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   }
             },
             zh: {
-                title: "刘滨闻 - AI研究员与开发者",
+                title: "刘滨闻的主页",
                 nav: {
                     about: "关于",
                     blog: "博客",
@@ -485,7 +485,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const originalTitle = document.title;
     document.addEventListener("visibilitychange", () => {
         if (document.hidden) {
-            document.title = "🤖 Come back soon!";
+            document.title = "Come back soon!";
         } else {
             document.title = originalTitle;
         }

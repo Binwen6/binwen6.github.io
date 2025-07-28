@@ -1,6 +1,6 @@
 ---
 title: "log"
-description: "关于 Docker 的第一次探索记录…"
+description: "关于 MCP 的第一次探索记录…"
 pubDate: "2025-07-28"
 tags: ["logs"]
 ---

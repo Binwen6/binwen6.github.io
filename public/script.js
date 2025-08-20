@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 hero: {
                     title: "AI Researcher & Developer",
-                    description: "Currently a student at Xi'an Jiaotong University, pursuing a degree in Artificial Intelligence. Passionate about LLMs, Brain-Computer Interfaces, and AI for Science."
+                    description: "Currently a student at Xi'an Jiaotong University, pursuing a Bachelor's degree in Artificial Intelligence. Passionate about LLMs, Brain-Computer Interfaces, and AI for Science."
                 },
                 sections: {
                     about: "About",
@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 hero: {
                     title: "AI研究员与开发者",
-                    description: "目前是西安交通大学的学生，正在攻读人工智能学位。热衷于大语言模型、脑机接口和科学AI。"
+                    description: "目前是西安交通大学的学生，正在攻读人工智能学士学位。热衷于大语言模型、脑机接口和科学AI。"
                 },
                 sections: {
                     about: "关于",

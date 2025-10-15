@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 hero: {
                     title: "AI Researcher & Developer",
-                    description: "Currently a student at Xi'an Jiaotong University, pursuing a Bachelor's degree in Artificial Intelligence. Passionate about LLMs, Brain-Computer Interfaces, and AI for Science."
+                    description: "Currently a Ph.D. student at Xi'an Jiaotong University, pursuing a Ph.D. in Artificial Intelligence. Passionate about LLMs, Brain-Computer Interfaces, and AI for Science."
                 },
                 sections: {
                     about: "About",
@@ -133,6 +133,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         school: "Xi'an Jiaotong University",
                         degree: "B.Eng, Artificial Intelligence | Sep 2022 - Jun 2026",
                         courses: "Courses: Machine Learning, Computer Vision & Pattern Recognition, NLP, Digital Signal Processing."
+                    },
+                    xjtu2: {
+                        school: "National Key Laboratory of Human-Machine Hybrid Augmented Intelligence & Institute of Artificial Intelligence and Robotics",
+                        degree: "Ph.D.(AI), Artificial Intelligence | Sep 2026 - ",
+                        courses: "Research Interests: Cognitive Computing, Brain-Computer Interface"
                     }
                 },
                 skills: {

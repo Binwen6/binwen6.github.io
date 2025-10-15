@@ -64,7 +64,7 @@ function generateSearchIndex() {
       {
         title: "About Me",
         url: "/#about",
-        content: "I am a strategic AI researcher and developer with a passion for large language models and collaborative innovation. I have experience creating high-performance applications by leveraging state-of-the-art AI techniques and cross-functional collaboration. My primary research interests include Brain-Computer Interfaces, the capabilities of Large Language Models, applying AI for Scientific discovery, and developing Multi-Modal Agents. I am dedicated to continuous learning and contributing to open-source communities."
+        content: "I am a Ph.D. student in Artificial Intelligence at Xi'an Jiaotong University, passionate about large language models and collaborative innovation. I have experience creating high-performance applications by leveraging state-of-the-art AI techniques and cross-functional collaboration. My primary research interests include Brain-Computer Interfaces, the capabilities of Large Language Models, applying AI for Scientific discovery, and developing Multi-Modal Agents. I am dedicated to continuous learning and contributing to open-source communities."
       },
       {
         title: "Projects",
@@ -84,7 +84,7 @@ function generateSearchIndex() {
       {
         title: "Education",
         url: "/#education",
-        content: "University of California, Berkeley. Xi'an Jiaotong University."
+        content: "University of California, Berkeley. Xi'an Jiaotong University. Ph.D. in Artificial Intelligence at National Key Laboratory of Human-Machine Hybrid Augmented Intelligence."
       },
       {
         title: "Skills",

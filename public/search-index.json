@@ -20,6 +20,94 @@
     "description": "我的第二篇周记"
   },
   {
+    "title": "6.30-7.06",
+    "url": "/blog/630-706",
+    "content": "时间线 2025年6月30日 (星期一) - 天气：雨 今天是实习的第一天，上午由实习单位的负责人在大会议室发布了项目任务，随后与指导老师在小会议室进行讨论。我们小组的任务是实现一个结合视频和文本模态的AI工具，用于生成PPT。我的任务是负责语音识别单元，并采用OpenAI的Whisper-v3-large-turbo模型进行音频转写。通过初步的测试，验证了方案的可行性，顺利完成了第一天的工作。 2025年7月1日 (星期二) - 天气：多云 第二天，我对Whisper模型的处理流程进行了批处理扩展。然而，随着测试音频时长的增加，处理时间显著增加，影响了实时性。为此，我探索了阿里开源的SenseVoice模型，发现其性能较好。在此基础上，我将两个模型进行了整合，为用户提供了音频质量的自定义选项，进一步优化了代码。 2025年7月2日 (星期三) - 天气：多云 今天，我们小组的项目正式命名为《言影智绘工坊-基于多模态知识源的智能教学课件生成》。通过测试党的革命事业上的文艺工作者的相关视频、图片和文档材料，我们的项目取得了阶段性成果。领导对项目进展高度关注，并对我们未来的工作提出了期望，我们将继续推进项目落地。 2025年7月3日 (星期四) - 天气：多云 今天，我尝试通过并行进程优化了现有算法的效率，尤其是在处理多条长语音时，利用多核CPU进行并行处理，大大提高了处理速度。我还探索了下游任务的接口和格式对接，并为下游知识融合小组提供了文本转写结果，帮助他们进行纠错和信息提取。通过这些努力，我们完成了PPT的第一版，尽管效果还有待提高，但流程已经顺畅。 2025年7月4日 (星期五) - 天气：多云 在实习的最后一天，我对语音转写模块进行了进一步优化，采用长音频分割并行处理的方式，提高了30%-50%的效率。我还调用了通义千问的API，进行语法及语义的纠错，保证了文本转写的连贯性。今天，我们完成了“小组一条龙”的演示，虽然成果还需进一步完善，但我对下周的工作充满信心。 里程碑 - 完成了语音转写模块的初步构建，并验证了可行性。 - 优化了多语音并行处理的效率，提升了整体性能。 - 完成了第一版PPT的制作，尽管效果有待提升，但流程已通畅。 Conclusion 实习的第一周，我在项目中担任语音识别单元的负责人，已经初步完成了任务分配并取得了阶段性成果。通过不断优化技术和与团队成员的协作，我们已经打下了坚实的基础，并且收到了领导的高度关注和认可。虽然还有很多挑战，但我对接下来的实习充满信心，期待能够在接下来的时间里继续推动项目发展。 --- This post was created using the automated script.",
+    "tags": [
+      "Journal"
+    ],
+    "pubDate": "2025-07-09",
+    "description": "我的第三篇周记"
+  },
+  {
+    "title": "7.21-7.27",
+    "url": "/blog/721-727",
+    "content": "闲谈 什么是闲谈？我想个人自有个人的看法。 于我而言，闲谈就是跳脱出日常行事的条条框框，敞开心扉地聊一聊最近的所思所想。 那么，最近都发生了什么事呢？ …… 疲于实习期间每日流水账般的实习日志的我，终于迎来了三周实习生活的句号，那就是23日的答辩。答辩很简单，很容易水过去，于是也没做什么准备，只是上台即兴讲几句罢了。因工作都出自自己手中，讲起来便顺理成章。说到我们的实习项目成果，乃是一个多模态知识融合的PPT生成系统，其中不乏许多对现有技术的融合应用，也有一点我们自己的思考。 其中一个蛮有意思的点，也是当前尚未充分解决的开放性问题，就是：在不引入额外的视觉大模型的前提下，如何从一段冗长的——可能长达几十分钟甚至上百分钟——的视频中，有效地提取出其中的“关键帧”。 针对这个问题，目前可以提出几种相对朴素但具有启发性的方法设想： 1. 固定间隔抽帧法：每隔一段预设的较长时间（该时间长度作为一个可调节的超参数），从视频中截取一帧画面，直接作为候选关键帧。该方法简单高效，但存在漏检或重检重要画面的风险。 2. 音频转写引导法：先从视频中分离出音频部分，并对其进行语音识别（获得带时间戳的文本），接着对文本进行关键字段/事件的标注（可借助语言大模型完成）。最终依据关键内容的时间戳回溯定位到视频中对应时刻的画面帧，这些帧即作为潜在关键帧。 3. 光流变化检测法：引入光流场（Optical Flow）的概念，对视频按原始帧率进行分帧后，计算相邻帧之间的像素级运动幅度。依据变化程度设定阈值，提取那些发生显著视觉变换的帧，或者反过来，保留长时间内几乎没有变化的帧（可能对应静态的展示页等），作为“关键帧”候选。 4. 多模态语义检索法：对按固定时间间隔抽取的视频帧，提取其视觉嵌入向量，并构建一个帧级向量库（可类比为一个小型RAG索引）。将音频转写后的文本同样计算文本嵌入，通过形状变换后与图像嵌入做相似度检索，挑选相似度最高的前k帧作为语义上最匹配的“关键帧”。 这几种方法是稍微动一动脑子就可以想出来的，但在业界的实际操作中，我猜测会用一种意料之外的简单粗暴的方法进行大一统。 另外一个与我实现的音频转文本模块息息相关的问题，是如何最大限度地提升整体处理效率。在实际试验中我发现，这一问题实际上可以进一步拆解为两个子问题： 其一，对于单条较长的音频片段，如何设计合理的并行处理方案以加速整体推理过程； 其二，对于多条长度不一的音频片段集合，如何实现资源分配上的负载均衡，以避免处理瓶颈或资源浪费。 以下是我在探索过程中总结的一些事实基础： 1. 串行处理运行在单个核心上，仅需加载一次模型，所有任务按时间顺序依次处理，模型无需重复初始化，具有较小的内存占用与启动开销。 2. 并行处理可分布在多个核心上执行，但每个核心都需独立加载模型，带来额外的初始化成本。任务集合被切分后分别分配至不同核心并发执行。 3. 系统中存在一个固定的模型加载时延 t，以及一个固定的单个任务执行时延 T。这两个参数构成了性能评估中的关键基线。 4. 对于单条音频片段，可预先进行切割操作，模拟成多条长度相同的子音频片段，从而支持多进程并行处理；唯一需要额外处理的是最终结果的顺序拼接与对齐。 5. 由于操作系统本身资源有限，系统中存在一个适宜的最大并行核心数 M，超过此数值可能会引发调度竞争，反而降低整体效率或导致不稳定。 6. Trade-off 观察：对于一组给定的 t 与 T 值，当并行核心数超过某一阈值 N 时，由于模型重复加载与资源争抢的代价上升，整体吞吐效率可能反而低于串行执行。 谈完实习，接下来就谈谈对实习后的贵州之旅的几点回味： 我对省会城市的资源集中程度有了新的认识。贵阳作为贵州的省会，在这里生活其实不大能体验到传统印象里贵州的许多特征。就像待在郑州也不大能体验到河南的许多名胜古迹一样。 贵州的自然景观实在是让我这种常年待在混凝土森林的城市人眼前一亮，也丝毫不亚于我在加州期间游览过的一些自然景观的独特之处。虽然游人还是一如既往的多，天气还是一如既往的热，但是沉浸在山水之间你会抛却这一切杂念。 美食。这是无论如何也不能忽视的一点。 …… 短暂的休憩后，从西安回到郑州，布置好家中一隅的工位，处理好一些暂存的任务，便过渡到了一种相对自洽的状态。我希望自己能在接下来的一个月里葆有内心的平静和头脑的清醒，多一些思考，少一些浮躁。 那么，让我们开始吧！",
+    "tags": [
+      "Journal"
+    ],
+    "pubDate": "2025-07-27",
+    "description": "Week 6"
+  },
+  {
+    "title": "7.28-8.03",
+    "url": "/blog/728-803",
+    "content": "写在前面 不知不觉已经来到了写作周记的第七周。在心烦意乱、内心浮躁的时候，我突然想到，能够让我内心逐渐平静下来的，应该就只有写点东西了吧…… 恙 什么事会让一个人感到痛苦呢？疾病？变故？疾病带来的痛苦是暂时的，旧病初愈，便好似新生；变故带来的痛苦也是暂时的，没有什么不散的宴席……唯有内心的痛苦是恒久的，你永远无法摆脱自己为自己设下的牢笼，除非？ 浮 是什么塑造了一个人的生活方式？换句话说，为什么有些人的生活日复一日没有任何波澜，而有些人的生活则跌宕起伏？在我看来，归根到底还是取决于你的内心是否被生活中的琐事和遭遇所牵引，取决于你为自己铺设的日复一日的旅程是否是个循环。 从我的生活经验来看，你所处的职业最终会把你塑造成这个职业所需要的模样。这个模样肯定是最有利于这个职业本身，但不一定最有利于你自己的身体和灵魂。从这个角度思考，看似比较悲观，但亦有解脱之道——把身体和灵魂的自主权重新夺回给自己。那该如何夺回呢？或者说，如何心安理得地夺回呢？ 释 一切的解决之道，在于打破一切不必要的枷锁。不要遵从潜意识里的自我封印，而是要让你的思维变得更有弹性。不至于过分坚硬而变得易碎，过分柔软而变得抓摸不定。状态的相对稳固与更迭，只有自身让渡一部分先入为主的控制，才会获得身心真正的释然。 --- 写于家中",
+    "tags": [
+      "Journel"
+    ],
+    "pubDate": "2025-08-05",
+    "description": "Week 7"
+  },
+  {
+    "title": "8.04-8.10",
+    "url": "/blog/804-810",
+    "content": "804-810 上周的内容安排主要集中于更好地调整自身状态以适应假期的学习方式与生活节奏。 Introduction 1. 建立了有效的Insect Sample Separation Workflow，构建了几组行之有效的提取分割算法，并加深了对传统计算机视觉任务与方法的理解 2. 同zyc学长就eeg-music reconstruction研究课题进行探讨，在前期文献与代码阅读的基础上确认了工作计划与推进安排，同时开始代码复现工作 3. 初步了解了研究生考试的具体内容，练手了数、英、政三门科目的往年真题 4. 成功开启并持续推进体育锻炼，每晚按时远程同npy进行户外活动 Main Content Insect Sample Separation 作为传统计算机视觉任务的一个子支，目标检测与实例分割一直是值得不断优化的课题。 具体到生物学和医学的范畴，并作为数据科学与统计学，尤其是深度学习这一领域的重要数据来源，生物医学样本的采集与处理显得尤为重要。 针对目标课题的任务方向，我开始对上百种、每种一万例的农业害虫的生殖器官样本切片进行显微镜下成图的批量分割工作。这是一个任务量庞大的工作，但确实加深了我对计算机视觉基础与进阶方法的理解与对自适应分割策略的迭代优化的思考。 首先，我需要明确一些变量: - 不同种类虫体在色彩空间、像素值、对比度(背景区分度)上的差异 - 不同种类虫体在形态学、轮廓特征、个体大小上的差异 - 摄像头距样本平台的距离差异所引入的无关黑色背景的面积差异 - 不同摄像头规格带来的成像质量与分辨率差异 - 样本平台的不同尺寸所带来的画面中样本孔个数差异 - 由虫体大小不同所带来的画面中虫体个数差异 - 由环境光线及人工补光差异所带来的样本孔中透射出的光线强度差异，进而造成视觉上样本孔由亮白色至浅黄色的变化 - 不同虫体所在样本孔中位置的差异，尤其是距离所在样本孔边缘的距离差异 以上种种差异不得不让我们在方法的性能和泛用性间面临一个两难抉择(trade-off)————要么追求极致性能，即有效分割数，代价是需要为每一组不同的原始样本图提供一种与之适配的方案；要么追求极致泛用性，尽可能用相同的算法解决不同的实际情况。 具体到算法层面，我主要针对两大类不同的情况提出了对应的解决方案: 第一种是虫体本身的区分度较样本孔更大的情况； 第二种是样本孔的区分度较虫体本身更大的情况。 也就是说，第一种类型需要我们直接面向虫体本身的特征进行特征提取与直接进行个体层面的识别，包括但不限于亮度滤波、自适应滤波、形态学滤波、色彩空间阈值以及一系列其他的阈值的条件组合。这些方法的共通之处是识别定位的中心永远在虫体上，且随虫子种类变化需要进行一定的阈值调整以及不可避免的存在一些漏检的现象。 第二种类型需要我们直接面向培养孔，也就是一个亮白色的由多圈同心圆组成的略带曲度的玻璃透镜，孔径一致，间距均匀，排列整齐。以上特点本身就足以为我们提供一些检测思路: 无论是Hough圆检测法，还是Otsu阈值分割算法；无论是Watershed检测，还是FRST方法，都能够在不同强度上实现圆环的检测。但问题的关键是我们还有一些上面提到的正则条件，所以在后期的算法打磨中陆续加上了圆心横纵坐标的异常值剔除与均值回归，样本孔半径的异常值剔除与均值回归以及培养板行/列间距的异常值剔除与均值回归。这些作为补充的条件信息能够在一定程度上提高我们分割的鲁棒性与完整性，基本保证能够实现全分割。 EEG-Music Reconstruction 目前的方法是基于Meta的Encodec，即High Fidelity Neural Audio Compression这篇文章提出的一种音频压缩模型框架，尝试通过码本来进行量化压缩并防止过拟合。一个基本的结构就是VQVAE，这里具体采用的是RVQ，即残差向量量化这种技术来构建我们的码本。 在实践中遇到的问题包括不限于: 1. 码本数量不少，但有效利用的永远是前几个码本，造成码本坍塌问题，重建出的音乐也会以训练集中的某几首为基调。尝试适当减少码本数量 2. 脑电信号的采样率远低于音频编码的采样率，数量级差异大，造成无法充分表征信息 3. 脑电信号的数据量较小，如不使用数据增强等手段无法满足需求 4. 音乐信号与脑电信号在不同模态空间上难以对齐，需要事先进行CLIP范式的模态对齐技术 5. 泛化性不足，难以在多音频刺激与多被试的组合下统一训练一个模型并实现测试时泛化 目前正逐步通过模块改进与补充对比实验的方式来验证一些想法的可行性。 Conclusion and Planning 下周的计划是能够进一步推进Insect Sample Separation的进度，并在eeg-music reconstruction的模型架构上获得一些启发和突破。 --- This post was created using the automated script.",
+    "tags": [
+      "Journel"
+    ],
+    "pubDate": "2025-08-14",
+    "description": "Week 8"
+  },
+  {
+    "title": "8.11-8.17",
+    "url": "/blog/811-817",
+    "content": "811-817 上周的主要内容集中在Encodec模块技术路径的可行性实践。 Introduction 1. 使用Maestro-v3.0数据集成功复现了Encodec-pyTorch版本的非官方开源代码 2. 针对Quantizer中包含的参数: Codebook Size和Codebook Layer Number进行了策略性调整与批量对比实验 3. 分析了Codebook容量在重建质量中发挥的作用，并进行了对重建质量影响因素的敏感性分析 4. 首次进行四卡并行训练与推理，熟悉了分布式计算的基本规范 5. 在实践中掌握了AI生图主流产品的使用流程，并总结了一些有益的经验教训 Main Content Maestro-v3.0 Dataset Maestro数据集是一个包含近1300首高质量古典钢琴乐的数据集，总时长两百余小时。数据格式包括.wav/.mid。 相比于之前在进行eeg-music reconstruction任务的脑电信号采集阶段使用的Music stimulus，Maestro数据集显然是一个单曲时长更长，质量更高的选择，也因此对我们模型的重建质量提供了更大的发挥空间。 Encodec-pyTorch Encodec架构作为Meta发布的一个用于高保真音乐编解码的模型架构，其创新点在于引入了GAN风格的一系列损失函数，并将其通过Balancer模块进行了合理的组合，从而在音乐的时域、频域损失，感知质量，可区分度，量化损失程度等方面进行了综合的约束与引导。其另一创新在于引入了RVQ这一巧妙的量化结构作为进一步压缩量化器体积并减少离散信号冗余度的方法。多层的码本结构类似于一种逐层补偿机制，在逐渐细粒度的量化过程中引导Encoder编码出更容易压缩的Embedding。 对于码本坍塌这一问题，其本质在于编码模态与解码模态间的信息密度差异，或者说码率/带宽的数量级差异。做一道简单的计算题：假如编码模态是以500Hz采样率采样的EEG信号，而解码模态是以22.4kHz/24kHz的音频，那么它们之间的数量级差异就会达到近50倍，而这50倍的信息密度差异足以让我们解码出的音频信号terribly bad。所以，在尽可能保留原始音频结构和保证基本听感的前提下，最大限度地压缩解码模态的码率/带宽是一个显而易见的方式。 于是，我们分别尝试了24kbps/12kbps/6kbps/3kbps/1.5kbps等一系列不同码率的压缩程度，发现在使用3kbps带宽下(也就是4层码本)且每层码本数量为256时，会达到一个不错的trade-off。 SD / MJ 目前业界最主流的AI生图产品无外乎Stable Diffusion(以下简称SD)、MidJourney(以下简称MJ)与DALL $\\cdot$ E三剑客，其中我主要想谈的是前两个。 作为开源社区应用最广泛的AI生图工具，SD可以说是有着最广泛的社区支持与源源不断的开发者群体。高度模块化的WebUI界面，众多精细调节的参数选择，即插即用的自定义插件与Adaptor，使得SD拥有了无可比拟的定制化与精细化的生图体验。作为Diffusion、ControlNet等技术路径直接以白盒的方式用于生成式的最好实践，SD在版本不断更新的同时也确实为非专业用户带来了一定的上手门槛。 一方面，高度依赖正负提示词的设计使得编写高质量的英文提示词本身就可以成为一项值得学习的技能； 另一方面，开源项目带来本地部署便利的同时，各种相互独立的效果插件对于存储的占用也成为算力成本之外的另一大开销； 除此之外，调参的复杂化也确实为相对满意的生图效果的复现带来了一些困扰。 这里就不得不谈谈MJ这一alternative了。 作为商业化成熟的闭源平台，MJ在使用渠道上相对受限，无非是Discord和官方Web端，但二者却能很好地互补————Discord中的MJ bot界面简洁，高度命令行式的风格使得用户可以高效地进行批处理，而Web端的可视化与编辑功能完善，方便用户就自己满意的Draft进行派生与微调。 角色一致性问题 1. 若人物，使用相机拍出来的照片；若漫画形象，使用网上的原版图片。 2. 把1中的图片先交给MJ Discord /Describe 一下 3. 然后把1中的图片作为oref放在MJ Web里，并附上2中的text prompt定制出一套动作+姿态+神态组合的character sheet(注意最好一次只专注于一种组合)(无背景，仅人物) 4. 从3中的组合库中挑选出自己需要放在场景中的那一种，并作为oref放在MJ Web里，把目标场景作为Image Prompt注入元素，同时作为sref注入风格(注意如果目标场景中的人物神态描述与参考头像神态差异过大，会造成人脸失真等严重问题) 5. 若4效果不好，可以先把3通过iOS主体提取作为贴纸(漫画效果有时更佳)，然后并通过snapedit把4中生成的图片的主体移除保留背景，然后把贴纸粘贴到背景上再送入3的流程一遍 6. 微挑 > ps.如何在ow不用设置过高的前提下保持人脸一致性？用一张全身/半身像作为Image Prompt而该角色的人脸像作为oref，ow设置200左右即可 最佳实践 - 效果最好的手动缝合格格不入的人物贴纸之法 首先，先用下图方式塑造目标场景中的目标人物姿势+动作 !image.png 其次，将上一步定制好的漫画风纯人物 / 从之前某张图片中抠出来的人物轮廓(“添加到贴纸”-动态效果之“漫画”)放在Omni Reference选框中(oref weight可以稍微调高一些)； 接着，将上述贴纸移动到目标背景上，共同组合成一张新图片，然后放在Image Prompt中； 然后，在Style Reference中放入一张内容语义比较相近的目标缝合效果示意图。 最后，在Text Prompt中输入一句简明的指令: 主-谓-宾即可。(注意比例参数要与Prompt和Reference中的原图接近) !image.png - 效果最好的场景一致性保持方式 同一场景多视角的Image Prompt注入 三维空间扫描/渲染法 之后根据所需视角进行截图即可 - 效果最好的小工具系列 - 智能消除工具: wps会员自带的 - 智能抠图工具: iOS自带的 - 避免色调单一问题 - 在style reference中放入多张风格相似但色调不同、色彩空间覆盖广泛的参考图 - 有时，Image Prompt+合适的文字风格描述本身就能顶替style reference的作用，还不会过拟合 Conclusion 下周的计划是在前期规律及经验总结的基础上，开始正式以eeg信号为出发点的系列实验，采用压缩码本容量的方式去验证减少码本坍塌的可行性。 --- This post was created using the automated script.",
+    "tags": [
+      "Journel"
+    ],
+    "pubDate": "2025-08-18",
+    "description": "Week 9"
+  },
+  {
+    "title": "9.01-9.07",
+    "url": "/blog/901-907",
+    "content": "901-907 上一周有点小忙╮(￣▽￣\"\")╭ 科研心得 1. 同一个项目的模型训练不能停，停几天就会对目录陌生 2. 应对此问题的一个补救措施是及时记录自己的更改 3. 能多卡训练就不要单卡训练(尽量减少 thinking-coding-running-feedbacking间的gap) 4. 实验要有环节意识，提前找好易出错的关键节点，并进行快速测试 5. 训练结束时自动保存原始结果数据(方便后期自行重复绘图) 6. 因操作顺序和前后覆盖编辑而实现的多组不同实验要在开源代码时替换为非顺序依赖的shell制 7. 学会将实验结果和自己分离开(实验结果不及预期不是你能力，更不是你态度的问题)，要把自己当作游离于实验任务之外的客体 8. 你一天能进行的工作量是指能在你的法定工作时间内完成的工作量 Conclusion 这一周有点大忙╮(￣▽￣\"\")╭ --- This post was created using the automated script.",
+    "tags": [
+      "Jounal"
+    ],
+    "pubDate": "2025-09-10",
+    "description": "Week 12"
+  },
+  {
+    "title": "915-921",
+    "url": "/blog/915-921",
+    "content": "915-921 Start writing your blog post here... Introduction Begin with an introduction to your topic. 小专题：研究生必上的第一课 - 一条路走不通时果断换另一条路 - 喂给AI代码时最好能先定为靶点然后截取片段不要大水漫灌 - 对于我们专业而言，计算机就是我们的实验室 - 读好论文的实验部分有助于培养实验思路，提高实验能力 - 如何解决研究生三大问之一的“跑不完的实验”这一大难 Conclusion Wrap up your thoughts and provide any next steps or calls to action. --- This post was created using the automated script.",
+    "tags": [],
+    "pubDate": "2025-09-22",
+    "description": "Add your description here..."
+  },
+  {
+    "title": "a-new-chapter",
+    "url": "/blog/a-new-chapter",
+    "content": "A New Chapter There are times when our thoughts are undermined in some subtle way. Worldview Take me as an example, when it comes to a tough work that could not be done in one shot, it turns out to be much more complicated practically then, than how tough it should have been. In other words, you'll be more prone to making poor decisions, developing path dependence, and falling into cognitive traps. What is the reason behind it? Maybe just a kind of inertia with a tendency toward sensationalism inherent in human nature. Sometimes one would pick on others without any reason, annoying others and keep their distance from him… In fact, it is just the ego and the inability to tolerate others doing better than oneself that are at play. It is always the case that we have a bad sense, estimation and control of time. For example, you will fail to make good use of a period of time to accomplish what could have been done within it, simply because you feel it is insufficient. A little fairy dwells within our minds, spreading our present emotions throughout our bodies, leaving us overwhelmed by feelings and unable to handle tasks that would otherwise be a breeze. Both the first and third points address our tendency to misjudge the difficulty of tasks. Methodology To reduce the likelihood of falling into cognitive traps, a reasonable approach is to tackle tasks by \"starting slow and accelerating later.\" While this sounds straightforward, it essentially involves consciously steering your inherently path-dependent thinking toward a better course from the outset. Put it another way, this is precisely why thorough preliminary research and thoughtful consideration can make your entire investigation twice as effective with half the effort. To calm the little voice that's currently clouding your mind and rescue your brain from its mental rut, one effective approach is to change your approach to the task at hand. This includes, but isn't limited to, shifting your environment, reorganizing your thoughts, or conducting further research. A balanced and sustainable workflow should incorporate all elements of work, relaxation, and rest. Contrary to what you might expect, maintaining roughly equal proportions—about one-third each—often proves more efficient than squeezing relaxation and rest time to the absolute minimum. Conclusion Metacognition doubles your productivity. --- This post was created using the automated script.",
+    "tags": [
+      "Declaration"
+    ],
+    "pubDate": "2025-09-04",
+    "description": "Some Declarations at the Very Beginning of the New Semester"
+  },
+  {
+    "title": "Let the docker grow up!",
+    "url": "/blog/let-the-docker-grow-up",
+    "content": "Let the docker grow up! 太好了，现在我们进入 Docker 实战进阶阶段！我来先带你掌握： --- Network <!-- - 与docker有关的网络配置 --> 与 docker 有关的网络配置 Log 关于docker的第一次探索记录… 顺便探索了一下MCP ✅ 第一部分：命令行中最常用的 Docker 命令（附示例） | 目的 | 命令 | 说明 | | ---------- | -------------------------------- | ------------------------ | | 📦 构建镜像 | docker build -t 镜像名 . | 从当前目录的 Dockerfile 构建镜像 | | 🚀 运行容器 | docker run -it 镜像名 | 启动一个交互式容器 | | 🔌 映射端口 | docker run -p 宿主端口:容器端口 镜像名 | 将容器端口映射到主机 | | 🗂️ 挂载目录 | docker run -v 本地目录:容器目录 镜像名 | 让容器访问本地文件 | | 🧼 停止并删除容器 | docker rm -f 容器ID或名称 | 立即强制删除容器 | | 📋 查看容器 | docker ps -a | 列出所有容器（包括停止的） | | 🔍 查看镜像 | docker images | 列出所有本地镜像 | | 🧹 删除镜像 | docker rmi 镜像名或ID | 删除本地镜像 | | 🧾 查看日志 | docker logs 容器ID | 容器运行时的控制台输出 | | 📤 导出镜像 | docker save -o 文件名.tar 镜像名 | 导出镜像为离线包 | | 📥 导入镜像 | docker load -i 文件名.tar | 导入 .tar 镜像文件 | | 🔧 进入容器终端 | docker exec -it 容器ID /bin/bash | 进入正在运行的容器 | --- ✅ 第二部分：Dockerfile 模板（通用结构讲解） 一个标准 Dockerfile 的结构如下： `dockerfile ① 选择基础镜像 FROM python:3.10-slim ② 设置工作目录（容器内部的文件位置） WORKDIR /app ③ 拷贝文件（从宿主机拷贝到容器中） COPY requirements.txt . ④ 安装依赖 RUN pip install -r requirements.txt ⑤ 再拷贝程序代码 COPY . . ⑥ 暴露端口（可选，用于文档提示） EXPOSE 5000 ⑦ 设置环境变量（可选） ENV PYTHONUNBUFFERED=1 ⑧ 容器启动后默认执行的命令 CMD [\"python\", \"app.py\"] ` --- 🔧 模板讲解： | 指令 | 作用 | | --------- | ------------------------------------------------------- | | FROM | 指定你想以哪个镜像为基础，比如 ubuntu、python:3.10 等 | | WORKDIR | 相当于 cd，后续命令都以这个目录为当前目录 | | COPY | 把宿主机的文件复制到容器内部（可以是 ., app.py, requirements.txt 等） | | RUN | 在构建时执行的命令，比如安装依赖、构建代码等 | | CMD | 容器启动时执行的命令（只能有一个） | | ENV | 设置环境变量，类似 export | | EXPOSE | 说明容器哪个端口对外服务（仅文档提示作用） | --- 📦 示例任务：Flask 项目 Dockerfile（基础+可扩展） `dockerfile FROM python:3.10-slim WORKDIR /app COPY requirements.txt . RUN pip install --no-cache-dir -r requirements.txt COPY . . ENV FLASK_APP=app.py ENV FLASK_ENV=development EXPOSE 5000 CMD [\"flask\", \"run\", \"--host=0.0.0.0\", \"--port=5000\"] ` 这个版本支持热重载、debug 模式，适合开发环境使用。 --- 🚀 下一步建议 如果你掌握了这些，我们可以继续进入中级任务，比如： * 制作带 Redis/MySQL 的多容器项目（Docker Compose） * 制作支持参数化部署的镜像（ARG 和 ENTRYPOINT） * 构建多阶段镜像以减小体积 * 运行带定时任务 / 多进程的容器 --- This post was created using the automated script.",
+    "tags": [
+      "Notes"
+    ],
+    "pubDate": "2025-07-28",
+    "description": "这是我的第一篇学习笔记"
+  },
+  {
     "title": "My First Blog Post",
     "url": "/blog/my-first-blog-post",
     "content": "My First Blog Post This is where your blog content will go. You can write about your projects, share insights from your research, or document your learning journey. Writing is a great way to solidify your knowledge and build a personal brand. Using Markdown Syntax While this is a Markdown file, you can structure your content easily. Use # for headings, regular text for paragraphs, and various Markdown features for rich content. Code Examples Here's an example of a Python code block: `python Example of a Python code block def hello_world(): print(\"Hello, world!\") ` Lists and Links You can create lists easily: - First item - Second item - Third item And add links: GitHub Blockquotes > \"The beautiful thing about learning is that nobody can take it away from you.\" - B.B. King Future Topics I plan to write about: 1. AI Research: My experiences with large language models and brain-computer interfaces 2. Project Updates: Progress on my various AI projects 3. Learning Journey: Insights from my studies and research 4. Technology Trends: Thoughts on emerging AI technologies Happy writing!",
@@ -33,7 +121,7 @@
   {
     "title": "About Me",
     "url": "/#about",
-    "content": "I am a strategic AI researcher and developer with a passion for large language models and collaborative innovation. I have experience creating high-performance applications by leveraging state-of-the-art AI techniques and cross-functional collaboration. My primary research interests include Brain-Computer Interfaces, the capabilities of Large Language Models, applying AI for Scientific discovery, and developing Multi-Modal Agents. I am dedicated to continuous learning and contributing to open-source communities."
+    "content": "I am a Ph.D. student in Artificial Intelligence at Xi'an Jiaotong University, passionate about large language models and collaborative innovation. I have experience creating high-performance applications by leveraging state-of-the-art AI techniques and cross-functional collaboration. My primary research interests include Brain-Computer Interfaces, the capabilities of Large Language Models, applying AI for Scientific discovery, and developing Multi-Modal Agents. I am dedicated to continuous learning and contributing to open-source communities."
   },
   {
     "title": "Projects",
@@ -53,7 +141,7 @@
   {
     "title": "Education",
     "url": "/#education",
-    "content": "University of California, Berkeley. Xi'an Jiaotong University."
+    "content": "University of California, Berkeley. Xi'an Jiaotong University. Ph.D. in Artificial Intelligence at National Key Laboratory of Human-Machine Hybrid Augmented Intelligence."
   },
   {
     "title": "Skills",

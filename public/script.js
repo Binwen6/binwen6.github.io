@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 hero: {
                     title: "AI研究员与开发者",
-                    description: "目前是西安交通大学的学生，正在攻读人工智能学士学位。热衷于大语言模型、脑机接口和科学AI。"
+                    description: "目前是西安交通大学的博士生，正在攻读人工智能博士学位。热衷于大语言模型、脑机接口和科学AI。"
                 },
                 sections: {
                     about: "关于",
@@ -290,6 +290,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         school: "西安交通大学",
                         degree: "工学学士，人工智能 | 2022年9月 - 2026年6月",
                         courses: "课程：机器学习、计算机视觉与模式识别、自然语言处理、数字信号处理。"
+                    },
+                    xjtu2: {
+                        school: "人机混合增强智能全国重点实验室 & 人工智能与机器人研究所",
+                        degree: "博士（AI），人工智能 | 2026年9月 - ",
+                        courses: "研究方向：认知计算、脑机接口"
                     }
                 },
                 skills: {

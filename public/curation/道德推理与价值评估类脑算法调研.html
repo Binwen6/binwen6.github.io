@@ -6,8 +6,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    /* 隐藏 HTML 模拟层 */
+    .katex-html {
+      display: none !important;
+    }
+
+    /* 确保 MathML 层可见 */
     .katex-mathml {
-      display: none
+      display: block;
+      /* 或者 inline，取决于你的公式类型 */
+      position: static !important;
+      clip: auto !important;
+      width: auto !important;
+      height: auto !important;
     }
 
     .markdown-preview {
@@ -925,7 +936,8 @@
                       class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span
                       class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal"
                       style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span>
-              来预测人类的偏好得分。通常采用 Bradley-Terry 模型来建模偏好概率：</p>
+              来预测人类的偏好得分。通常采用 Bradley-Terry 模型来建模偏好概率：
+            </p>
             <p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math
                       xmlns="http://www.w3.org/1998/Math/MathML" display="block">
                       <semantics>
@@ -1496,7 +1508,8 @@
                               style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span
                                 class="mbin mtight">∗</span></span></span></span></span></span></span></span></span></span></span>
           之间存在解析映射关系 [5]。<br>
-          对于标准的RLHF目标函数：</p>
+          对于标准的RLHF目标函数：
+        </p>
         <p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math
                   xmlns="http://www.w3.org/1998/Math/MathML" display="block">
                   <semantics>
@@ -2277,7 +2290,8 @@
           指出，虽然DPO更稳定，但在某些特定条件下（如奖励函数极其稀疏，或奖励模型的假设空间与策略模型不同构时），显式的两阶段RLHF可能仍具有优势。然而，在社会交互场景中，人类的社会规范通常可以通过大量的成对比较（Pairwise
           Comparison）来体现，DPO提供了一种更符合“直接从反馈中学习”的生物学合理性的路径，且极大地降低了多智能体系统中每个个体进行价值对齐的算力门槛。</p>
         <h3 id="14-算法演进ipo-kto与rlaif" ebook-toc-level-3="" heading="<strong>1.4 算法演进：IPO、KTO与RLAIF</strong> ">
-          <strong>1.4 算法演进：IPO、KTO与RLAIF</strong> </h3>
+          <strong>1.4 算法演进：IPO、KTO与RLAIF</strong>
+        </h3>
         <h4 id="141-ipo-identity-preference-optimization" ebook-toc-level-4=""
           heading="<strong>1.4.1 IPO (Identity Preference Optimization)</strong> "><strong>1.4.1 IPO (Identity
             Preference Optimization)</strong> </h4>
@@ -2768,7 +2782,8 @@
             Voting）。数学上的证明显示，辩论过程实际上是一种迭代的信念修正，能够放大正确信息的信号 13。</li>
           <li>
             <strong>文化与价值观的公平性</strong>：单体模型往往倾向于输出训练数据中占主导地位的文化价值观（通常是WEIRD——西方、受过教育、工业化、富裕、民主社会的价值观）。多智能体辩论框架允许不同智能体扮演不同文化背景的角色，通过协商达成兼顾各方习俗和规范的决策。这对于构建“跨场景泛化”的类脑算法至关重要，因为真实的社会交互本质上就是多元价值观的博弈
-            12。</li>
+            12。
+          </li>
         </ul>
         <h3 id="25-内生自我修正-intrinsic-self-correction" ebook-toc-level-3=""
           heading="<strong>2.5 内生自我修正 (Intrinsic Self-Correction)</strong> "><strong>2.5 内生自我修正 (Intrinsic
@@ -2794,7 +2809,8 @@
           <li><strong>利他与互惠</strong>：在当下利益与长远关系之间的权衡 19。</li>
         </ul>
         <h4 id="312-道德判断-moral-judgment" ebook-toc-level-4="" heading="<strong>3.1.2 道德判断 (Moral Judgment)</strong> ">
-          <strong>3.1.2 道德判断 (Moral Judgment)</strong> </h4>
+          <strong>3.1.2 道德判断 (Moral Judgment)</strong>
+        </h4>
         <p>道德判断是对行为、意图或个体品质是否符合道德标准（对/错、善/恶）的评估 20。计算模型通常将其细分为四个层级：</p>
         <ol>
           <li><strong>价值评估 (Evaluations)</strong>：最基础的效价判断（Good vs. Bad），通常是快速且直觉的。</li>
@@ -3103,7 +3119,8 @@
               Network）或基于模型的强化学习中的奖励预测器</strong>，它存储了历史交互中积累的社会情感权重。</li>
         </ul>
         <h4 id="422-颞顶联合区-tpj心智化与意图推断" ebook-toc-level-4="" heading="<strong>4.2.2 颞顶联合区 (TPJ)：心智化与意图推断</strong> ">
-          <strong>4.2.2 颞顶联合区 (TPJ)：心智化与意图推断</strong> </h4>
+          <strong>4.2.2 颞顶联合区 (TPJ)：心智化与意图推断</strong>
+        </h4>
         <ul>
           <li><strong>功能定位</strong>：TPJ是心智理论（ToM）的核心脑区，负责处理他人的信念、意图和视角 22。</li>
           <li><strong>在道德中的作用</strong>：TPJ对于区分“意外伤害”和“蓄意伤害”至关重要。研究发现，在判断未遂谋杀（有恶念无恶果）和过失杀人（无恶念有恶果）时，TPJ的激活程度直接决定了责备的归属。
@@ -3256,7 +3273,8 @@
           Test）专注于测量<strong>道德能力（Competence）而非态度（Attitude）</strong>。它包含两个核心困境（如“工人困境”和“医生困境”）。其独特之处在于，它要求受试者同时评估支持和反对自己立场的论据
           30。</p>
         <h4 id="532-核心指标c指数-c-index" ebook-toc-level-4="" heading="<strong>5.3.2 核心指标：C指数 (C-Index)</strong> ">
-          <strong>5.3.2 核心指标：C指数 (C-Index)</strong> </h4>
+          <strong>5.3.2 核心指标：C指数 (C-Index)</strong>
+        </h4>
         <p>C指数（Competence Index）测量受试者判断的一致性在多大程度上是由论据的道德质量决定的，而非由观点一致性决定的。<br>
           计算方法类似于方差分析（MANOVA）：</p>
         <p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math
@@ -3374,7 +3392,8 @@
             三大规范伦理学流派的计算视角</strong> </h3>
         <p>在构建社会交互系统时，智能体的顶层价值架构不可避免地要预设某种伦理学立场。我们从计算实现的视角分析三大流派。</p>
         <h4 id="611-功利主义-utilitarianism" ebook-toc-level-4="" heading="<strong>6.1.1 功利主义 (Utilitarianism)</strong> ">
-          <strong>6.1.1 功利主义 (Utilitarianism)</strong> </h4>
+          <strong>6.1.1 功利主义 (Utilitarianism)</strong>
+        </h4>
         <ul>
           <li><strong>核心主张</strong>：行为的道德价值取决于其结果（Consequences），追求最大多数人的最大幸福 33。</li>
           <li><strong>计算实现</strong>：**标准强化学习（Standard RL）**本质上就是功利主义的。智能体通过最大化累积奖励期望 <span class="katex"><span
@@ -3412,7 +3431,8 @@
           <li><strong>困境与风险</strong>：易导致“目的论偏差”，即为了达成目标不择手段（如为了治愈癌症而强行进行人体实验）。在多智能体系统中，纯功利主义智能体可能陷入“公地悲剧”或零和博弈。</li>
         </ul>
         <h4 id="612-道义论-deontology" ebook-toc-level-4="" heading="<strong>6.1.2 道义论 (Deontology)</strong> ">
-          <strong>6.1.2 道义论 (Deontology)</strong> </h4>
+          <strong>6.1.2 道义论 (Deontology)</strong>
+        </h4>
         <ul>
           <li><strong>核心主张</strong>：行为的对错取决于是否符合普遍的规则或义务（Duty），与结果无关。强调“绝对命令”（Categorical Imperative）和权利边界 33。</li>
           <li><strong>计算实现</strong>：<strong>约束优化（Constrained Optimization）或宪法AI（Constitutional
@@ -3421,7 +3441,8 @@
           <li><strong>价值</strong>：为AI行为设定安全底线，防止极端行为。</li>
         </ul>
         <h4 id="613-美德伦理学-virtue-ethics" ebook-toc-level-4="" heading="<strong>6.1.3 美德伦理学 (Virtue Ethics)</strong> ">
-          <strong>6.1.3 美德伦理学 (Virtue Ethics)</strong> </h4>
+          <strong>6.1.3 美德伦理学 (Virtue Ethics)</strong>
+        </h4>
         <ul>
           <li><strong>核心主张</strong>：关注行为者的品格（Character）和习惯，而非具体的行为规则或结果。核心是培养“好人”（Good Agent） 33。</li>
           <li><strong>计算实现</strong>：<strong>模仿学习（Imitation Learning）与角色扮演（Persona-based
@@ -3469,7 +3490,8 @@
           </li>
           <li>
             <strong>评测体系</strong>：应建立包含<strong>DIT-2、MJT</strong>等心理学量表和<strong>电车难题、囚徒困境</strong>等社会学场景的综合评测基座，不仅考量AI的智力，更量化其道德能力（Moral
-            Competence）和拟人化程度。</li>
+            Competence）和拟人化程度。
+          </li>
         </ol>
         <p>这一跨学科的融合路径，将为最终实现具备高度社会智能、能够安全融入人类社会的类脑多智能体系统奠定坚实基础。</p>
         <h4 id="works-cited" ebook-toc-level-4="" heading="<strong>Works cited</strong> "><strong>Works cited</strong>

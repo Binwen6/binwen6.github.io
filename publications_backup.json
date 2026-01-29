@@ -1,6 +1,22 @@
 {
   "publications": [
     {
+      "title": "[EEG2MUSIC: High-Fidelity Neural Music Reconstruction via Discrete Codebook Priors]",
+      "authors": [
+        "Yichi Zhang*",
+        "Binwen Liu*",
+        "Zhaowei Wu*",
+        "Yuxin Shi",
+        "Kaizhong Zheng†",
+        "Badong Chen†"
+      ],
+      "venue": "ICML Submitted (2026)",
+      "thumbnail": "images/thumbs/4.png",
+      "selected": 1,
+      "award": "",
+      "links": {}
+    },
+    {
       "title": "[Development and validation of an intraoperative ureter identification model based on convolutional neural network instance segmentation and laparoscopic colorectal surgical videos]",
       "authors": [
         "Hanhui Jing*",

@@ -1,0 +1,1817 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>no title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    .markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}.emoji{height:.8em}@font-face{font-family:Raleway;font-style:italic;font-weight:400;src:url(https://fonts.gstatic.com/s/raleway/v37/1Pt_g8zYS_SKggPNyCgSQamb1W0lwk4S4WjMDrMfJQ.ttf) format('truetype')}@font-face{font-family:Raleway;font-style:italic;font-weight:700;src:url(https://fonts.gstatic.com/s/raleway/v37/1Pt_g8zYS_SKggPNyCgSQamb1W0lwk4S4Y_LDrMfJQ.ttf) format('truetype')}@font-face{font-family:Raleway;font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/raleway/v37/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvaorCIPrQ.ttf) format('truetype')}@font-face{font-family:Raleway;font-style:normal;font-weight:700;src:url(https://fonts.gstatic.com/s/raleway/v37/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVs9pbCIPrQ.ttf) format('truetype')}body{background:#fcfcfc;color:#111;font-family:Raleway,sans-serif;font-weight:400;font-size:16px}body .math,body .mathjax-exps,body h1,body h2,body h3,body h4,body h5,body h6,body li,body table{color:#111;font-family:Raleway,sans-serif}body h1{font-weight:400;line-height:4rem;margin:0 0 1.75rem;padding:20px 30px;text-align:center;text-transform:uppercase;margin-top:4rem}body h2{font-weight:400;line-height:3rem;margin:0 0 1.9375rem;padding:0 30px;text-align:center;text-transform:uppercase;margin-top:3rem}body h3{font-weight:400}body h4{font-weight:400}body h5{font-size:1.125rem;font-weight:400}body h6{font-size:1rem;font-weight:700}body p{color:#111;font-size:1rem;line-height:1.75rem;margin:0 0 1.25rem}body blockquote{margin-left:1rem;margin-right:0;padding:.5em}body h1{font-size:2.827rem}body h2{font-size:1.999rem}body h3{font-size:1.413rem}body h4{font-size:1.25rem}body h5{font-size:1.15rem}body h6{font-size:1rem}body a{color:#900;text-decoration:none}body a:hover{text-decoration:underline}body table{margin-bottom:20px}body table td,body table th{padding:8px;line-height:1.25rem;vertical-align:top;border-top:1px solid #ddd}body table th{font-weight:700}body table thead th{vertical-align:bottom}body table caption+thead tr:first-child td,body table caption+thead tr:first-child th,body table colgroup+thead tr:first-child td,body table colgroup+thead tr:first-child th,body table thead:first-child tr:first-child td,body table thead:first-child tr:first-child th{border-top:0}body table tbody+tbody{border-top:2px solid #ddd}body code{padding:.5em;color:inherit;border:1px solid #ccc;padding:.1em;font-size:.9em;margin-left:.2em;margin-right:.2em}body pre>code{border:none}body li>p{margin-top:0;margin-bottom:0}body .task-list{padding-left:0}body .task-list-item{list-style:none;margin-left:-2.4em}body .task-list-item input{top:3px;margin-right:1.6em}body .task-list-item input:before{content:'';display:inline-block;width:1rem;height:1rem;vertical-align:middle;text-align:center;border:1px solid gray;background-color:#fdfdfd;margin-left:0;margin-top:-.8rem}body .task-list-item input:checked:before,body .task-list-item input[checked]:before{content:'\25FC';font-size:.8125rem;line-height:.9375rem;margin-top:-1rem}@media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:0.001dpcm){body .task-list-item input:before{margin-top:-.2rem}body .task-list-item input:checked:before,body .task-list-item input[checked]:before{margin-top:-.2rem}}body blockquote{margin:0 0 1.11111rem;padding:.5rem 1.11111rem 0 1.05556rem;border-left:1px solid gray;background-color:#ededed}body blockquote,body blockquote p{line-height:1.6;color:#6f6f6f}body img{max-width:100%}body kbd{color:#111}
+    /* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+    </style>
+    
+    <script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script>
+  </head>
+  <body for="html-export">
+    <div class="crossnote markdown-preview">
+    <html><head></head><body><div>
+<h1 id="脑计划子课题二文献调研结果">脑计划子课题二文献调研结果 </h1>
+<blockquote>
+<p>整合日期：2026-03-25<br>
+分类体系：<strong>方法学五子问题 + 数据集四维度</strong>，共九大类<br>
+全表共计 <strong>156 篇独立条目</strong>（去重后）</p>
+</blockquote>
+<hr>
+<h1 id="part-a-方法学论文五个子问题">Part A 方法学论文（五个子问题） </h1>
+<h2 id="子问题一机器心智理论tom的计算建模">子问题一：机器心智理论（ToM）的计算建模 </h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>方法名</th>
+<th>出处</th>
+<th>文献标题</th>
+<th>方法简介</th>
+<th>主要贡献</th>
+<th>适用任务</th>
+<th>开源代码</th>
+<th>论文链接</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>LAIP</td>
+<td>2025, Toronto</td>
+<td>Towards Machine Theory of Mind with LLM-Augmented Inverse Planning</td>
+<td>LLM生成假设→估算似然→精确贝叶斯后验</td>
+<td>首个LLM增强贝叶斯逆规划ToM</td>
+<td>贝叶斯ToM</td>
+<td></td>
+<td><a href="https://arxiv.org/html/2507.03682v1">https://arxiv.org/html/2507.03682v1</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td>BIP-ALM</td>
+<td>ACL 2024</td>
+<td>MMToM-QA: Multimodal Theory of Mind Question Answering（含BIP-ALM）</td>
+<td>多模态统一表示+LLM辅助贝叶斯逆规划</td>
+<td>首个多模态贝叶斯ToM QA</td>
+<td>多模态ToM</td>
+<td><a href="https://github.com/chuanyangjin/MMToM-QA">https://github.com/chuanyangjin/MMToM-QA</a></td>
+<td><a href="https://aclanthology.org/2024.acl-long.851/">https://aclanthology.org/2024.acl-long.851/</a></td>
+</tr>
+<tr>
+<td>3</td>
+<td>AutoToM</td>
+<td>NeurIPS 2025, JHU</td>
+<td>AutoToM: Scaling Model-based Mental Inference via Automated Bayesian Inverse Planning</td>
+<td>全自动LLM生成agent模型→贝叶斯逆规划→模型搜索修正</td>
+<td>完全自动化心智模型发现，多基准SOTA</td>
+<td>自动化ToM</td>
+<td><a href="https://github.com/SCAI-JHU/AutoToM">https://github.com/SCAI-JHU/AutoToM</a></td>
+<td><a href="https://arxiv.org/abs/2502.15676">https://arxiv.org/abs/2502.15676</a></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Hierarchical ToM</td>
+<td>bioRxiv 2025</td>
+<td>A Hierarchical Theory of Mind Model based on Strategy Inference</td>
+<td>策略层层级（0阶→1阶→2阶递归）贝叶斯推断</td>
+<td>系统化高阶ToM策略层建模</td>
+<td>高阶ToM</td>
+<td></td>
+<td><a href="https://www.biorxiv.org/content/10.1101/2025.06.25.660690v1">https://www.biorxiv.org/content/10.1101/2025.06.25.660690v1</a></td>
+</tr>
+<tr>
+<td>5</td>
+<td>ROTE</td>
+<td>NeurIPS, UW/JHU</td>
+<td>Modeling Others' Minds as Code</td>
+<td>LLM搜索最小Python程序→有限状态机建模</td>
+<td>程序合成实现高效ToM</td>
+<td>程序合成ToM</td>
+<td><a href="https://github.com/KJha02/mindsAsCode">https://github.com/KJha02/mindsAsCode</a></td>
+<td><a href="https://openreview.net/pdf?id=YxmxGP89eX">https://openreview.net/pdf?id=YxmxGP89eX</a></td>
+</tr>
+<tr>
+<td>6</td>
+<td>MindForge</td>
+<td>NeurIPS 2025</td>
+<td>MindForge: Empowering Embodied Agents with ToM for Lifelong Cultural Learning</td>
+<td>BigToM因果模板+Soar三元记忆</td>
+<td>开放世界终身文化学习+ToM</td>
+<td>具身协作</td>
+<td></td>
+<td><a href="https://arxiv.org/html/2411.12977v6">https://arxiv.org/html/2411.12977v6</a></td>
+</tr>
+<tr>
+<td>7</td>
+<td>Hypothetical Minds</td>
+<td>NeurIPS 2024 oral</td>
+<td>Hypothetical Minds: Scaffolding ToM for Multi-Agent Tasks with LLMs</td>
+<td>持续生成对手策略假设+评估修正循环</td>
+<td>动态假设修正驱动多智能体博弈</td>
+<td>MARL</td>
+<td><a href="https://github.com/locross93/Hypothetical-Minds">https://github.com/locross93/Hypothetical-Minds</a></td>
+<td><a href="https://arxiv.org/abs/2407.07086">https://arxiv.org/abs/2407.07086</a></td>
+</tr>
+<tr>
+<td>8</td>
+<td>ProAgent</td>
+<td>AAAI 2024, BIGAI</td>
+<td>ProAgent: Building Proactive Cooperative Agents with LLMs</td>
+<td>状态语义翻译+意图推断+信念修正+验证器</td>
+<td>无需显式通信的零样本协作</td>
+<td>零样本协调</td>
+<td><a href="https://pku-proagent.github.io">https://pku-proagent.github.io</a></td>
+<td><a href="https://arxiv.org/html/2308.11339v3">https://arxiv.org/html/2308.11339v3</a></td>
+</tr>
+<tr>
+<td>9</td>
+<td>A-ToM</td>
+<td>2025/2026</td>
+<td>Adaptive Theory of Mind for LLM-based Multi-Agent Coordination</td>
+<td>动态评估伙伴ToM阶数并匹配自身递归深度</td>
+<td>解决ToM阶数错配协调崩溃</td>
+<td>多智能体协调</td>
+<td><a href="https://github.com/ChunjiangMonkey/Adaptive-ToM">https://github.com/ChunjiangMonkey/Adaptive-ToM</a></td>
+<td><a href="https://arxiv.org/html/2603.16264v1">https://arxiv.org/html/2603.16264v1</a></td>
+</tr>
+<tr>
+<td>10</td>
+<td>GIGO-ToM</td>
+<td>2024</td>
+<td>Machine Theory of Mind for Autonomous Cyber-Defence</td>
+<td>GNN推断攻击者意图+扩展Wasserstein距离</td>
+<td>图输入图输出对抗性ToM</td>
+<td>网络安全ToM</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>11</td>
+<td>MSGM</td>
+<td>Frontiers Neurosci. 2026</td>
+<td>MSGM: Multi-Scale Spatiotemporal Graph Mamba for EEG Emotion Recognition</td>
+<td>多尺度时空图+Mamba SSM，151ms边缘推理</td>
+<td>实时EEG情绪追踪</td>
+<td>情感计算</td>
+<td></td>
+<td><a href="https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2026.1665145/full">https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2026.1665145/full</a></td>
+</tr>
+<tr>
+<td>12</td>
+<td>Ex-NEGAT</td>
+<td>PMC 2025</td>
+<td>Lightweight explainable attention-based GNN for classifying ASD from dynamic FC</td>
+<td>高阶时空动态功能连接图注意力</td>
+<td>可解释ASD分类</td>
+<td>认知差异</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13</td>
+<td>TOMA</td>
+<td>JAIR</td>
+<td>TOMA: Computational Theory of Mind with Abstractions for Hybrid Intelligence</td>
+<td>社会规范/角色为触发器抽象个体信念</td>
+<td>可扩展混合智能ToM</td>
+<td>人机协作</td>
+<td></td>
+<td><a href="https://www.jair.org/index.php/jair/article/view/16402">https://www.jair.org/index.php/jair/article/view/16402</a></td>
+</tr>
+<tr>
+<td>14</td>
+<td>ToMAgent</td>
+<td>2025</td>
+<td>Infusing Theory of Mind into Socially Intelligent LLM Agents</td>
+<td>prompt显式化+记忆模块+神经符号验证</td>
+<td>多策略LLM-Agent ToM增强</td>
+<td>社交Agent</td>
+<td></td>
+<td><a href="https://arxiv.org/html/2509.22887v1">https://arxiv.org/html/2509.22887v1</a></td>
+</tr>
+<tr>
+<td>15</td>
+<td>Scallop</td>
+<td>2024</td>
+<td>Scallop（Datalog-based neurosymbolic programming）</td>
+<td>递归/否定Datalog+出处半环推理</td>
+<td>通用神经符号编程语言</td>
+<td>神经符号推理</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16</td>
+<td>Privacy Conflicts + ToM</td>
+<td>AAMAS 2025</td>
+<td>Mitigating Privacy Conflicts with Computational Theory of Mind</td>
+<td>ToM预测隐私偏好+博弈机制设计</td>
+<td>首个ToM+规范冲突解决</td>
+<td>隐私冲突</td>
+<td></td>
+<td><a href="https://www.ifaamas.org/Proceedings/aamas2025/pdfs/p695.pdf">https://www.ifaamas.org/Proceedings/aamas2025/pdfs/p695.pdf</a></td>
+</tr>
+<tr>
+<td>17</td>
+<td>ToM in LLMs Survey</td>
+<td>ACL 2025</td>
+<td>Theory of Mind in Large Language Models（综述）</td>
+<td>梳理CoT/角色扮演/微调等方法及构念效度</td>
+<td>指出prompt/微调不保证显式心理状态</td>
+<td>综述</td>
+<td></td>
+<td><a href="https://aclanthology.org/2025.acl-long.1522.pdf">https://aclanthology.org/2025.acl-long.1522.pdf</a></td>
+</tr>
+<tr>
+<td>18</td>
+<td>ToM Applied Domains</td>
+<td>2025 preprint</td>
+<td>Improving ToM Capabilities of LLMs in Applied Domains</td>
+<td>特定领域合成对话+标注微调</td>
+<td>领域专用ToM增强</td>
+<td>领域ToM</td>
+<td></td>
+<td><a href="https://www.preprints.org/manuscript/202502.1456">https://www.preprints.org/manuscript/202502.1456</a></td>
+</tr>
+<tr>
+<td>19</td>
+<td>NeSy AI综述</td>
+<td>IJCAI 2025</td>
+<td>Neuro-symbolic artificial intelligence（综述）</td>
+<td>LLM抽取→符号推理→双向交互</td>
+<td>最新NeSy全面综述</td>
+<td>综述</td>
+<td></td>
+<td><a href="https://dl.acm.org/doi/10.24963/ijcai.2025/1195">https://dl.acm.org/doi/10.24963/ijcai.2025/1195</a></td>
+</tr>
+<tr>
+<td>20</td>
+<td>CITMA</td>
+<td>2025</td>
+<td>The Challenge of Artificial Moral Agents to Human Exceptionalism</td>
+<td>具备ToM+约束推理的AI→真正道德主体性</td>
+<td>道德主体性计算身份理论</td>
+<td>理论框架</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="子问题二上下文敏感的多目标价值函数建模">子问题二：上下文敏感的多目标价值函数建模 </h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>方法名</th>
+<th>出处</th>
+<th>文献标题</th>
+<th>方法简介</th>
+<th>主要贡献</th>
+<th>适用任务</th>
+<th>开源代码</th>
+<th>论文链接</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>21</td>
+<td>Adaptive Alignment MORL</td>
+<td>OpenReview 2025</td>
+<td>Adaptive Alignment: Dynamic Preference Adjustments via MORL for Pluralistic AI</td>
+<td>MOMDP+Pareto前沿+动态效用函数后验选择</td>
+<td>首个动态偏好自适应MORL</td>
+<td>多目标RL</td>
+<td></td>
+<td><a href="https://openreview.net/pdf?id=KYrPaFeAyq">https://openreview.net/pdf?id=KYrPaFeAyq</a></td>
+</tr>
+<tr>
+<td>22</td>
+<td>Pluralistic Roadmap</td>
+<td>ICML 2024</td>
+<td>Position: A Roadmap to Pluralistic Alignment</td>
+<td>定义Overton/Steerable/Distributional三种多元主义</td>
+<td>多元对齐路线图</td>
+<td>理论框架</td>
+<td></td>
+<td><a href="https://arxiv.org/pdf/2402.05070">https://arxiv.org/pdf/2402.05070</a></td>
+</tr>
+<tr>
+<td>23</td>
+<td>MORLAIF</td>
+<td>2024</td>
+<td>Multi-objective Reinforcement learning from AI Feedback</td>
+<td>CAI分解为多原则偏好模型</td>
+<td>显式解耦多目标CAI</td>
+<td>RLAIF</td>
+<td></td>
+<td><a href="https://arxiv.org/html/2406.07295v2">https://arxiv.org/html/2406.07295v2</a></td>
+</tr>
+<tr>
+<td>24</td>
+<td>Temporal Pluralism</td>
+<td>2024, Toronto</td>
+<td>Pluralistic Alignment Over Time</td>
+<td>跨时间步交替满足不同利益相关者</td>
+<td>时间轴对齐公平性</td>
+<td>序贯决策</td>
+<td></td>
+<td><a href="https://www.cs.toronto.edu/~toryn/docs/KlassenPA2024time.pdf">https://www.cs.toronto.edu/~toryn/docs/KlassenPA2024time.pdf</a></td>
+</tr>
+<tr>
+<td>25</td>
+<td>PAL</td>
+<td>2024</td>
+<td>PAL: Pluralistic Alignment Framework for Learning from Heterogeneous Preferences</td>
+<td>理想点模型+度量学习替代BTL</td>
+<td>突破BTL同质偏好假设</td>
+<td>偏好学习</td>
+<td></td>
+<td><a href="https://arxiv.org/html/2406.08469v1">https://arxiv.org/html/2406.08469v1</a></td>
+</tr>
+<tr>
+<td>26</td>
+<td>Value as Semantics</td>
+<td>NeurIPS 2023</td>
+<td>Value as Semantics: Representations of Human Moral and Hedonic Value in LLMs</td>
+<td>对比嵌入提取道德/享乐向量</td>
+<td>揭示LLM道德-享乐纠缠</td>
+<td>表示工程</td>
+<td><a href="https://github.com/AIObjectives/value-semantics">https://github.com/AIObjectives/value-semantics</a></td>
+<td></td>
+</tr>
+<tr>
+<td>27</td>
+<td>Causal Value Graph</td>
+<td>2025, BIGAI</td>
+<td>Causal Graph Guided Steering of LLM Values via Prompts and SAEs</td>
+<td>PC算法→因果价值图→SAE精准操控</td>
+<td>首个因果图引导价值操控</td>
+<td>因果价值调控</td>
+<td></td>
+<td><a href="https://arxiv.org/html/2501.00581v1">https://arxiv.org/html/2501.00581v1</a></td>
+</tr>
+<tr>
+<td>28</td>
+<td>Structural Value Alignment</td>
+<td>ACL Findings 2025</td>
+<td>Are the Values of LLMs Structurally Aligned with Humans? A Causal Perspective</td>
+<td>PC+Fisher Z→LLM内部价值因果DAG</td>
+<td>RLHF后因果结构仍错位</td>
+<td>因果对齐评估</td>
+<td><a href="https://github.com/bigai-nlco/Look-Both-Ways-and-No-Sink">https://github.com/bigai-nlco/Look-Both-Ways-and-No-Sink</a></td>
+<td><a href="https://aclanthology.org/2025.findings-acl.1188.pdf">https://aclanthology.org/2025.findings-acl.1188.pdf</a></td>
+</tr>
+<tr>
+<td>29</td>
+<td>SAE Feature Steering</td>
+<td>2025</td>
+<td>Steerable Chatbots: Personalizing LLMs with Preference-Based Activation Steering</td>
+<td>SAE分解激活→推理时注入向量</td>
+<td>零微调推理时价值操控</td>
+<td>个性化对齐</td>
+<td></td>
+<td><a href="https://arxiv.org/html/2505.04260v2">https://arxiv.org/html/2505.04260v2</a></td>
+</tr>
+<tr>
+<td>30</td>
+<td>RLMC-MD</td>
+<td>2023, Maier et al.</td>
+<td>A RL Meta-Control Architecture Based on Dual-Process Theory of Moral Decision-Making</td>
+<td>MF-RL(义务论)+MB-RL(功利)+softmax元控制器</td>
+<td>首个仿生双过程道德RL</td>
+<td>道德决策RL</td>
+<td><a href="https://osf.io/j6fhk_v1">https://osf.io/j6fhk_v1</a></td>
+<td></td>
+</tr>
+<tr>
+<td>31</td>
+<td>Modular Pluralism</td>
+<td>EMNLP 2024</td>
+<td>Modular Pluralism: Pluralistic Alignment via Multi-LLM Collaboration</td>
+<td>Base LLM→Community LM池路由</td>
+<td>模块化多LLM多元对齐</td>
+<td>多元对齐</td>
+<td><a href="https://github.com/BunsenFeng/modular_pluralism">https://github.com/BunsenFeng/modular_pluralism</a></td>
+<td><a href="https://aclanthology.org/2024.emnlp-main.240.pdf">https://aclanthology.org/2024.emnlp-main.240.pdf</a></td>
+</tr>
+<tr>
+<td>32</td>
+<td>Pairwise Calibration</td>
+<td>2024, Halpern</td>
+<td>Pairwise Calibrated Rewards for Pluralistic Alignment</td>
+<td>K-ensemble奖励函数精确匹配标注者比例</td>
+<td>分布校准多元奖励</td>
+<td>分布奖励建模</td>
+<td></td>
+<td><a href="https://daniel-halpern.com/files/pairwise-calibration.pdf">https://daniel-halpern.com/files/pairwise-calibration.pdf</a></td>
+</tr>
+<tr>
+<td>33</td>
+<td>Steerable Pluralism</td>
+<td>2024</td>
+<td>Steerable Pluralism: Pluralistic Alignment via Few-Shot Comparative Regression</td>
+<td>少样本比较回归适配个体偏好</td>
+<td>少样本可操控对齐</td>
+<td>个性化对齐</td>
+<td><a href="https://github.com/ITM-Kitware/steerable-pluralism-llm-regression">https://github.com/ITM-Kitware/steerable-pluralism-llm-regression</a></td>
+<td></td>
+</tr>
+<tr>
+<td>34</td>
+<td>MORL for Value Systems</td>
+<td>2022/2025</td>
+<td>Multi-objective RL for provably incentivising alignment with value systems</td>
+<td>向量化道德reward+理论对齐保证</td>
+<td>形式化道德MORL理论</td>
+<td>道德MORL</td>
+<td></td>
+<td><a href="https://www.sciencedirect.com/science/article/pii/S0004370225001791">https://www.sciencedirect.com/science/article/pii/S0004370225001791</a></td>
+</tr>
+<tr>
+<td>35</td>
+<td>Learning Value Systems</td>
+<td>2026</td>
+<td>Learning the Value Systems of Societies with Preference-based MORL</td>
+<td>偏好反馈在线学习社会价值向量</td>
+<td>在线社会价值学习</td>
+<td>社会价值学习</td>
+<td></td>
+<td><a href="https://arxiv.org/html/2602.08835v1">https://arxiv.org/html/2602.08835v1</a></td>
+</tr>
+<tr>
+<td>36</td>
+<td>URM/URME</td>
+<td>ICLR 2025</td>
+<td>Uncertainty-aware Reward Model</td>
+<td>分布式reward+不确定性惩罚</td>
+<td>不确定性感知奖励建模</td>
+<td>RLHF</td>
+<td></td>
+<td><a href="https://arxiv.org/abs/2410.00847">https://arxiv.org/abs/2410.00847</a></td>
+</tr>
+<tr>
+<td>37</td>
+<td>Moral Compass Steering</td>
+<td>2025</td>
+<td>Exploring and Steering the Moral Compass of LLMs</td>
+<td>LLM偏向义务论/功利主义可操控性</td>
+<td>道德罗盘可操控实证</td>
+<td>价值操控</td>
+<td></td>
+<td><a href="https://dl.acm.org/doi/10.1007/978-3-031-88223-4_30">https://dl.acm.org/doi/10.1007/978-3-031-88223-4_30</a></td>
+</tr>
+<tr>
+<td>38</td>
+<td>Moral Alignment Agents</td>
+<td>2024/2025</td>
+<td>Moral Alignment for LLM Agents</td>
+<td>LLM-Agent在RL中的道德对齐</td>
+<td>Agent级道德对齐</td>
+<td>Agent对齐</td>
+<td></td>
+<td><a href="https://arxiv.org/abs/2410.01639">https://arxiv.org/abs/2410.01639</a></td>
+</tr>
+<tr>
+<td>39</td>
+<td>AI vs Human Moral</td>
+<td>PMC 2025</td>
+<td>Comparing AI and Human Moral Reasoning: Context-Sensitive Patterns</td>
+<td>跨文化/情境道德评价差异实证</td>
+<td>context→weight映射必要性</td>
+<td>跨文化比较</td>
+<td></td>
+<td><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12832734/">https://pmc.ncbi.nlm.nih.gov/articles/PMC12832734/</a></td>
+</tr>
+<tr>
+<td>40</td>
+<td>Reflective Verbal Reward</td>
+<td>EMNLP/IJCAI 2025</td>
+<td>Reflective Verbal Reward Design for Pluralistic Alignment</td>
+<td>反思性语言奖励多元对齐</td>
+<td>语言级多元对齐</td>
+<td>多元对齐</td>
+<td></td>
+<td><a href="https://aclanthology.org/2025.emnlp-main.1301.pdf">https://aclanthology.org/2025.emnlp-main.1301.pdf</a></td>
+</tr>
+<tr>
+<td>41</td>
+<td>DPO</td>
+<td>NeurIPS 2023</td>
+<td>Direct Preference Optimization</td>
+<td>KL约束RLHF→直接偏好损失</td>
+<td>RL对齐简化为类监督学习</td>
+<td>LLM对齐</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>42</td>
+<td>IPO</td>
+<td>2024</td>
+<td>Identity Preference Optimization</td>
+<td>MSE损失替代Sigmoid防过拟合</td>
+<td>更强正则化</td>
+<td>LLM对齐</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>43</td>
+<td>KTO</td>
+<td>2024</td>
+<td>Kahneman-Tversky Optimization</td>
+<td>前景理论+非配对二元反馈</td>
+<td>打破成对数据依赖</td>
+<td>LLM对齐</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>44</td>
+<td>CAI</td>
+<td>2022/2023, Anthropic</td>
+<td>Constitutional AI</td>
+<td>宪法式自我批判→修正→SFT+RLAIF</td>
+<td>显式原则编码</td>
+<td>安全对齐</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>45</td>
+<td>C3AI + ICAI</td>
+<td>2025</td>
+<td>C3AI框架与反向宪法</td>
+<td>系统构建/逆向提取价值原则</td>
+<td>宪法系统化构建与逆向分析</td>
+<td>宪法构建</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>46</td>
+<td>Weak-to-Strong</td>
+<td>2024, OpenAI</td>
+<td>Weak-to-Strong Generalization</td>
+<td>弱监督者引导强模型</td>
+<td>不需完美道德人来训练</td>
+<td>超人对齐</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>47</td>
+<td>SCoRe</td>
+<td>ICLR 2025</td>
+<td>Training Language Models to Self-Correct via RL</td>
+<td>多轮修正数据集+RL训练</td>
+<td>内生自我修正</td>
+<td>自我修正</td>
+<td></td>
+<td><a href="https://proceedings.iclr.cc/paper_files/paper/2025/file/871ac99fdc5282d0301934d23945ebaa-Paper-Conference.pdf">https://proceedings.iclr.cc/paper_files/paper/2025/file/871ac99fdc5282d0301934d23945ebaa-Paper-Conference.pdf</a></td>
+</tr>
+<tr>
+<td>48</td>
+<td>MAD</td>
+<td>ACL 2025</td>
+<td>Multiple LLM Agents Debate for Equitable Cultural Alignment</td>
+<td>多角色辩论→信念修正→共识</td>
+<td>减少幻觉+文化公平</td>
+<td>文化对齐</td>
+<td></td>
+<td><a href="https://aclanthology.org/2025.acl-long.1210.pdf">https://aclanthology.org/2025.acl-long.1210.pdf</a></td>
+</tr>
+<tr>
+<td>49</td>
+<td>LIVS</td>
+<td>ICML 2025</td>
+<td>LIVS: A Pluralistic Alignment Dataset for Inclusive Public Spaces</td>
+<td>万级比较×6标准，交叉人口统计</td>
+<td>城市多准则多元数据</td>
+<td>多准则DPO</td>
+<td></td>
+<td><a href="https://icml.cc/virtual/2025/poster/45204">https://icml.cc/virtual/2025/poster/45204</a></td>
+</tr>
+<tr>
+<td>50</td>
+<td>Universalization</td>
+<td>PNAS 2020</td>
+<td>The logic of universalization guides moral judgment</td>
+<td>康德普遍化→随机效用函数</td>
+<td>道义论可计算化</td>
+<td>道德判断建模</td>
+<td></td>
+<td><a href="https://www.pnas.org/doi/10.1073/pnas.2014505117">https://www.pnas.org/doi/10.1073/pnas.2014505117</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="子问题三社会规范表征与违规检测">子问题三：社会规范表征与违规检测 </h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>方法名</th>
+<th>出处</th>
+<th>文献标题</th>
+<th>方法简介</th>
+<th>主要贡献</th>
+<th>适用任务</th>
+<th>开源代码</th>
+<th>论文链接</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>51</td>
+<td>Social Chemistry 101</td>
+<td>EMNLP 2020</td>
+<td>Social Chemistry 101: Learning to Reason about Social and Moral Norms</td>
+<td>292K RoT×12维×4.5M标注</td>
+<td>首个大规模社会规范形式化</td>
+<td>规范推理</td>
+<td></td>
+<td><a href="https://aclanthology.org/2020.emnlp-main.48.pdf">https://aclanthology.org/2020.emnlp-main.48.pdf</a></td>
+</tr>
+<tr>
+<td>52</td>
+<td>NormBank</td>
+<td>ACL 2023</td>
+<td>NormBank: A Knowledge Bank of Situational Social Norms</td>
+<td>155K规范+SCENE分类法，非单调推理</td>
+<td>首个可废止推理情境规范库</td>
+<td>非单调规范</td>
+<td><a href="https://github.com/SALT-NLP/normbank">https://github.com/SALT-NLP/normbank</a></td>
+<td><a href="https://aclanthology.org/2023.acl-long.429.pdf">https://aclanthology.org/2023.acl-long.429.pdf</a></td>
+</tr>
+<tr>
+<td>53</td>
+<td>Delphi</td>
+<td>AI2 / Nature MI 2025</td>
+<td>Investigating machine moral judgement through the Delphi experiment</td>
+<td>大规模标注训练的神经道德判断模型</td>
+<td>大规模机器道德判断分析</td>
+<td>道德判断</td>
+<td></td>
+<td><a href="https://www.nature.com/articles/s42256-024-00969-6">https://www.nature.com/articles/s42256-024-00969-6</a></td>
+</tr>
+<tr>
+<td>54</td>
+<td>OPO</td>
+<td>2024</td>
+<td>On-the-fly Preference Optimization / Align on the Fly</td>
+<td>外部记忆存储法律/道德嵌入→实时检索</td>
+<td>无需微调流式规范对齐</td>
+<td>实时对齐</td>
+<td><a href="https://github.com/GAIR-NLP/OPO">https://github.com/GAIR-NLP/OPO</a></td>
+<td></td>
+</tr>
+<tr>
+<td>55</td>
+<td>LINC</td>
+<td>EMNLP 2023</td>
+<td>LINC: A Neurosymbolic Approach for Logical Reasoning</td>
+<td>LLM→一阶逻辑→Prover9</td>
+<td>演绎推理卸载到符号系统</td>
+<td>逻辑推理</td>
+<td></td>
+<td><a href="https://aclanthology.org/2023.emnlp-main.313.pdf">https://aclanthology.org/2023.emnlp-main.313.pdf</a></td>
+</tr>
+<tr>
+<td>56</td>
+<td>VSA+LLM</td>
+<td>EMNLP 2025</td>
+<td>Improving Rule-based Reasoning in LLMs using Vector Symbolic Algebras</td>
+<td>LLM隐状态→向量符号代数，损失降88.6%</td>
+<td>神经符号无缝融合</td>
+<td>规则推理</td>
+<td></td>
+<td><a href="https://aclanthology.org/2025.emnlp-main.1556.pdf">https://aclanthology.org/2025.emnlp-main.1556.pdf</a></td>
+</tr>
+<tr>
+<td>57</td>
+<td>Defeasible Logic</td>
+<td>2005/2025</td>
+<td>Ethical Decision-Making in AI: A Logic Programming Approach</td>
+<td>严格规则+可废止规则+挫败者</td>
+<td>社会规范例外形式化</td>
+<td>法律/道德推理</td>
+<td></td>
+<td><a href="https://www.mdpi.com/2673-2688/5/4/130">https://www.mdpi.com/2673-2688/5/4/130</a></td>
+</tr>
+<tr>
+<td>58</td>
+<td>GEMS</td>
+<td>2024</td>
+<td>Rethinking LLM Human Simulation: When a Graph is What You Need</td>
+<td>异构图链接预测，参数量少10³</td>
+<td>极低代价匹配LLM人类模拟</td>
+<td>行为模拟</td>
+<td></td>
+<td><a href="https://arxiv.org/html/2511.02135v1">https://arxiv.org/html/2511.02135v1</a></td>
+</tr>
+<tr>
+<td>59</td>
+<td>LinguGKD</td>
+<td>AAAI 2025</td>
+<td>LLM Meets GNN in Knowledge Distillation</td>
+<td>LLM图指令微调→对比蒸馏→GNN</td>
+<td>LLM语义→GNN结构迁移</td>
+<td>文本属性图</td>
+<td></td>
+<td><a href="https://ojs.aaai.org/index.php/AAAI/article/view/33901/36056">https://ojs.aaai.org/index.php/AAAI/article/view/33901/36056</a></td>
+</tr>
+<tr>
+<td>60</td>
+<td>GNN-RAG</td>
+<td>2024</td>
+<td>GNN-RAG: Combining LLM Understanding with GNN Reasoning in RAG</td>
+<td>GNN推理最短逻辑路径→LLM上下文</td>
+<td>无需参数更新的复杂推理</td>
+<td>知识图谱QA</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>61</td>
+<td>HiRAG</td>
+<td>EMNLP Findings 2025</td>
+<td>HiRAG（层次化RAG）</td>
+<td>层次知识结构对齐认知层级</td>
+<td>增强语义对齐</td>
+<td>层次检索</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>62</td>
+<td>ILP/Social Integrity</td>
+<td>2007</td>
+<td>Inducing Declarative Logic-Based Models from Labeled Traces</td>
+<td>从行为日志归纳前向链规则</td>
+<td>从执行迹发现规范</td>
+<td>行为规范发现</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>63</td>
+<td>CCKG</td>
+<td>EACL 2026</td>
+<td>Cultural Commonsense Knowledge Graph Extraction</td>
+<td>LLM→跨文化常识/规范图谱</td>
+<td>跨文化规范KG自动构建</td>
+<td>文化规范</td>
+<td></td>
+<td><a href="https://aclanthology.org/2026.eacl-long.295.pdf">https://aclanthology.org/2026.eacl-long.295.pdf</a></td>
+</tr>
+<tr>
+<td>64</td>
+<td>AFEC</td>
+<td>2025</td>
+<td>AFEC: A KG capturing social intelligence in casual conversation</td>
+<td>对话中情绪/共情/规范内化KG</td>
+<td>对话型社交智能结构化</td>
+<td>对话规范</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>65</td>
+<td>Normative Eval LLMs</td>
+<td>ACM 2025</td>
+<td>Normative Evaluation of LLMs with Everyday Moral Dilemmas</td>
+<td>日常道德困境规范评估</td>
+<td>日常道德评估方法</td>
+<td>道德评估</td>
+<td></td>
+<td><a href="https://dl.acm.org/doi/full/10.1145/3715275.3732044">https://dl.acm.org/doi/full/10.1145/3715275.3732044</a></td>
+</tr>
+<tr>
+<td>66</td>
+<td>Implicit Values</td>
+<td>EMNLP 2025</td>
+<td>Implicit Values Embedded in How Humans and LLMs Complete Text</td>
+<td>从LLM补全抽取隐含规范/价值</td>
+<td>自动隐含价值抽取</td>
+<td>价值抽取</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>67</td>
+<td>GNN Local Culture</td>
+<td>2024</td>
+<td>Using GNNs to predict local culture</td>
+<td>GNN预测社会网络局部文化</td>
+<td>GNN社会结构表达力</td>
+<td>社会行为预测</td>
+<td></td>
+<td><a href="https://journals.sagepub.com/doi/abs/10.1177/23998083241262053">https://journals.sagepub.com/doi/abs/10.1177/23998083241262053</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="子问题四道德不确定性下的决策">子问题四：道德不确定性下的决策 </h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>方法名</th>
+<th>出处</th>
+<th>文献标题</th>
+<th>方法简介</th>
+<th>主要贡献</th>
+<th>适用任务</th>
+<th>开源代码</th>
+<th>论文链接</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>68</td>
+<td>MEC</td>
+<td>2020, MacAskill et al.</td>
+<td>Uncertain Values: An Axiomatic Approach to Axiological Uncertainty</td>
+<td>概率加权多理论choiceworthiness聚合</td>
+<td>元规范决策理论奠基</td>
+<td>道德不确定性</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>69</td>
+<td>Variance Normalization</td>
+<td>Lloyd</td>
+<td>Moral uncertainty, expected choiceworthiness, and variance normalization</td>
+<td>方差归一化解决跨理论比较</td>
+<td>揭示参考集依赖缺陷</td>
+<td>跨理论聚合</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>70</td>
+<td>Moral Parliament</td>
+<td>Bostrom/Ord等</td>
+<td>A Bargaining-Theoretic Approach to Moral Uncertainty</td>
+<td>道德理论→议会代表，谈判/道德贸易</td>
+<td>协商博弈解决不确定性</td>
+<td>多框架协商</td>
+<td></td>
+<td><a href="https://brill.com/view/journals/jmp/21/1-2/article-p127_006.xml">https://brill.com/view/journals/jmp/21/1-2/article-p127_006.xml</a></td>
+</tr>
+<tr>
+<td>71</td>
+<td>RL Under Moral Unc.</td>
+<td>ICML 2021</td>
+<td>Reinforcement Learning Under Moral Uncertainty</td>
+<td>多理论choiceworthiness函数+多Q值</td>
+<td>首个道德不确定性RL</td>
+<td>强化学习</td>
+<td></td>
+<td><a href="https://proceedings.mlr.press/v139/ecoffet21a.html">https://proceedings.mlr.press/v139/ecoffet21a.html</a></td>
+</tr>
+<tr>
+<td>72</td>
+<td>UCB-MU</td>
+<td>2024</td>
+<td>Online Decision-Making under Moral Uncertainty</td>
+<td>MAB+跨理论方差风险惩罚</td>
+<td>首个算法化道德对冲MAB</td>
+<td>在线决策</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>73</td>
+<td>AMP</td>
+<td>2023</td>
+<td>Automated Parliaments: A Solution to Decision Uncertainty and Misalignment in LMs</td>
+<td>LLM分区多框架代表×Generator/Modifier/Evaluator</td>
+<td>首个自动化道德议会</td>
+<td>多框架审议</td>
+<td></td>
+<td><a href="https://arxiv.org/pdf/2311.10098">https://arxiv.org/pdf/2311.10098</a></td>
+</tr>
+<tr>
+<td>74</td>
+<td>GRACE/RBAMA</td>
+<td>2025</td>
+<td>Breaking Up with Normatively Monolithic Agency with GRACE</td>
+<td>道义逻辑MM+RL DMM+Guard</td>
+<td>首个分离规范与工具优化的NeSy架构</td>
+<td>安全伦理对齐</td>
+<td></td>
+<td><a href="https://arxiv.org/html/2601.10520v1">https://arxiv.org/html/2601.10520v1</a></td>
+</tr>
+<tr>
+<td>75</td>
+<td>CCAI</td>
+<td>FAccT 2024</td>
+<td>Collective Constitutional AI: Aligning a LM with Public Input</td>
+<td>Polis聚合公众偏好→宪法→RLHF</td>
+<td>民主化AI宪法制定</td>
+<td>宪法式对齐</td>
+<td><a href="https://github.com/collect-intel/osccai">https://github.com/collect-intel/osccai</a></td>
+<td><a href="https://arxiv.org/html/2406.07814v1">https://arxiv.org/html/2406.07814v1</a></td>
+</tr>
+<tr>
+<td>76</td>
+<td>SPICA</td>
+<td>ACL Findings 2025</td>
+<td>SPICA: Retrieving Scenarios for Pluralistic In-Context Alignment</td>
+<td>共享场景+群体检索恢复二阶规范</td>
+<td>上下文多元对齐检索</td>
+<td>上下文对齐</td>
+<td><a href="https://github.com/Social-Futures-Lab/SPICA-code">https://github.com/Social-Futures-Lab/SPICA-code</a></td>
+<td><a href="https://aclanthology.org/2025.findings-acl.41.pdf">https://aclanthology.org/2025.findings-acl.41.pdf</a></td>
+</tr>
+<tr>
+<td>77</td>
+<td>MoralUncertainty LLM</td>
+<td>2025</td>
+<td>Dropouts in Confidence: Moral Uncertainty in Human-LLM Alignment</td>
+<td>Attention-dropout量化道德不确定性</td>
+<td>首个dropout道德不确定性量化</td>
+<td>不确定性量化</td>
+<td><a href="https://github.com/jeakwon/MoralUncertainty">https://github.com/jeakwon/MoralUncertainty</a></td>
+<td><a href="https://arxiv.org/html/2511.13290v1">https://arxiv.org/html/2511.13290v1</a></td>
+</tr>
+<tr>
+<td>78</td>
+<td>Edge Alignment</td>
+<td>2025</td>
+<td>Position: General Alignment Has Hit a Ceiling; Edge Alignment Must Be Taken Seriously</td>
+<td>通用对齐结构性天花板</td>
+<td>提出边缘对齐概念</td>
+<td>对齐理论</td>
+<td></td>
+<td><a href="https://arxiv.org/html/2602.20042v1">https://arxiv.org/html/2602.20042v1</a></td>
+</tr>
+<tr>
+<td>79</td>
+<td>Moral Parliament Tool</td>
+<td>Rethink Priorities</td>
+<td>Rethink Priorities' Moral Parliament Tool</td>
+<td>可配置议会工具(Nash/Borda/Approval)</td>
+<td>实用道德议会模拟</td>
+<td>资源分配</td>
+<td><a href="https://github.com/rethinkpriorities/moral-parliament">https://github.com/rethinkpriorities/moral-parliament</a></td>
+<td></td>
+</tr>
+<tr>
+<td>80</td>
+<td>MEDRO</td>
+<td>NeurIPS 2025</td>
+<td>Multi-Expert DRO for OOD Generalization</td>
+<td>共享提取器+环境专家头DRO</td>
+<td>多专家DRO映射道德议会</td>
+<td>OOD泛化</td>
+<td></td>
+<td><a href="https://neurips.cc/virtual/2025/poster/118509">https://neurips.cc/virtual/2025/poster/118509</a></td>
+</tr>
+<tr>
+<td>81</td>
+<td>Moralmathics</td>
+<td>2024</td>
+<td>Moralmathics: An Axiomatic Foundation for Ethical AI</td>
+<td>道德值→嵌入空间正交子空间假说</td>
+<td>道德几何向量化理论</td>
+<td>表示工程</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>82</td>
+<td>Fanaticism Problem</td>
+<td>AAAI 2024</td>
+<td>Moral Uncertainty and the Problem of Fanaticism</td>
+<td>k-trimmed mean/Highest Median替代MEC</td>
+<td>解决极端理论劫持</td>
+<td>理论聚合</td>
+<td></td>
+<td><a href="https://ojs.aaai.org/index.php/AAAI/article/view/29971/31701">https://ojs.aaai.org/index.php/AAAI/article/view/29971/31701</a></td>
+</tr>
+<tr>
+<td>83</td>
+<td>Computer Says IDK</td>
+<td>2021, Martinho</td>
+<td>Computer Says I Don't Know</td>
+<td>潜类选择模型聚类道德异质性</td>
+<td>用潜类编码社会道德异质性</td>
+<td>道德偏好建模</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>84</td>
+<td>AI Safety via Debate</td>
+<td>Irving et al.</td>
+<td>AI Safety via Debate</td>
+<td>结构化对抗辩论</td>
+<td>对抗辩论可扩展监督</td>
+<td>安全监督</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>85</td>
+<td>Deep-TEMPEST</td>
+<td>2024/2025</td>
+<td>Deep-TEMPEST</td>
+<td>树搜索+极小化评估LLM安全边界</td>
+<td>对抗道德边界映射</td>
+<td>对抗安全</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>86</td>
+<td>Moral Unc. + LLMs RL</td>
+<td>2025</td>
+<td>Addressing Moral Uncertainty using LLMs for Ethical Decision-Making</td>
+<td>LLM伦理顾问→RL多框架评估</td>
+<td>首个LLM道德不确定性RL</td>
+<td>道德不确定性RL</td>
+<td></td>
+<td><a href="https://arxiv.org/abs/2503.05724">https://arxiv.org/abs/2503.05724</a></td>
+</tr>
+<tr>
+<td>87</td>
+<td>AI Safety Requires Unc.</td>
+<td>2025</td>
+<td>Why AI Safety Requires Uncertainty, Incomplete Preferences, and...</td>
+<td>精细贝叶斯处理不完全偏好</td>
+<td>moral credence学习理论基础</td>
+<td>AI安全理论</td>
+<td></td>
+<td><a href="https://arxiv.org/html/2512.23508v1">https://arxiv.org/html/2512.23508v1</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="子问题五社会智能评测的构念效度与方法论">子问题五：社会智能评测的构念效度与方法论 </h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>方法名</th>
+<th>出处</th>
+<th>文献标题</th>
+<th>方法简介</th>
+<th>主要贡献</th>
+<th>适用任务</th>
+<th>开源代码</th>
+<th>论文链接</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>88</td>
+<td>Moral Competence 5D</td>
+<td>2025/2026</td>
+<td>Discerning What Matters: A Multi-Dimensional Assessment of Moral Competence in LLMs</td>
+<td>五维过程级：特征→权重→理由→判断→缺口</td>
+<td>"判决预测"→"过程级能力"</td>
+<td>道德能力评估</td>
+<td></td>
+<td><a href="https://arxiv.org/html/2506.13082v4">https://arxiv.org/html/2506.13082v4</a></td>
+</tr>
+<tr>
+<td>89</td>
+<td>Construct Validity LLM</td>
+<td>NeurIPS 2025</td>
+<td>Measuring What Matters: Construct Validity in LLM Benchmarks</td>
+<td>审查445个基准，半数缺构念定义</td>
+<td>首个大规模构念效度审查</td>
+<td>基准方法论</td>
+<td></td>
+<td><a href="https://arxiv.org/html/2511.04703v1">https://arxiv.org/html/2511.04703v1</a></td>
+</tr>
+<tr>
+<td>90</td>
+<td>Construct Validity ML</td>
+<td>2025</td>
+<td>Construct Validity for Evaluating Machine Learning Models</td>
+<td>内容/区分/结果效度框架</td>
+<td>ML评估方法论</td>
+<td>方法论</td>
+<td></td>
+<td><a href="https://arxiv.org/html/2510.23191v1">https://arxiv.org/html/2510.23191v1</a></td>
+</tr>
+<tr>
+<td>91</td>
+<td>Trust AI Benchmarks</td>
+<td>AIES 2025</td>
+<td>Can We Trust AI Benchmarks? An Interdisciplinary Review</td>
+<td>跨学科审查基准缺陷</td>
+<td>living benchmark指导</td>
+<td>方法论</td>
+<td></td>
+<td><a href="https://ojs.aaai.org/index.php/AIES/article/view/36595">https://ojs.aaai.org/index.php/AIES/article/view/36595</a></td>
+</tr>
+<tr>
+<td>92</td>
+<td>Facsimile Problem</td>
+<td>2026</td>
+<td>The Facsimile Problem: Why AI Needs Architecture-Level ASI</td>
+<td>AI模仿道德审议但无结构性承诺</td>
+<td>架构级对齐必要性</td>
+<td>对齐理论</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>93</td>
+<td>MoCa</td>
+<td>NeurIPS 2023</td>
+<td>MoCa: Measuring Human-LM Alignment on Causal and Moral Judgment Tasks</td>
+<td>AMCE映射因子级权重差异</td>
+<td>首个因子级因果道德对齐分析</td>
+<td>因果道德对齐</td>
+<td></td>
+<td><a href="https://web.stanford.edu/~cpiech/bio/papers/moca.pdf">https://web.stanford.edu/~cpiech/bio/papers/moca.pdf</a></td>
+</tr>
+<tr>
+<td>94</td>
+<td>Representational Alignment</td>
+<td>2023/2024</td>
+<td>Getting aligned on representational alignment</td>
+<td>锚点相对嵌入消除歧义的跨架构比较</td>
+<td>从内部几何验证构念获取</td>
+<td>表征对齐</td>
+<td></td>
+<td><a href="https://arxiv.org/html/2310.13018v3">https://arxiv.org/html/2310.13018v3</a></td>
+</tr>
+<tr>
+<td>95</td>
+<td>Learning Human-like Repr.</td>
+<td>NeurIPS 2024</td>
+<td>Learning Human-like Representations to Enable Learning Human Values</td>
+<td>表征对齐→MAB中更安全学习价值</td>
+<td>表征对齐→价值安全因果链</td>
+<td>价值学习</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>96</td>
+<td>Cost Insensitivity</td>
+<td>2023, Mao et al.</td>
+<td>Doing the right thing for the right reason: Probing cost insensitivity</td>
+<td>递增利他代价量化内在道德动机</td>
+<td>首个内在道德vs工具理性探针</td>
+<td>道德动机检测</td>
+<td></td>
+<td><a href="https://arxiv.org/pdf/2305.18269">https://arxiv.org/pdf/2305.18269</a></td>
+</tr>
+<tr>
+<td>97</td>
+<td>Brain-Score</td>
+<td>bioRxiv 2018/MIT</td>
+<td>Brain-Score: Which ANN for Object Recognition is most Brain-Like?</td>
+<td>多子任务复合评分+安全管线</td>
+<td>类脑评估平台范式</td>
+<td>平台架构</td>
+<td></td>
+<td><a href="https://www.biorxiv.org/content/10.1101/407007v1">https://www.biorxiv.org/content/10.1101/407007v1</a></td>
+</tr>
+<tr>
+<td>98</td>
+<td>Net2Brain</td>
+<td>Frontiers 2025</td>
+<td>Net2Brain: A toolbox to compare vision models with brain responses</td>
+<td>Brain-Score模块化扩展</td>
+<td>模块化插件架构</td>
+<td>平台工具</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>99</td>
+<td>py-irt</td>
+<td>INFORMS 2022</td>
+<td>py-irt: A Scalable IRT Library for Python</td>
+<td>3PL模型+潜在能力估计</td>
+<td>AI心理测量基础设施</td>
+<td>心理测量</td>
+<td></td>
+<td><a href="https://pubsonline.informs.org/doi/10.1287/ijoc.2022.1250">https://pubsonline.informs.org/doi/10.1287/ijoc.2022.1250</a></td>
+</tr>
+<tr>
+<td>100</td>
+<td>CAT4AI</td>
+<td>2025, USTC</td>
+<td>CAT4AI: Adaptive Testing Framework for AI Models</td>
+<td>在线表现动态选题</td>
+<td>AI首个完整CAT实现</td>
+<td>自适应评估</td>
+<td><a href="https://github.com/bigdata-ustc/CAT4AI">https://github.com/bigdata-ustc/CAT4AI</a></td>
+<td></td>
+</tr>
+<tr>
+<td>101</td>
+<td>AnaToM</td>
+<td>IJCNLP Findings 2025</td>
+<td>AnaToM: Dataset Generation for Evaluating ToM Reasoning</td>
+<td>结构化难度解剖ToM生成</td>
+<td>系统分析ToM难度来源</td>
+<td>ToM评估</td>
+<td></td>
+<td><a href="https://aclanthology.org/2025.findings-ijcnlp.14.pdf">https://aclanthology.org/2025.findings-ijcnlp.14.pdf</a></td>
+</tr>
+<tr>
+<td>102</td>
+<td>Testing ToM LLM+Human</td>
+<td>Nature HB 2024</td>
+<td>Testing theory of mind in large language models and humans</td>
+<td>控制语言复杂度分离ToM贡献</td>
+<td>严格能力解耦范式</td>
+<td>ToM评估</td>
+<td></td>
+<td><a href="https://www.nature.com/articles/s41562-024-01882-z">https://www.nature.com/articles/s41562-024-01882-z</a></td>
+</tr>
+<tr>
+<td>103</td>
+<td>PRIME</td>
+<td>2025</td>
+<td>The Convergent Ethics of AI? Analyzing Moral Foundation Priorities in LLMs</td>
+<td>MFQ+Kohlberg+后果/义务论</td>
+<td>多框架LLM道德评估</td>
+<td>道德评估</td>
+<td></td>
+<td><a href="https://arxiv.org/pdf/2504.19255">https://arxiv.org/pdf/2504.19255</a></td>
+</tr>
+<tr>
+<td>104</td>
+<td>LLM Ethics 3D</td>
+<td>Nature Sci. Rep. 2025</td>
+<td>LLM ethics benchmark: a three-dimensional assessment system</td>
+<td>三维度伦理评估</td>
+<td>结构化伦理评估</td>
+<td>伦理评估</td>
+<td></td>
+<td><a href="https://www.nature.com/articles/s41598-025-18489-7">https://www.nature.com/articles/s41598-025-18489-7</a></td>
+</tr>
+<tr>
+<td>105</td>
+<td>DIF for AI</td>
+<td>2024/2025</td>
+<td>fl-IRT-ing with Psychometrics to Improve NLP Bias Measurement</td>
+<td>DIF检测无关因素偏差</td>
+<td>DIF引入AI公平性</td>
+<td>心理测量</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>106</td>
+<td>SocialEval</td>
+<td>NAACL 2025</td>
+<td>SocialEval: Benchmarking Social Intelligence of Language Agents</td>
+<td>社会智能复合基准</td>
+<td>多维社会智能评估</td>
+<td>社会智能</td>
+<td><a href="https://github.com/thu-coai/SocialEval">https://github.com/thu-coai/SocialEval</a></td>
+<td><a href="https://aclanthology.org/2025.naacl-long.257.pdf">https://aclanthology.org/2025.naacl-long.257.pdf</a></td>
+</tr>
+<tr>
+<td>107</td>
+<td>SI-Bench</td>
+<td>2025</td>
+<td>SI-Bench: Benchmarking Social Intelligence of LLMs</td>
+<td>社会智能基准</td>
+<td>社会智能评测</td>
+<td>社会智能</td>
+<td></td>
+<td><a href="https://arxiv.org/html/2510.23182v1">https://arxiv.org/html/2510.23182v1</a></td>
+</tr>
+<tr>
+<td>108</td>
+<td>PacifAIst</td>
+<td>MDPI 2025</td>
+<td>The PacifAIst Benchmark: Do AIs Prioritize Human Survival?</td>
+<td>动态对抗living benchmark</td>
+<td>AI优先人类生存检测</td>
+<td>安全评估</td>
+<td></td>
+<td><a href="https://www.mdpi.com/2673-2688/6/10/256">https://www.mdpi.com/2673-2688/6/10/256</a></td>
+</tr>
+<tr>
+<td>109</td>
+<td>Decrypto</td>
+<td>OpenReview 2025</td>
+<td>The Decrypto Benchmark for Multi-Agent Reasoning and ToM</td>
+<td>揭示协调中词汇关联伪影</td>
+<td>多智能体ToM构念探针</td>
+<td>多智能体ToM</td>
+<td></td>
+<td><a href="https://openreview.net/forum?id=epfwDqw7wn">https://openreview.net/forum?id=epfwDqw7wn</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1 id="part-b-数据集四个维度">Part B 数据集（四个维度） </h1>
+<h2 id="维度一道德推理与伦理判断数据集">维度一：道德推理与伦理判断数据集 </h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>数据集名</th>
+<th>出处</th>
+<th>规模/模态</th>
+<th>主要任务</th>
+<th>语言</th>
+<th>链接</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>110</td>
+<td>ETHICS</td>
+<td>ICLR 2021</td>
+<td>134K+，文本</td>
+<td>五轴规范伦理分类</td>
+<td>En</td>
+<td><a href="https://github.com/hendrycks/ethics">https://github.com/hendrycks/ethics</a></td>
+</tr>
+<tr>
+<td>111</td>
+<td>Moral Machine</td>
+<td>MIT 2016/2023</td>
+<td>39.61M决策，文本+图</td>
+<td>跨文化道德偏好</td>
+<td>多语言</td>
+<td><a href="https://moralmachine.mit.edu">https://moralmachine.mit.edu</a></td>
+</tr>
+<tr>
+<td>112</td>
+<td>UniMoral</td>
+<td>ACL 2025</td>
+<td>1K–10K场景，文本</td>
+<td>多语言心理学道德推理</td>
+<td>6种语言</td>
+<td><a href="https://github.com/shivanik96/UniMoral">https://github.com/shivanik96/UniMoral</a></td>
+</tr>
+<tr>
+<td>113</td>
+<td>Scruples</td>
+<td>2021, AI2/UW</td>
+<td>~30K，文本</td>
+<td>现实道德可接受性</td>
+<td>En</td>
+<td></td>
+</tr>
+<tr>
+<td>114</td>
+<td>PSM Dilemmas</td>
+<td>2024/2025</td>
+<td>39模型×161轮，文本</td>
+<td>揭示偏好理论</td>
+<td>En</td>
+<td></td>
+</tr>
+<tr>
+<td>115</td>
+<td>Moral Stories</td>
+<td>2021, Dartmouth</td>
+<td>~12K叙事，文本</td>
+<td>规范/偏离识别</td>
+<td>En</td>
+<td><a href="https://huggingface.co/datasets/demelin/moral_stories">https://huggingface.co/datasets/demelin/moral_stories</a></td>
+</tr>
+<tr>
+<td>116</td>
+<td>Morables</td>
+<td>EMNLP 2025</td>
+<td>10K+，文本</td>
+<td>抽象道德原则排序</td>
+<td>En</td>
+<td><a href="https://aclanthology.org/2025.emnlp-main.1411">https://aclanthology.org/2025.emnlp-main.1411</a></td>
+</tr>
+<tr>
+<td>117</td>
+<td>MoralDial</td>
+<td>ACL 2023, 清华</td>
+<td>~5K+对话，文本</td>
+<td>多轮道德讨论</td>
+<td>En/Zh</td>
+<td><a href="https://aclanthology.org/2023.acl-long.123">https://aclanthology.org/2023.acl-long.123</a></td>
+</tr>
+<tr>
+<td>118</td>
+<td>C-VARC</td>
+<td>2025/2026</td>
+<td>250K+规则，文本</td>
+<td>中文价值建模/困境</td>
+<td>Zh</td>
+<td><a href="https://github.com/Beijing-AISI/C-VARC">https://github.com/Beijing-AISI/C-VARC</a></td>
+</tr>
+<tr>
+<td>119</td>
+<td>CMoralEval</td>
+<td>ACL Findings 2024</td>
+<td>30,388实例，文本</td>
+<td>中文道德场景QA</td>
+<td>Zh</td>
+<td><a href="https://aclanthology.org/2024.findings-acl.703">https://aclanthology.org/2024.findings-acl.703</a></td>
+</tr>
+<tr>
+<td>120</td>
+<td>Chinese SafetyQA</td>
+<td>ACL 2025</td>
+<td>2,000 QA，文本</td>
+<td>中文安全事实性</td>
+<td>Zh</td>
+<td><a href="https://aclanthology.org/2025.acl-long.732">https://aclanthology.org/2025.acl-long.732</a></td>
+</tr>
+<tr>
+<td>121</td>
+<td>ToolSafety</td>
+<td>EMNLP 2025</td>
+<td>多步场景，文本</td>
+<td>多步工具安全</td>
+<td>En</td>
+<td><a href="https://aclanthology.org/2025.emnlp-main.714">https://aclanthology.org/2025.emnlp-main.714</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="维度二价值观对齐评测数据集">维度二：价值观对齐评测数据集 </h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>数据集名</th>
+<th>出处</th>
+<th>规模/模态</th>
+<th>主要任务</th>
+<th>语言</th>
+<th>链接</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>122</td>
+<td>VAL-Bench</td>
+<td>2026</td>
+<td>115K配对，文本</td>
+<td>一致性追踪</td>
+<td>En</td>
+<td><a href="https://arxiv.org/abs/2510.05465">https://arxiv.org/abs/2510.05465</a></td>
+</tr>
+<tr>
+<td>123</td>
+<td>ValueBench</td>
+<td>ACL 2024</td>
+<td>44量表×453维，文本</td>
+<td>心理测量价值探测</td>
+<td>En</td>
+<td><a href="https://github.com/value4ai/valuebench">https://github.com/value4ai/valuebench</a></td>
+</tr>
+<tr>
+<td>124</td>
+<td>MVPBench</td>
+<td>2025</td>
+<td>24,020实例75国，文本</td>
+<td>地理-人口偏好对齐</td>
+<td>多语言</td>
+<td><a href="https://arxiv.org/html/2509.08022v1">https://arxiv.org/html/2509.08022v1</a></td>
+</tr>
+<tr>
+<td>125</td>
+<td>BBQ</td>
+<td>ACL 2022</td>
+<td>58,492行，文本</td>
+<td>偏见评估QA</td>
+<td>En</td>
+<td><a href="https://arxiv.org/abs/2110.08193">https://arxiv.org/abs/2110.08193</a></td>
+</tr>
+<tr>
+<td>126</td>
+<td>NEVU</td>
+<td>2026</td>
+<td>2,865文章，文本</td>
+<td>新闻价值归因</td>
+<td>En</td>
+<td><a href="https://arxiv.org/html/2603.17838v1">https://arxiv.org/html/2603.17838v1</a></td>
+</tr>
+<tr>
+<td>127</td>
+<td>CValues</td>
+<td>2023</td>
+<td>~2,100实例，文本</td>
+<td>中文安全/责任对齐</td>
+<td>Zh</td>
+<td><a href="https://huggingface.co/papers/2307.09705">https://huggingface.co/papers/2307.09705</a></td>
+</tr>
+<tr>
+<td>128</td>
+<td>MoralBench</td>
+<td>KDD/ACM 2024</td>
+<td>150K+场景，文本</td>
+<td>综合道德评测</td>
+<td>多语言</td>
+<td><a href="https://arxiv.org/abs/2406.04428">https://arxiv.org/abs/2406.04428</a></td>
+</tr>
+<tr>
+<td>129</td>
+<td>HHH Alignment</td>
+<td>2021起</td>
+<td>~1.5K+，文本</td>
+<td>三维偏好排序</td>
+<td>En</td>
+<td><a href="https://huggingface.co/datasets/HuggingFaceH4/hhh_alignment">https://huggingface.co/datasets/HuggingFaceH4/hhh_alignment</a></td>
+</tr>
+<tr>
+<td>130</td>
+<td>MFTCXplain</td>
+<td>EMNLP Findings 2025</td>
+<td>~3K推文，文本</td>
+<td>MFT道德解释+仇恨言论</td>
+<td>多语言</td>
+<td><a href="https://aclanthology.org/2025.findings-emnlp.851">https://aclanthology.org/2025.findings-emnlp.851</a></td>
+</tr>
+<tr>
+<td>131</td>
+<td>WVS</td>
+<td>1981–持续</td>
+<td>120+国家调查</td>
+<td>跨文化价值坐标</td>
+<td>多语言</td>
+<td><a href="https://worldvaluessurvey.org">https://worldvaluessurvey.org</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="维度三社会认知与社会智能数据集">维度三：社会认知与社会智能数据集 </h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>数据集名</th>
+<th>出处</th>
+<th>规模/模态</th>
+<th>主要任务</th>
+<th>语言</th>
+<th>链接</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>132</td>
+<td>SocialIQA</td>
+<td>EMNLP 2019</td>
+<td>38K QA，文本</td>
+<td>社会常识推理</td>
+<td>En</td>
+<td><a href="https://aclanthology.org/D19-1454/">https://aclanthology.org/D19-1454/</a></td>
+</tr>
+<tr>
+<td>133</td>
+<td>ExploreToM</td>
+<td>2024</td>
+<td>大规模生成，文本</td>
+<td>对抗性ToM</td>
+<td>En</td>
+<td><a href="https://arxiv.org/html/2412.12175v1">https://arxiv.org/html/2412.12175v1</a></td>
+</tr>
+<tr>
+<td>134</td>
+<td>FANToM</td>
+<td>EMNLP 2023</td>
+<td>~12K对话，文本</td>
+<td>多轮对话ToM</td>
+<td>En</td>
+<td><a href="https://arxiv.org/abs/2310.15421">https://arxiv.org/abs/2310.15421</a></td>
+</tr>
+<tr>
+<td>135</td>
+<td>ToMi</td>
+<td>2019</td>
+<td>~4K场景，文本</td>
+<td>错误信念任务</td>
+<td>En</td>
+<td></td>
+</tr>
+<tr>
+<td>136</td>
+<td>BigToM/HiToM</td>
+<td>2023/2024</td>
+<td>受控故事，文本</td>
+<td>零样本ToM</td>
+<td>En</td>
+<td></td>
+</tr>
+<tr>
+<td>137</td>
+<td>TIDE</td>
+<td>EMNLP 2025</td>
+<td>10K对话，文本</td>
+<td>PTSD共情对话</td>
+<td>En</td>
+<td><a href="https://aclanthology.org/2025.emnlp-main.1573">https://aclanthology.org/2025.emnlp-main.1573</a></td>
+</tr>
+<tr>
+<td>138</td>
+<td>HEART</td>
+<td>2026</td>
+<td>情绪支持对话，文本</td>
+<td>情感推理评估</td>
+<td>En</td>
+<td></td>
+</tr>
+<tr>
+<td>139</td>
+<td>SENSE-7</td>
+<td>2025</td>
+<td>695对话，文本</td>
+<td>共情感知</td>
+<td>En</td>
+<td></td>
+</tr>
+<tr>
+<td>140</td>
+<td>SocialMindChange</td>
+<td>2025</td>
+<td>动态演变，文本</td>
+<td>动态ToM(living)</td>
+<td>En</td>
+<td><a href="https://arxiv.org/html/2510.07974v1">https://arxiv.org/html/2510.07974v1</a></td>
+</tr>
+<tr>
+<td>141</td>
+<td>SoMi-ToM</td>
+<td>NeurIPS 2025</td>
+<td>Minecraft 3D</td>
+<td>具身多视角ToM</td>
+<td>En</td>
+<td><a href="https://github.com/XianzheFan/SoMi-ToM">https://github.com/XianzheFan/SoMi-ToM</a></td>
+</tr>
+<tr>
+<td>142</td>
+<td>ToMBench</td>
+<td>2024</td>
+<td>综合基准，文本</td>
+<td>多维ToM</td>
+<td>En</td>
+<td></td>
+</tr>
+<tr>
+<td>143</td>
+<td>CMU-MOSEI</td>
+<td>2018, CMU</td>
+<td>23K+片段，多模态</td>
+<td>情感分类+强度</td>
+<td>En</td>
+<td><a href="https://multicomp.cs.cmu.edu">https://multicomp.cs.cmu.edu</a></td>
+</tr>
+<tr>
+<td>144</td>
+<td>RAF-DB</td>
+<td>2017+</td>
+<td>30K+图像</td>
+<td>面部表情识别</td>
+<td>跨文化</td>
+<td><a href="https://whdeng.cn/RAF/">https://whdeng.cn/RAF/</a></td>
+</tr>
+<tr>
+<td>145</td>
+<td>EmpathicStories++</td>
+<td>ACL Findings 2024</td>
+<td>318min视音频+5380文本</td>
+<td>多模态共情</td>
+<td>En</td>
+<td></td>
+</tr>
+<tr>
+<td>146</td>
+<td>Decrypto</td>
+<td>OpenReview 2025</td>
+<td>多智能体对话</td>
+<td>协作推理+ToM</td>
+<td>En</td>
+<td><a href="https://openreview.net/forum?id=epfwDqw7wn">https://openreview.net/forum?id=epfwDqw7wn</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="维度四多模态及神经科学关联数据集">维度四：多模态及神经科学关联数据集 </h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>数据集名</th>
+<th>出处</th>
+<th>规模/模态</th>
+<th>主要任务</th>
+<th>链接</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>147</td>
+<td>MoMentS</td>
+<td>EMNLP Findings 2025</td>
+<td>168视频×2344QA，视频+文本</td>
+<td>长视频多模态ToM QA</td>
+<td><a href="https://github.com/villacu/MoMentS">https://github.com/villacu/MoMentS</a></td>
+</tr>
+<tr>
+<td>148</td>
+<td>MMToM-QA</td>
+<td>2024, MIT/UW</td>
+<td>600 QA，视频+文本</td>
+<td>多模态信念/目标推断</td>
+<td><a href="https://huggingface.co/datasets/Chuanyang-Jin/MMToM-QA">https://huggingface.co/datasets/Chuanyang-Jin/MMToM-QA</a></td>
+</tr>
+<tr>
+<td>149</td>
+<td>MuMA-ToM</td>
+<td>AAAI 2025 Oral</td>
+<td>1000视频，视频+文本</td>
+<td>多智能体逆规划ToM</td>
+<td><a href="https://github.com/SCAI-JHU/MuMA-ToM">https://github.com/SCAI-JHU/MuMA-ToM</a></td>
+</tr>
+<tr>
+<td>150</td>
+<td>OpenNeuro ds004067</td>
+<td>2022</td>
+<td>80被试，EEG</td>
+<td>道德判断神经时间基线</td>
+<td><a href="https://openneuro.org/datasets/ds004067">https://openneuro.org/datasets/ds004067</a></td>
+</tr>
+<tr>
+<td>151</td>
+<td>Spacetop</td>
+<td>Nature Sci.Data 2025</td>
+<td>101被试×6h，fMRI</td>
+<td>多任务自然范式fMRI</td>
+<td><a href="https://nature.com/articles/s41597-025-05154-x">https://nature.com/articles/s41597-025-05154-x</a></td>
+</tr>
+<tr>
+<td>152</td>
+<td>SoDec</td>
+<td>OpenNeuro ~2024</td>
+<td>60被试，fMRI</td>
+<td>责任/内疚脑区</td>
+<td><a href="https://openneuro.org/datasets/ds005588">https://openneuro.org/datasets/ds005588</a></td>
+</tr>
+<tr>
+<td>153</td>
+<td>Moral Decision EEG</td>
+<td>~2024</td>
+<td>~50被试，EEG</td>
+<td>道德决策ERP时程</td>
+<td><a href="https://pubmed/38294997">https://pubmed/38294997</a></td>
+</tr>
+<tr>
+<td>154</td>
+<td>EmoWork</td>
+<td>Nature Sci.Data 2025</td>
+<td>40人，视频+EEG+ECG+GSR</td>
+<td>工作场景情绪社交</td>
+<td><a href="https://nature.com/articles/s41597-025-06531-2">https://nature.com/articles/s41597-025-06531-2</a></td>
+</tr>
+<tr>
+<td>155</td>
+<td>OpenNeuro ds000171</td>
+<td>2018</td>
+<td>39被试，fMRI</td>
+<td>情感处理</td>
+<td></td>
+</tr>
+<tr>
+<td>156</td>
+<td>OpenNeuro ds006036</td>
+<td>2024</td>
+<td>多组EEG</td>
+<td>神经退行性认知社会加工</td>
+<td><a href="https://openneuro.org/datasets/ds006036">https://openneuro.org/datasets/ds006036</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<blockquote>
+<p><strong>全表统计：156 篇独立条目</strong></p>
+<ul>
+<li>Part A 方法学：109篇（子问题一 20 + 子问题二 30 + 子问题三 17 + 子问题四 20 + 子问题五 22）</li>
+<li>Part B 数据集：47项（维度一 12 + 维度二 10 + 维度三 15 + 维度四 10）</li>
+</ul>
+</blockquote>
+</div></body></html>
+    </div>
+  </body>
+</html>

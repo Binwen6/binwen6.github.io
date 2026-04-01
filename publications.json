@@ -23,14 +23,14 @@
         "Kaizhong Zheng†",
         "Badong Chen†"
       ],
-      "venue": "ICML 2026 (Submitted)",
+      "venue": "arXiv",
       "thumbnail": "images/thumbs/4.png",
       "selected": 1,
       "award": "",
       "links": {}
     },
     {
-      "title": "[Development and validation of an intraoperative ureter identification model based on convolutional neural network instance segmentation and laparoscopic colorectal surgical videos]",
+      "title": "[Deep Learning-based Real-time Ureter Localization: A Study in Laparoscopic Colorectal Surgery]",
       "authors": [
         "Hanhui Jing*",
         "Wensheng Zhai**",

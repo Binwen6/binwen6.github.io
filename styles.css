@@ -285,6 +285,61 @@ section {
   box-shadow: 0 2px 5px rgba(74, 116, 185, 0.2);
 }
 
+
+/* Project styles */
+.project-item {
+  margin-bottom: 1.25rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border-color);
+  transition: transform var(--transition-time) ease;
+}
+
+.project-item:hover {
+  transform: translateX(var(--animation-offset));
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.25rem;
+}
+
+.project-title {
+  font-weight: 500;
+  font-size: 1.05rem;
+  color: var(--text-color);
+  flex: 1;
+}
+
+.project-years {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  margin-left: 1rem;
+}
+
+.project-role {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  margin-bottom: 0.25rem;
+}
+
+.project-major {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--text-secondary);
+  margin-bottom: 0.4rem;
+  line-height: 1.4;
+}
+
+.project-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
 /* Awards section */
 .award-item {
   display: flex;

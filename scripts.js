@@ -6,6 +6,7 @@ let showingSelected = true;
 document.addEventListener('DOMContentLoaded', function() {
   // Load publications data
   loadPublications();
+  loadProjects();
   
   // Initialize animation delays for sections
   const sections = document.querySelectorAll('section');
@@ -39,6 +40,95 @@ function loadPublications() {
       // Create fallback publications display if JSON loading fails
       displayFallbackPublications();
     });
+}
+
+// Load projects from JSON file
+function loadProjects() {
+  fetch('projects.json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Network response was not ok: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log("Projects loaded successfully:", data);
+      renderProjects(data.projects, true);
+    })
+    .catch(error => {
+      console.error('Error loading projects:', error);
+      const container = document.getElementById('projects-container');
+      if (container) {
+          container.innerHTML = `Error loading projects.`;
+      }
+    });
+}
+
+// Render projects
+function renderProjects(projects, selectedOnly) {
+  const container = document.getElementById('projects-container');
+  if (!container) return;
+  
+  container.innerHTML = '';
+  
+  const projectsToShow = selectedOnly ? 
+    projects.filter(p => p.selected === 1) : 
+    projects;
+  
+  projectsToShow.forEach(project => {
+    const projectElement = createProjectElement(project);
+    container.appendChild(projectElement);
+  });
+}
+
+// Create HTML element for a project
+function createProjectElement(project) {
+  const projectItem = document.createElement('div');
+  projectItem.className = 'project-item';
+  
+  // Header with title and years
+  const header = document.createElement('div');
+  header.className = 'project-header';
+  
+  const title = document.createElement('div');
+  title.className = 'project-title';
+  title.textContent = project.title;
+  header.appendChild(title);
+  
+  if (project.years) {
+    const years = document.createElement('div');
+    years.className = 'project-years';
+    years.textContent = project.years;
+    header.appendChild(years);
+  }
+  
+  projectItem.appendChild(header);
+  
+  // Role
+  if (project.role) {
+    const role = document.createElement('div');
+    role.className = 'project-role';
+    role.textContent = project.role;
+    projectItem.appendChild(role);
+  }
+  
+  // Major Project
+  if (project.major_project) {
+    const major = document.createElement('div');
+    major.className = 'project-major';
+    major.textContent = project.major_project;
+    projectItem.appendChild(major);
+  }
+  
+  // Description
+  if (project.description) {
+    const desc = document.createElement('div');
+    desc.className = 'project-desc';
+    desc.textContent = project.description;
+    projectItem.appendChild(desc);
+  }
+  
+  return projectItem;
 }
 
 // Fallback if JSON loading fails

@@ -25,6 +25,25 @@ body {
   font-weight: 300;
 }
 
+.bg-quote {
+  position: absolute;
+  top: calc(2.8rem + 1.5rem);
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: clamp(1.2rem, 2.5vw, 2.2rem);
+  font-weight: 600;
+  font-style: italic;
+  color: var(--text-color);
+  opacity: 0.06;
+  z-index: -1;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+  overflow: hidden;
+}
+
 header {
   margin-bottom: 1.5rem;
   border-bottom: 1px solid var(--border-color);
@@ -69,19 +88,65 @@ h2 {
 }
 
 /* Navigation */
-nav {
-  margin-top: 1.5rem;
+#site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--bg-color);
+  border-bottom: 1px solid var(--border-color);
+  margin: 0 -1.5rem;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-nav ul {
+#site-nav ul {
   list-style: none;
   padding: 0;
+  margin: 0;
   display: flex;
-  flex-wrap: wrap;
-  gap: 1.25rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-nav a,
+#site-nav ul::-webkit-scrollbar {
+  display: none;
+}
+
+#site-nav ul li a {
+  display: block;
+  padding: 0.55rem 0.65rem;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color var(--transition-time) ease;
+}
+
+#site-nav ul li a:hover,
+#site-nav ul li a.active {
+  color: var(--accent-color);
+}
+
+.nav-blog-link {
+  flex-shrink: 0;
+  display: block;
+  padding: 0.55rem 0.65rem 0.55rem 1rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--accent-color);
+  text-decoration: none;
+  border-left: 1px solid var(--border-color);
+  white-space: nowrap;
+  transition: color var(--transition-time) ease;
+}
+
+.nav-blog-link:hover {
+  color: var(--accent-hover);
+}
+
 .social-links-header a {
   text-decoration: none;
   color: var(--text-secondary);
@@ -91,7 +156,6 @@ nav a,
   border-radius: 4px;
 }
 
-nav a:hover,
 .social-links-header a:hover {
   color: var(--accent-color);
   background-color: rgba(74, 116, 185, 0.08);
@@ -140,7 +204,7 @@ nav a:hover,
 
 section {
   margin-bottom: 2rem;
-  scroll-margin-top: 1rem;
+  scroll-margin-top: 2.5rem;
   animation: fadeIn 0.8s ease-out;
   width: 100%;
 }
@@ -503,6 +567,109 @@ strong {
   transform: scale(1.1);
 }
 
+/* Blog styles */
+.blog-page-header {
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1rem;
+}
+
+.blog-page-header h1 {
+  margin-bottom: 0.25rem;
+}
+
+.blog-back-link {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.blog-post {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+  animation: fadeIn 0.8s ease-out;
+}
+
+.blog-post:last-child {
+  border-bottom: none;
+}
+
+.blog-post-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 0.35rem;
+  color: var(--text-color);
+}
+
+.blog-post-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+
+.blog-post-date {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.blog-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.blog-tag {
+  font-size: 0.75rem;
+  padding: 0.1rem 0.5rem;
+  border-radius: 3px;
+  background-color: rgba(74, 116, 185, 0.08);
+  color: var(--accent-color);
+}
+
+.blog-post-summary {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 0.75rem;
+}
+
+.blog-post-content {
+  display: none;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--text-color);
+}
+
+.blog-post-content.expanded {
+  display: block;
+}
+
+.blog-post-content p {
+  margin: 0.5rem 0 0.75rem;
+}
+
+.blog-toggle {
+  font-size: 0.85rem;
+  color: var(--accent-color);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  transition: color var(--transition-time) ease;
+}
+
+.blog-toggle:hover {
+  color: var(--accent-hover);
+}
+
+.blog-empty {
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
 /* Responsive design fixes */
 @media (max-width: 768px) {
 
@@ -526,7 +693,6 @@ strong {
   .service-category:hover,
   .misc-item:hover,
   .news-list li:hover,
-  nav a:hover,
   .social-links-header a:hover,
   .pub-links a:hover {
     transform: none !important;

@@ -7,17 +7,33 @@ document.addEventListener('DOMContentLoaded', function() {
   // Load publications data
   loadPublications();
   loadProjects();
-  
+
   // Initialize animation delays for sections
   const sections = document.querySelectorAll('section');
   sections.forEach((section, index) => {
     section.style.animationDelay = `${index * 0.1}s`;
   });
-  
+
   // Add event listener for toggle button
   const toggleButton = document.getElementById('toggle-publications');
   if (toggleButton) {
     toggleButton.addEventListener('click', togglePublications);
+  }
+
+  // Highlight active nav link based on scroll position
+  const navLinks = document.querySelectorAll('#site-nav ul li a[href^="#"]');
+  if (navLinks.length > 0) {
+    const sectionEls = document.querySelectorAll('section[id]');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => {
+            link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+          });
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    sectionEls.forEach(s => observer.observe(s));
   }
 });
 

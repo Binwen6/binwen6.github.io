@@ -71,21 +71,15 @@ function createPostElement(post) {
     article.appendChild(summary);
   }
 
-  // Full content (collapsible)
-  if (post.content) {
-    const content = document.createElement('div');
-    content.className = 'blog-post-content';
-    content.innerHTML = post.content;
-    article.appendChild(content);
-
-    const toggle = document.createElement('button');
-    toggle.className = 'blog-toggle';
-    toggle.textContent = 'Read more';
-    toggle.addEventListener('click', () => {
-      const expanded = content.classList.toggle('expanded');
-      toggle.textContent = expanded ? 'Collapse' : 'Read more';
-    });
-    article.appendChild(toggle);
+  // Read more link
+  if (post.file || post.content) {
+    const readMore = document.createElement('a');
+    readMore.className = 'blog-toggle';
+    readMore.textContent = 'Read more';
+    readMore.href = `post.html?id=${post.id}`;
+    readMore.style.display = 'inline-block';
+    readMore.style.textDecoration = 'none';
+    article.appendChild(readMore);
   }
 
   return article;

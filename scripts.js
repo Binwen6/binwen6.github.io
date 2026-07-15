@@ -270,7 +270,14 @@ function createPublicationElement(publication) {
       projectLink.textContent = '[Project Page]';
       links.appendChild(projectLink);
     }
-    
+
+    if (publication.links.certificate) {
+      const certificateLink = document.createElement('a');
+      certificateLink.href = publication.links.certificate;
+      certificateLink.textContent = '[Certificate]';
+      links.appendChild(certificateLink);
+    }
+
     content.appendChild(links);
   }
   

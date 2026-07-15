@@ -1,6 +1,21 @@
 {
   "publications": [
     {
+      "title": "[Epistemic Stance Flexibility Probing: Measuring Prompt-Conditioned Register Shift in Large Language Models]",
+      "authors": [
+        "Binwen Liu",
+        "Yilin Ren"
+      ],
+      "venue": "arXiv",
+      "thumbnail": "images/thumbs/6.png",
+      "selected": 1,
+      "award": "🏆 Winner — Metacognition Track, Google DeepMind \"Measuring Progress Toward AGI: Cognitive Abilities\" (Kaggle)",
+      "links": {
+        "pdf": "https://arxiv.org/pdf/2607.12739",
+        "certificate": "https://doi.org/10.34740/kaggle/w/77513"
+      }
+    },
+    {
       "title": "[Dual-Stream Gated External Memory Alignment for Multi-Site Major Depressive Disorder Diagnosis]",
       "authors": [
         "Binwen Liu*",

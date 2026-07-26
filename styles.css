@@ -689,6 +689,15 @@ strong {
   margin-right: 0.4rem;
 }
 
+.blog-load-error {
+  padding: 0.75rem 0 1.5rem;
+  color: var(--text-secondary);
+}
+
+.blog-load-error p {
+  margin: 0 0 0.35rem;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;

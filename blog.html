@@ -29,13 +29,22 @@
             <a href="index.html" class="blog-back-link">← Back to Homepage</a>
         </div>
         <div id="blog-container">
-            <p class="blog-empty">Loading posts…</p>
+            <article class="blog-post blog-directory">
+                <div class="blog-directory-label"><span class="fas fa-folder" aria-hidden="true"></span> NOTE DIRECTORY</div>
+                <div class="blog-post-title">Study Notes</div>
+                <div class="blog-post-meta">
+                    <span id="vault-note-count" class="blog-post-date">Public notes · Synced from Obsidian</span>
+                </div>
+                <p class="blog-post-summary">Research notes, paper reading, experiments, and working ideas organized with the original vault structure.</p>
+                <a class="blog-toggle" href="notes.html">Browse directory →</a>
+            </article>
+            <div id="blog-posts"></div>
         </div>
     </main>
     <footer>
         <p>Last updated: <span data-current-date>automatically</span>. All rights reserved.</p>
     </footer>
     <script src="site.js"></script>
-    <script src="blog.js"></script>
+    <script src="blog.js?v=20260726-2"></script>
 </body>
 </html>

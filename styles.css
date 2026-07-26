@@ -670,6 +670,25 @@ strong {
   font-style: italic;
 }
 
+.blog-directory {
+  padding: 1.15rem 1.25rem 1.35rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background: rgba(74, 116, 185, 0.025);
+}
+
+.blog-directory-label {
+  margin-bottom: 0.55rem;
+  color: var(--accent-color);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.blog-directory-label .fas {
+  margin-right: 0.4rem;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;

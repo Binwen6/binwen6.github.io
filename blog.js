@@ -1,116 +1,57 @@
-let allNotes = [];
-let activeDirectory = '';
+document.addEventListener('DOMContentLoaded', loadBlog);
 
-document.addEventListener('DOMContentLoaded', () => {
-  activeDirectory = new URLSearchParams(window.location.search).get('folder') || '';
-  document.getElementById('note-search').addEventListener('input', renderNotes);
-  document.getElementById('folder-toggle').addEventListener('click', event => {
-    const expanded = event.currentTarget.getAttribute('aria-expanded') === 'true';
-    event.currentTarget.setAttribute('aria-expanded', String(!expanded));
-    document.getElementById('folder-tree').classList.toggle('open', !expanded);
-  });
-  loadNotes();
-});
-
-function loadNotes() {
-  fetch('blog-index.json')
-    .then(response => {
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      return response.json();
-    })
-    .then(data => {
-      allNotes = data.notes || [];
-      document.getElementById('blog-description').textContent =
-        `${data.vaultName} · A public collection synced from my local Obsidian vault.`;
-      renderFolderTree();
-      renderNotes();
-    })
-    .catch(err => {
-      console.error('Error loading notes:', err);
-      document.getElementById('blog-container').innerHTML =
-        '<p class="blog-empty">Could not load notes.</p>';
-    });
-}
-
-function renderFolderTree() {
-  const counts = new Map([['', allNotes.length]]);
-  allNotes.forEach(note => {
-    if (!note.directory) return;
-    const parts = note.directory.split('/');
-    for (let index = 1; index <= parts.length; index += 1) {
-      const folder = parts.slice(0, index).join('/');
-      counts.set(folder, (counts.get(folder) || 0) + 1);
-    }
-  });
-  const tree = document.getElementById('folder-tree');
-  tree.innerHTML = '';
-  tree.appendChild(createFolderButton('', 'All notes', allNotes.length, 0));
-  [...counts.entries()]
-    .filter(([folder]) => folder)
-    .sort(([a], [b]) => a.localeCompare(b, 'zh-CN'))
-    .forEach(([folder, count]) => {
-      tree.appendChild(createFolderButton(folder, folder.split('/').pop(), count, folder.split('/').length - 1));
-    });
-}
-
-function createFolderButton(folder, label, count, depth) {
-  const button = document.createElement('button');
-  button.type = 'button';
-  button.className = `folder-item${folder === activeDirectory ? ' active' : ''}`;
-  button.style.setProperty('--folder-depth', depth);
-  button.innerHTML = `<span class="fas ${folder ? 'fa-folder' : 'fa-layer-group'}" aria-hidden="true"></span><span>${escapeHtml(label)}</span><small>${count}</small>`;
-  button.addEventListener('click', () => {
-    activeDirectory = folder;
-    document.querySelectorAll('.folder-item').forEach(item => item.classList.remove('active'));
-    button.classList.add('active');
-    document.getElementById('folder-toggle').textContent = folder ? label : 'Browse folders';
-    document.getElementById('folder-tree').classList.remove('open');
-    document.getElementById('folder-toggle').setAttribute('aria-expanded', 'false');
-    renderNotes();
-  });
-  return button;
-}
-
-function renderNotes() {
+async function loadBlog() {
   const container = document.getElementById('blog-container');
-  const query = document.getElementById('note-search').value.trim().toLocaleLowerCase();
-  const notes = allNotes.filter(note => {
-    const inFolder = !activeDirectory || note.directory === activeDirectory || note.directory.startsWith(`${activeDirectory}/`);
-    const searchable = `${note.title} ${note.path} ${note.summary} ${(note.tags || []).join(' ')}`.toLocaleLowerCase();
-    return inFolder && (!query || searchable.includes(query));
-  });
-  document.getElementById('note-count').textContent = `${notes.length} note${notes.length === 1 ? '' : 's'}`;
-  if (notes.length === 0) {
-    container.innerHTML = '<p class="blog-empty">No matching notes.</p>';
-    return;
+  try {
+    const [blogResponse, notesResponse] = await Promise.all([
+      fetch('blog.json'),
+      fetch('blog-index.json')
+    ]);
+    if (!blogResponse.ok || !notesResponse.ok) throw new Error('Could not load the blog index.');
+    const blog = await blogResponse.json();
+    const notes = await notesResponse.json();
+    container.innerHTML = '';
+    container.appendChild(createVaultEntry(notes));
+    [...(blog.posts || [])]
+      .sort((a, b) => new Date(b.date) - new Date(a.date))
+      .forEach(post => container.appendChild(createPostElement(post)));
+  } catch (error) {
+    console.error(error);
+    container.innerHTML = '<p class="blog-empty">Could not load posts.</p>';
   }
-
-  container.innerHTML = '';
-  notes
-    .sort((a, b) => a.path.localeCompare(b.path, 'zh-CN'))
-    .forEach(note => container.appendChild(createNoteElement(note)));
 }
 
-function createNoteElement(note) {
+function createVaultEntry(vault) {
   const article = document.createElement('article');
-  article.className = 'blog-post vault-note-card';
-  const link = document.createElement('a');
-  link.className = 'note-card-link';
-  link.href = `post.html?note=${encodeURIComponent(note.id)}`;
-  const pathLabel = note.directory || 'Vault root';
-  link.innerHTML = `<div class="note-path"><span class="fas fa-folder-open" aria-hidden="true"></span>${escapeHtml(pathLabel)}</div><h2>${escapeHtml(note.title)}</h2>`;
-  if (note.summary) {
-    const summary = document.createElement('p');
-    summary.className = 'blog-post-summary';
-    summary.textContent = note.summary;
-    link.appendChild(summary);
-  }
-  const open = document.createElement('span');
-  open.className = 'note-open';
-  open.textContent = 'Open note →';
-  link.appendChild(open);
-  article.appendChild(link);
+  article.className = 'blog-post blog-directory';
+  article.innerHTML = `
+    <div class="blog-directory-label"><span class="fas fa-folder" aria-hidden="true"></span> NOTE DIRECTORY</div>
+    <div class="blog-post-title">${escapeHtml(vault.vaultName || 'Study Notes')}</div>
+    <div class="blog-post-meta"><span class="blog-post-date">${Number(vault.count) || 0} public notes · Synced from Obsidian</span></div>
+    <p class="blog-post-summary">Research notes, paper reading, experiments, and working ideas organized with the original vault structure.</p>
+    <a class="blog-toggle" href="notes.html">Browse directory →</a>`;
   return article;
+}
+
+function createPostElement(post) {
+  const article = document.createElement('article');
+  article.className = 'blog-post';
+  const tags = (post.tags || []).map(tag => `<span class="blog-tag">${escapeHtml(tag)}</span>`).join('');
+  article.innerHTML = `
+    <div class="blog-post-title">${escapeHtml(post.title)}</div>
+    <div class="blog-post-meta">
+      <span class="blog-post-date">${formatDate(post.date)}</span>
+      ${tags ? `<div class="blog-tags">${tags}</div>` : ''}
+    </div>
+    ${post.summary ? `<p class="blog-post-summary">${escapeHtml(post.summary)}</p>` : ''}
+    <a class="blog-toggle" href="post.html?id=${encodeURIComponent(post.id)}">Read more</a>`;
+  return article;
+}
+
+function formatDate(value) {
+  return new Date(`${value}T00:00:00`).toLocaleDateString('en-US', {
+    year: 'numeric', month: 'long', day: 'numeric'
+  });
 }
 
 function escapeHtml(value) {

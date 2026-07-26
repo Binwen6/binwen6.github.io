@@ -26,7 +26,7 @@
 
     <main>
         <div class="blog-page-header post-page-header">
-            <a href="blog.html" class="blog-back-link">← All notes</a>
+            <a id="post-back-link" href="blog.html" class="blog-back-link">← Back to Blog</a>
             <nav id="note-breadcrumbs" class="note-breadcrumbs" aria-label="Breadcrumb"></nav>
         </div>
         <div id="single-post-container">
@@ -35,11 +35,25 @@
     </main>
 
     <footer>
-        <p>Last updated: April 2026. All rights reserved.</p>
+        <p>Last updated: <span data-current-date>automatically</span>. All rights reserved.</p>
     </footer>
 
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            }
+        };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js"></script>
+    <script src="site.js"></script>
     <script src="post.js"></script>
 </body>
 </html>

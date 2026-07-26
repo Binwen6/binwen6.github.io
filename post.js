@@ -1,6 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
     const params = new URLSearchParams(window.location.search);
     const postId = params.get('note') || params.get('id');
+    if (params.has('note')) {
+        const backLink = document.getElementById('post-back-link');
+        backLink.href = 'notes.html';
+        backLink.textContent = '← All notes';
+    }
     
     if (!postId) {
         document.getElementById('single-post-container').innerHTML = '<p>Post not found.</p>';
@@ -103,6 +108,11 @@ function renderSinglePost(post) {
                     link.target = '_blank';
                     link.rel = 'noopener noreferrer';
                 });
+                if (window.MathJax && window.MathJax.typesetPromise) {
+                    window.MathJax.typesetPromise([content]).catch(error => {
+                        console.error('Math rendering failed:', error);
+                    });
+                }
             })
             .catch(err => {
                 console.error('Error loading markdown:', err);
@@ -125,13 +135,13 @@ function renderBreadcrumbs(post) {
     const parts = post.path.split('/');
     parts.pop();
     const root = document.createElement('a');
-    root.href = 'blog.html';
+    root.href = 'notes.html';
     root.textContent = 'Study Notes';
     container.appendChild(root);
     parts.forEach((part, index) => {
         container.append(' / ');
         const link = document.createElement('a');
-        link.href = `blog.html?folder=${encodeURIComponent(parts.slice(0, index + 1).join('/'))}`;
+        link.href = `notes.html?folder=${encodeURIComponent(parts.slice(0, index + 1).join('/'))}`;
         link.textContent = part;
         container.appendChild(link);
     });

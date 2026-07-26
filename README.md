@@ -21,6 +21,24 @@ A clean, minimal academic website template, designed for researchers and PhD stu
 4. Modify `publications.json` for your papers
 5. Customize sections as needed (About, Research, News, etc.)
 
+## Sync the Obsidian blog
+
+The Blog is generated from the local Obsidian vault at
+`/Users/binwen6/Obsidian/Study Notes`.
+
+```bash
+# First run only: add a checked publishing control to every note, then sync
+node tools/sync-obsidian.mjs --init-publish-flags
+
+# Normal updates
+node tools/sync-obsidian.mjs
+```
+
+Each note begins with `- [x] Publish on personal website`. Change it to
+`- [ ] Publish on personal website` to remove that note from the next sync.
+The generated `blog-index.json` and `blog/obsidian/` directory should be
+committed with the rest of the website.
+
 ## File Structure
 
 ```

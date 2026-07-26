@@ -1,0 +1,223 @@
+{
+  "generatedAt": "2026-07-26T03:01:59.377Z",
+  "vaultName": "Study Notes",
+  "count": 24,
+  "notes": [
+    {
+      "id": "03ce68284b174449",
+      "path": "定义一段research/何时启动你的实验？.md",
+      "title": "何时启动你的实验？",
+      "directory": "定义一段research",
+      "summary": "科研里面这是一个非常重要的决策。 否则很容易陷入 endless literature review。 很多博士生一年都在： 永远走不到实验。 而优秀的 discovery research 往往都会有一个明确的时刻： 我决定相信自己的 hypothesis 足够有价值，现在开始真正做科学，而不是继续找理由支持它。",
+      "tags": [],
+      "file": "blog/obsidian/notes/03ce68284b174449.md"
+    },
+    {
+      "id": "bfd818c5e141e0d6",
+      "path": "定义一段research/如何划定科研时间线与科研节奏.md",
+      "title": "如何划定科研时间线与科研节奏",
+      "directory": "定义一段research",
+      "summary": "5周 exploration phase + 12周 research phase",
+      "tags": [],
+      "file": "blog/obsidian/notes/bfd818c5e141e0d6.md"
+    },
+    {
+      "id": "9024d333b6e95c0f",
+      "path": "定义一段research/如何找到你的合作者.md",
+      "title": "如何找到你的合作者",
+      "directory": "定义一段research",
+      "summary": "找顶会级别的合作者，本质上是两个问题的叠加：在哪里遇到人（渠道），以及怎么判断和绑定可靠性（筛选与机制）。大部分人只讨论前者，但翻车基本都出在后者。我按渠道的可靠性递减顺序讲，再说筛选。 一、渠道，按信任成本从低到高 1. 组内与导师网络的一跳延伸。这是成功率最高的来源：师兄师姐的现同事、导师的合作者的学生、组里毕业去了工业界的人。信任是继承来的——对方违约",
+      "tags": [],
+      "file": "blog/obsidian/notes/9024d333b6e95c0f.md"
+    },
+    {
+      "id": "c4698ed571818976",
+      "path": "服务器管理/原则.md",
+      "title": "原则",
+      "directory": "服务器管理",
+      "summary": "1. 只在容器内配置cc 初始时利用跳板机cc配置容器，而不要在宿主机上配置cc",
+      "tags": [],
+      "file": "blog/obsidian/notes/c4698ed571818976.md"
+    },
+    {
+      "id": "fa84d98320dc229f",
+      "path": "绘图/tricks.md",
+      "title": "tricks",
+      "directory": "绘图",
+      "summary": "1. t SNE可以算三维，但二维透视 2. hhh",
+      "tags": [],
+      "file": "blog/obsidian/notes/fa84d98320dc229f.md"
+    },
+    {
+      "id": "de524ad64b1b23de",
+      "path": "实验范式/泛化性实验.md",
+      "title": "泛化性实验",
+      "directory": "实验范式",
+      "summary": "1. 不一定要展示平均 逐点展示",
+      "tags": [],
+      "file": "blog/obsidian/notes/de524ad64b1b23de.md"
+    },
+    {
+      "id": "af4d64f96303101d",
+      "path": "实验范式/可解释性实验.md",
+      "title": "可解释性实验",
+      "directory": "实验范式",
+      "summary": "",
+      "tags": [],
+      "file": "blog/obsidian/notes/af4d64f96303101d.md"
+    },
+    {
+      "id": "41c27ca28be893dd",
+      "path": "通信原理基础/智能感知与移动计算.md",
+      "title": "智能感知与移动计算",
+      "directory": "通信原理基础",
+      "summary": "第一章 概述 第二章 感知原理 本章回答一个核心问题： 物联网/智能感知系统如何\"感知\"世界 。三条并列的技术路线构成全章骨架： 1. 传感器类节点 —— 用专门的敏感元件把物理/化学/生物量转成电信号； 2. 非传感器类节点 —— 不依赖传统传感器，而是借助 无线通信技术 实现感知（识别、定位、动作识别等）； 3. 多模态融合 —— 把多种模态的数据综合起",
+      "tags": [],
+      "file": "blog/obsidian/notes/41c27ca28be893dd.md"
+    },
+    {
+      "id": "70d20d950cd9da2d",
+      "path": "研究回溯/bsh/域泛化.md",
+      "title": "域泛化",
+      "directory": "研究回溯/bsh",
+      "summary": "您的这番理解和联想非常深刻，不仅准确地抓住了两篇论文的技术本质，而且通过桌游做出的类比极其精妙。 以下针对您的看法和联想，为您梳理出它们在学术概念和数学逻辑上的深层映射： 1. 关于第一篇 SPG 的看法：“榨干数据集中的映射关系”与“即插即用” 您的直觉非常精准。 “榨干”映射关系 ：传统的 Prompt 学习方法（如 CoOp）是在特征空间中寻找几个“静",
+      "tags": [],
+      "file": "blog/obsidian/notes/70d20d950cd9da2d.md"
+    },
+    {
+      "id": "644c934954a9c892",
+      "path": "自监督学习/范式.md",
+      "title": "范式",
+      "directory": "自监督学习",
+      "summary": "对比学习主要促使自监督ViT捕获表征空间中的低频信号（Low frequency signals），从而驱动多头自注意力机制捕捉更长距离的全局模式（Global patterns），例如对象的整体几何形状与空间布局。这种特征在ViT架构的较深层（Later layers）尤为显著，使得CL模型在本质上呈现出强烈的“形状导向（Shape oriented）”特",
+      "tags": [],
+      "file": "blog/obsidian/notes/644c934954a9c892.md"
+    },
+    {
+      "id": "40c9d72b8ad9e4b2",
+      "path": "自监督学习/视觉Foundation model在扩散模型中的应用-笔记.md",
+      "title": "视觉Foundation model在扩散模型中的应用-笔记",
+      "directory": "自监督学习",
+      "summary": "基本框架 Encoder负责把输⼊图片从Pixel空间映射到Latent Embedding空间， 然后自回归模型、扩散模型处理这些Embedding，最后Decoder负责把 Embedding映射回像素空间，得到⽣成图片",
+      "tags": [],
+      "file": "blog/obsidian/notes/40c9d72b8ad9e4b2.md"
+    },
+    {
+      "id": "fa21d14916c44225",
+      "path": "组会/paper reading/7.21.md",
+      "title": "7.21",
+      "directory": "组会/paper reading",
+      "summary": "今天我将为大家汇报一篇关于大语言模型内部干预机制的最新研究工作。这篇文章的核心聚焦于大语言模型（LLM）的对齐与机制可解释性领域。具体而言，它的核心任务是推理阶段的模型错误修正（或称幻觉缓解）。从交叉领域的角度来看，这项工作巧妙地结合了表征工程（特别是机制激活引导机制）与受限优化理论，旨在实现更安全、更可靠的模型干预。 为了更好地理解本文的贡献，我们需要先铺",
+      "tags": [],
+      "file": "blog/obsidian/notes/fa21d14916c44225.md"
+    },
+    {
+      "id": "3f619faf069614f6",
+      "path": "AGI/ARC-AGI/调研.md",
+      "title": "调研",
+      "directory": "AGI/ARC-AGI",
+      "summary": "下面是基于已收集资料、围绕你五点需求整理的一份「可直接行动」的 ARC‑AGI 系列深度综述与导航。内容分为：官方与论文 → 专业解读与作者观点 → 高分/SOTA 方案 → 创新/另辟蹊径方案 → Kaggle & 社区经验总结。每一部分我都会给出 你可以直接去读的具体入口 + 要抓的关键思想 ，方便你系统钻研，而不是只给链接堆砌。 一、ARC‑AGI‑1",
+      "tags": [],
+      "file": "blog/obsidian/notes/3f619faf069614f6.md"
+    },
+    {
+      "id": "ee083edffe43a279",
+      "path": "AGI/Definition.md",
+      "title": "Definition",
+      "directory": "AGI",
+      "summary": "",
+      "tags": [],
+      "file": "blog/obsidian/notes/ee083edffe43a279.md"
+    },
+    {
+      "id": "951ea7e38e57b684",
+      "path": "emotion/自由写作.md",
+      "title": "自由写作",
+      "directory": "emotion",
+      "summary": "我现在的情绪是什么？ 现在是周一傍晚，明天是周二，导师告知要开组会。 组会上要做汇报，汇报要有进度，还要讲论文。 我想在组会前多赶一些进度，这样汇报时会心安理得一些，不那么紧张。 但赶进度在一定程度上会耽误做汇报PPT的时间。 同时讲论文也需要特别准备，既不能讲的太粗浅，也不能讲的太过细枝末节。。 进度要分两方面来汇报，一方面是组里合作的项目，导师预期很高，",
+      "tags": [],
+      "file": "blog/obsidian/notes/951ea7e38e57b684.md"
+    },
+    {
+      "id": "d2ff318503b54f0f",
+      "path": "hack your research group/合作篇.md",
+      "title": "合作篇",
+      "directory": "hack your research group",
+      "summary": "1. 跟你的导师说想跟谁合作",
+      "tags": [],
+      "file": "blog/obsidian/notes/d2ff318503b54f0f.md"
+    },
+    {
+      "id": "c74a30ec64b4df71",
+      "path": "Paper Reading/Beyond Steering Vector：Flow-based Activation Steering for Inference-Time Intervention.md",
+      "title": "Beyond Steering Vector：Flow-based Activation Steering for Inference-Time Intervention",
+      "directory": "Paper Reading",
+      "summary": "代入这篇论文（arXiv:2605.05892v1）作者团队的视角，我们可以逆向工程出整个研究从“产生困惑” 到 “提出假设” 、 “设计验证” 以及最终 “反哺理论”的完整心路历程与行文脉络。 第一阶段：提出问题与寻找突破口（“为什么现有的 Steering 都打不过 Prompting？”） 1. 痛点觉察与科研直觉 作为可解释性与 LLM 干预方向的研",
+      "tags": [],
+      "file": "blog/obsidian/notes/c74a30ec64b4df71.md"
+    },
+    {
+      "id": "9ee1b2c7d5cb98ad",
+      "path": "Paper Reading/Human-like abstract visual reasoning via understanding and solving reasoning loop.md",
+      "title": "Human-like abstract visual reasoning via understanding and solving reasoning loop",
+      "directory": "Paper Reading",
+      "summary": "1. 论文研究的领域 本篇发表于 CVPR 的论文聚焦于人工智能领域核心的抽象视觉推理（Abstract Visual Reasoning）以及通用人工智能（AGI）能力评估。其具体的实验与评估任务落在目前被视为 AGI 核心基准之一的 ARC AGI（Abstraction and Reasoning Corpus for AGI）上，要求模型在仅给出极少",
+      "tags": [],
+      "file": "blog/obsidian/notes/9ee1b2c7d5cb98ad.md"
+    },
+    {
+      "id": "423ccae5e09738e1",
+      "path": "PhD/角色转换.md",
+      "title": "角色转换",
+      "directory": "PhD",
+      "summary": "你观察到的这个断裂感是真实的,而且背后有结构性原因,不只是心态问题。 本科之前的师生关系本质上是一种教学关系:老师的职责是把知识传递给你,你的成长本身就是他工作的产出,你们的利益几乎完全一致。而课题组是一个生产单位——导师要申请经费、交付项目结题、产出论文来维持实验室的运转和自己的职业生涯。你从\"教学服务的对象\"变成了\"生产体系里的劳动力\",这个位置的变化决",
+      "tags": [],
+      "file": "blog/obsidian/notes/423ccae5e09738e1.md"
+    },
+    {
+      "id": "7d1dbbc7a1feeeea",
+      "path": "PhD/永远不要停止探索，在你对什么是真正重要的问题这个问题本身失去敏锐感知之前.md",
+      "title": "永远不要停止探索，在你对什么是真正重要的问题这个问题本身失去敏锐感知之前",
+      "directory": "PhD",
+      "summary": "有人说PhD是一份职业，有人说PhD是求学生涯的一个新阶段。 我说：PhD是一种状态，是人生而为人对周遭世界一切未知事物保持好奇的一种持之以恒的心态。 很早之前 在我在b站上发布关于 ARC is a Vision Problem 这篇Paper的解读之时，以及在Kaggle上开打 Measuring Progress towards AGI a Cogni",
+      "tags": [],
+      "file": "blog/obsidian/notes/7d1dbbc7a1feeeea.md"
+    },
+    {
+      "id": "91b0ac8af483c9a6",
+      "path": "skills/非线性论文阅读.md",
+      "title": "非线性论文阅读",
+      "directory": "skills",
+      "summary": "先后尝试了ai.explore.poker 后文一律用poker替代 和vibero的vibe reading产品，分享一点体验和感想供参考—— 先说好的方面，poker这个产品目前是集vibe chat和vibe reading为一体的，它的核心思路是基于keyword parsing的递归式阅读。所谓keyword parsing很好理解，就是对于任意给",
+      "tags": [],
+      "file": "blog/obsidian/notes/91b0ac8af483c9a6.md"
+    },
+    {
+      "id": "41320b0fc9f2e775",
+      "path": "skills/非线性模型对话.md",
+      "title": "非线性模型对话",
+      "directory": "skills",
+      "summary": "一些设计想法",
+      "tags": [],
+      "file": "blog/obsidian/notes/41320b0fc9f2e775.md"
+    },
+    {
+      "id": "8bfd1a6207bf7654",
+      "path": "Training/动力学/局部最优解的错觉.md",
+      "title": "局部最优解的错觉",
+      "directory": "Training/动力学",
+      "summary": "https://b23.tv/vKmFxVF",
+      "tags": [],
+      "file": "blog/obsidian/notes/8bfd1a6207bf7654.md"
+    },
+    {
+      "id": "5c6e70e62a649919",
+      "path": "Vibe Coding/记录claude的十大罪行.md",
+      "title": "记录claude的十大罪行",
+      "directory": "Vibe Coding",
+      "summary": "1. 喜欢把绘图Instruction写在图上 用那种斜体小灰字 2. 翻译腔眼中 e.g.喜欢把中文常用的双音节词直接从英文翻译过来用单音节词表示",
+      "tags": [],
+      "file": "blog/obsidian/notes/5c6e70e62a649919.md"
+    }
+  ]
+}

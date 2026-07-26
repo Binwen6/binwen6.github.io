@@ -29,11 +29,29 @@
 
     <main>
         <div class="blog-page-header">
-            <h1>Blog</h1>
+            <div>
+                <p class="blog-eyebrow">OBSIDIAN VAULT</p>
+                <h1>Study Notes</h1>
+                <p id="blog-description" class="blog-description">Browse my public notes by folder or search across titles and summaries.</p>
+            </div>
             <a href="index.html" class="blog-back-link">← Back to Homepage</a>
         </div>
-        <div id="blog-container">
-            <!-- Posts loaded from blog.json -->
+        <div class="vault-toolbar">
+            <label class="vault-search">
+                <span class="fas fa-search" aria-hidden="true"></span>
+                <span class="sr-only">Search notes</span>
+                <input id="note-search" type="search" placeholder="Search notes…" autocomplete="off">
+            </label>
+            <span id="note-count" class="vault-count"></span>
+        </div>
+        <div class="vault-layout">
+            <aside class="vault-sidebar" aria-label="Note folders">
+                <button id="folder-toggle" class="folder-toggle" type="button" aria-expanded="false">Browse folders</button>
+                <nav id="folder-tree" class="folder-tree"></nav>
+            </aside>
+            <section id="blog-container" class="vault-notes" aria-live="polite">
+                <p class="blog-empty">Loading notes…</p>
+            </section>
         </div>
     </main>
 
@@ -41,7 +59,6 @@
         <p>Last updated: April 2026. All rights reserved.</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="blog.js"></script>
 </body>
 

@@ -25,8 +25,9 @@
     </nav>
 
     <main>
-        <div class="blog-page-header">
-            <a href="blog.html" class="blog-back-link">← Back to Blog</a>
+        <div class="blog-page-header post-page-header">
+            <a href="blog.html" class="blog-back-link">← All notes</a>
+            <nav id="note-breadcrumbs" class="note-breadcrumbs" aria-label="Breadcrumb"></nav>
         </div>
         <div id="single-post-container">
             <p>Loading post...</p>
@@ -38,6 +39,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js"></script>
     <script src="post.js"></script>
 </body>
 </html>

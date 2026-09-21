@@ -4,10 +4,24 @@
   --text-secondary: #4a5568;
   --accent-color: #4a74b9;
   --accent-hover: #3a5c9e;
+  --accent-solid: #4a74b9;
   --border-color: #e2e8f0;
   --shadow-color: rgba(0, 0, 0, 0.05);
   --animation-offset: 3px;
   --transition-time: 0.3s;
+}
+
+/* Night mode (set by the theme toggle on the homepage) */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg-color: #15181e;
+  --text-color: #e2e6ee;
+  --text-secondary: #a3adbd;
+  --accent-color: #82a8e2;
+  --accent-hover: #a5c1ec;
+  --accent-solid: #3f69ad;
+  --border-color: #2c323d;
+  --shadow-color: rgba(0, 0, 0, 0.4);
 }
 
 html {
@@ -23,6 +37,14 @@ body {
   color: var(--text-color);
   background-color: var(--bg-color);
   font-weight: 300;
+  transition: background-color var(--transition-time) ease, color var(--transition-time) ease;
+}
+
+/* Merriweather has no CJK glyphs; fall back to a serif Chinese font */
+html[lang="zh-CN"] body {
+  font-family: 'Merriweather', 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', 'STSong', 'SimSun', serif;
+  font-weight: 400;
+  line-height: 1.8;
 }
 
 .bg-quote {
@@ -147,6 +169,46 @@ h2 {
   color: var(--accent-hover);
 }
 
+.nav-controls {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  margin-left: auto;
+  padding: 0 0.4rem;
+}
+
+.nav-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  padding: 0;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: color var(--transition-time) ease, background-color var(--transition-time) ease;
+}
+
+.nav-toggle-lang {
+  font-weight: 500;
+}
+
+.nav-toggle:hover {
+  color: var(--accent-color);
+  background-color: rgba(74, 116, 185, 0.12);
+}
+
+.nav-toggle:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 1px;
+}
+
 .social-links-header a,
 .social-links-header .email-obfuscated {
   text-decoration: none;
@@ -239,7 +301,7 @@ section {
 }
 
 .toggle-publications:hover {
-  background-color: var(--accent-color);
+  background-color: var(--accent-solid);
   color: white;
 }
 
@@ -314,7 +376,7 @@ section {
   font-size: 0.85rem;
   font-weight: 500;
   color: #fff;
-  background-color: var(--accent-color);
+  background-color: var(--accent-solid);
   padding: 0.15rem 0.5rem;
   border-radius: 4px;
   display: inline-block;
@@ -354,7 +416,7 @@ section {
 
 .pub-links a:hover {
   color: #fff;
-  background-color: var(--accent-color);
+  background-color: var(--accent-solid);
   transform: translateX(3px);
   box-shadow: 0 2px 5px rgba(74, 116, 185, 0.2);
 }

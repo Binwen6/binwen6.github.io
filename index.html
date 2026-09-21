@@ -18,33 +18,49 @@
         href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;500;600&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <script>
+        // Apply the saved (or system) theme before first paint to avoid a flash
+        (function () {
+            var theme;
+            try { theme = localStorage.getItem('site-theme'); } catch (e) {}
+            if (theme !== 'light' && theme !== 'dark') {
+                theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            document.documentElement.setAttribute('data-theme', theme);
+            try { if (localStorage.getItem('site-lang') === 'zh') document.documentElement.setAttribute('lang', 'zh-CN'); } catch (e) {}
+        })();
+    </script>
 </head>
 
 <body id="top">
     <nav id="site-nav">
         <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#research">Research</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#news">News</a></li>
-            <li><a href="#publications">Pubs</a></li>
-            <li><a href="#awards">Awards</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#miscellaneous">Misc</a></li>
+            <li><a href="#about" data-i18n="nav.about">About</a></li>
+            <li><a href="#research" data-i18n="nav.research">Research</a></li>
+            <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+            <li><a href="#news" data-i18n="nav.news">News</a></li>
+            <li><a href="#publications" data-i18n="nav.publications">Pubs</a></li>
+            <li><a href="#awards" data-i18n="nav.awards">Awards</a></li>
+            <li><a href="#services" data-i18n="nav.services">Services</a></li>
+            <li><a href="#miscellaneous" data-i18n="nav.misc">Misc</a></li>
         </ul>
-        <a href="blog.html" class="nav-blog-link">Blog</a>
+        <div class="nav-controls">
+            <button type="button" id="lang-toggle" class="nav-toggle nav-toggle-lang">中</button>
+            <button type="button" id="theme-toggle" class="nav-toggle"><i class="fas fa-moon" aria-hidden="true"></i></button>
+        </div>
+        <a href="blog.html" class="nav-blog-link" data-i18n="nav.blog">Blog</a>
     </nav>
-    <div class="bg-quote">Understanding intelligence, in minds and machines.</div>
+    <div class="bg-quote" data-i18n="quote">Understanding intelligence, in minds and machines.</div>
     <header>
         <div class="header-content">
-            <h1>Binwen Liu</h1>
-            <p>PhD Researcher in Artificial Intelligence • Xi'an Jiaotong University</p>
+            <h1 data-i18n="header.name">Binwen Liu</h1>
+            <p data-i18n="header.subtitle">PhD Researcher in Artificial Intelligence • Xi'an Jiaotong University</p>
             <div class="social-links-header">
                 <a href="https://scholar.google.com/citations?hl=en&user=w3nBsVAAAAAJ"><i
                         class="fas fa-graduation-cap"></i>Google Scholar</a>
                 <a href="https://www.linkedin.com/in/binwen-liu/"><i class="fab fa-linkedin"></i>LinkedIn</a>
                 <a href="https://github.com/Binwen6"><i class="fab fa-github"></i>GitHub</a>
-                <span class="email-obfuscated"><i class="fas fa-envelope"></i>liubinwen [at] stu [dot] xjtu [dot] edu [dot] cn</span>
+                <span class="email-obfuscated" data-i18n="header.email"><i class="fas fa-envelope"></i>liubinwen [at] stu [dot] xjtu [dot] edu [dot] cn</span>
             </div>
         </div>
         <div class="header-image">
@@ -54,7 +70,7 @@
 
     <main>
         <section id="about">
-            <p>Hi! I'm a first-year direct-entry PhD student in Artificial Intelligence @ Xi'an Jiaotong University,
+            <p data-i18n="about.intro">Hi! I'm a first-year direct-entry PhD student in Artificial Intelligence @ Xi'an Jiaotong University,
                 advised by prof.
                 <a href="https://scholar.google.com/citations?user=mq6tPX4AAAAJ&hl=en">Badong Chen</a> & <a
                     href="https://scholar.google.com/citations?user=6mMSxZYAAAAJ&hl=en">Kaizhong Zheng</a>.
@@ -62,12 +78,12 @@
         </section>
 
         <section id="research">
-            <h2>Research</h2>
-            <p>My research investigates the <strong>Cognitive Mechanisms of AI Systems</strong>, with a particular focus
+            <h2 data-i18n="research.title">Research</h2>
+            <p data-i18n="research.p1">My research investigates the <strong>Cognitive Mechanisms of AI Systems</strong>, with a particular focus
                 on <strong>Autonomous Agents</strong>. By leveraging frameworks from cognitive science, I aim to
                 diagnose <strong>structural gaps</strong> in how current AI agents reason, monitor, and act—limitations
                 that standard task-level benchmarks often obscure.</p>
-            <p>
+            <p data-i18n="research.p2">
                 My work transitions from cognitive diagnosis to constructive proposal, aiming to drive improvements in
                 AI
                 <strong>architectures</strong> and <strong>alignment</strong>. I am especially interested in how
@@ -78,25 +94,25 @@
         </section>
 
         <section id="projects">
-            <h2>Selected Projects</h2>
+            <h2 data-i18n="projects.title">Selected Projects</h2>
             <div id="projects-container">
                 <!-- Projects will be dynamically loaded here -->
             </div>
         </section>
 
         <section id="news">
-            <h2>News</h2>
+            <h2 data-i18n="news.title">News</h2>
             <div class="news-container">
                 <ul class="news-list">
-                    <li>[9/2026]: Attend the Quarterly Workshop @ Fudan University, Shanghai, for the <em><strong>Brain
+                    <li data-i18n="news.1">[9/2026]: Attend the Quarterly Workshop @ Fudan University, Shanghai, for the <em><strong>Brain
                                 Science and Brain-Like Research</strong> National Science and Technology Major Project
                             (2025-2030)</em>.
                     </li>
-                    <li>[4/2026]: Attend the Quarterly Workshop @ Changsha, Hunan, for the <em><strong>Brain Science and
+                    <li data-i18n="news.2">[4/2026]: Attend the Quarterly Workshop @ Changsha, Hunan, for the <em><strong>Brain Science and
                                 Brain-Like Research</strong> National Science and Technology Major Project
                             (2025-2030)</em>.
                     </li>
-                    <li>[1/2026]: Attend the kick-off meeting @ Fudan University as a participating member for the
+                    <li data-i18n="news.3">[1/2026]: Attend the kick-off meeting @ Fudan University as a participating member for the
                         <em>Research on a
                             Brain-Inspired
                             Multi-Agent Social Interaction System Driven by Affective Cognition and Moral
@@ -106,7 +122,7 @@
                             Technology
                             Major Project (2025-2030)</em>.
                     </li>
-                    <li>[10/2025]: Admitted to National Key Laboratory of Human-Machine Hybrid Augmented Intelligence &
+                    <li data-i18n="news.4">[10/2025]: Admitted to National Key Laboratory of Human-Machine Hybrid Augmented Intelligence &
                         Institute of Artificial Intelligence and Robotics (IAIR) through Direct-Entry PhD program.
                     </li>
                 </ul>
@@ -124,80 +140,81 @@
         </section>
 
         <section id="awards">
-            <h2>Honors & Awards</h2>
+            <h2 data-i18n="awards.title">Honors & Awards</h2>
             <div class="award-item">
                 <span class="award-year">2026</span>
-                <div class="award-desc">🏆 Winner, Metacognition Track – Kaggle/Google DeepMind Hackathon "Measuring
+                <div class="award-desc" data-i18n="awards.1">🏆 Winner, Metacognition Track – Kaggle/Google DeepMind Hackathon "Measuring
                     Progress Toward AGI: Cognitive Abilities" (Design benchmarks for cognitive faculties: Learning,
                     Metacognition, Social Cognition, etc.) <a href="https://doi.org/10.34740/kaggle/w/77513">[Certificate]</a></div>
             </div>
             <div class="award-item">
                 <span class="award-year">2026</span>
-                <div class="award-desc">11th National Biomedical Engineering Innovation Design Competition for College
+                <div class="award-desc" data-i18n="awards.2">11th National Biomedical Engineering Innovation Design Competition for College
                     Students – Third Prize (Electrothermal Waistband for Intervening in Prolonged-Sitting Fatigue of
                     Special Vehicle Drivers) <a href="images/bme-competition-2026-certificate.png">[Certificate]</a></div>
             </div>
             <div class="award-item">
                 <span class="award-year">2026</span>
-                <div class="award-desc">Outstanding Representative of Honorary Graduates (Class of 2026), Qian Xuesen
+                <div class="award-desc" data-i18n="awards.3">Outstanding Representative of Honorary Graduates (Class of 2026), Qian Xuesen
                     College, Xi'an Jiaotong University</div>
             </div>
             <div class="award-item">
                 <span class="award-year">2026</span>
-                <div class="award-desc">Kaggle Deep Past Challenge – Translate Akkadian to English (Machine Translation
+                <div class="award-desc" data-i18n="awards.4">Kaggle Deep Past Challenge – Translate Akkadian to English (Machine Translation
                     of 4,000-year-old Old Assyrian Cuneiform)</div>
             </div>
             <div class="award-item">
                 <span class="award-year">2025</span>
-                <div class="award-desc">Outstanding Individual in Social Activities (2024–2025 Academic Year), Xi'an
+                <div class="award-desc" data-i18n="awards.5">Outstanding Individual in Social Activities (2024–2025 Academic Year), Xi'an
                     Jiaotong University</div>
             </div>
             <div class="award-item">
                 <span class="award-year">2024</span>
-                <div class="award-desc">13th “China Software Cup” College Student Software Design Competition – Third
+                <div class="award-desc" data-i18n="awards.6">13th “China Software Cup” College Student Software Design Competition – Third
                     Prize</div>
             </div>
             <div class="award-item">
                 <span class="award-year">2024</span>
-                <div class="award-desc">American Mathematical Contest in Modeling (MCM) – H Award</div>
+                <div class="award-desc" data-i18n="awards.7">American Mathematical Contest in Modeling (MCM) – H Award</div>
             </div>
             <div class="award-item">
                 <span class="award-year">2023</span>
-                <div class="award-desc">"FLTRP●ETIC Cup" National College Foreign Language Contest – Silver Award
+                <div class="award-desc" data-i18n="awards.8">"FLTRP●ETIC Cup" National College Foreign Language Contest – Silver Award
                     (English Writing)</div>
             </div>
         </section>
 
         <section id="services">
-            <h2>Services</h2>
+            <h2 data-i18n="services.title">Services</h2>
             <div class="service-category">
-                <div class="service-title">Reviewer</div>
+                <div class="service-title" data-i18n="services.reviewer">Reviewer</div>
                 <p>[Conference 1 YYYY], [Conference 2 YYYY], [Journal 1 YYYY], [Journal 2 YYYY]</p>
             </div>
 
             <div class="service-category">
-                <div class="service-title">Volunteer</div>
-                <p>Volunteer for the "Affective Embodied Intelligence" Sub-forum, the 2nd China Embodied AI and Systems
+                <div class="service-title" data-i18n="services.volunteer">Volunteer</div>
+                <p data-i18n="services.volunteer.1">Volunteer for the "Affective Embodied Intelligence" Sub-forum, the 2nd China Embodied AI and Systems
                     Conference (CEAIS 2025), Xi'an, China, Nov 2025</p>
             </div>
         </section>
 
         <section id="miscellaneous">
-            <h2>Miscellaneous</h2>
+            <h2 data-i18n="misc.title">Miscellaneous</h2>
             <div class="misc-item">
-                <p>Once inspired by Douglas Hofstadter & Karl Friston</p>
+                <p data-i18n="misc.1">Once inspired by Douglas Hofstadter & Karl Friston</p>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>Last updated: <span data-current-date>automatically</span>. All rights reserved.</p>
+        <p><span data-i18n="footer.updated">Last updated: </span><span data-current-date>automatically</span><span data-i18n="footer.rights">. All rights reserved.</span></p>
     </footer>
 
     <div id="imageModal" class="modal">
         <span class="modal-close" onclick="closeModal()">&times;</span>
         <img class="modal-content" id="modalImage">
     </div>
+    <script src="i18n.js"></script>
     <script src="site.js"></script>
     <script src="scripts.js"></script>
 </body>

@@ -1,6 +1,21 @@
 // Global variables
 let allPublications = [];
 let showingSelected = true;
+let allProjects = [];
+
+// Fallback when i18n.js is not loaded
+const translate = typeof t === 'function' ? t : key => ({
+  'pubs.selected': 'Selected Publications',
+  'pubs.all': 'All Publications',
+  'pubs.showAll': 'Show All',
+  'pubs.showSelected': 'Show Selected'
+})[key] || key;
+
+// Re-render language-dependent dynamic content
+document.addEventListener('site:languagechange', () => {
+  updatePublicationLabels();
+  if (allProjects.length > 0) renderProjects(allProjects, true);
+});
 
 // Initialize the page
 document.addEventListener('DOMContentLoaded', function() {
@@ -69,7 +84,8 @@ function loadProjects() {
     })
     .then(data => {
       console.log("Projects loaded successfully:", data);
-      renderProjects(data.projects, true);
+      allProjects = data.projects;
+      renderProjects(allProjects, true);
     })
     .catch(error => {
       console.error('Error loading projects:', error);
@@ -108,7 +124,7 @@ function createProjectElement(project) {
   
   const title = document.createElement('div');
   title.className = 'project-title';
-  title.textContent = project.title;
+  title.textContent = localizedField(project, 'title');
   header.appendChild(title);
   
   if (project.years) {
@@ -124,7 +140,7 @@ function createProjectElement(project) {
   if (project.role) {
     const role = document.createElement('div');
     role.className = 'project-role';
-    role.textContent = project.role;
+    role.textContent = localizedField(project, 'role');
     projectItem.appendChild(role);
   }
   
@@ -132,7 +148,7 @@ function createProjectElement(project) {
   if (project.major_project) {
     const major = document.createElement('div');
     major.className = 'project-major';
-    major.textContent = project.major_project;
+    major.textContent = localizedField(project, 'major_project');
     projectItem.appendChild(major);
   }
   
@@ -140,7 +156,7 @@ function createProjectElement(project) {
   if (project.description) {
     const desc = document.createElement('div');
     desc.className = 'project-desc';
-    desc.textContent = project.description;
+    desc.textContent = localizedField(project, 'description');
     projectItem.appendChild(desc);
   }
   
@@ -158,11 +174,20 @@ function togglePublications() {
   showingSelected = !showingSelected;
   renderPublications(showingSelected);
   
-  // Update button text
+  updatePublicationLabels();
+}
+
+function updatePublicationLabels() {
   const toggleButton = document.getElementById('toggle-publications');
-  toggleButton.textContent = showingSelected ? 'Show All' : 'Show Selected';
+  if (toggleButton) toggleButton.textContent = translate(showingSelected ? 'pubs.showAll' : 'pubs.showSelected');
   const toggleHeader = document.getElementById('toggle-header');
-  toggleHeader.textContent = showingSelected ? 'Selected Publications' : 'All Publications';
+  if (toggleHeader) toggleHeader.textContent = translate(showingSelected ? 'pubs.selected' : 'pubs.all');
+}
+
+// Pick the Chinese variant of a project field (e.g. title_zh) when available
+function localizedField(item, field) {
+  const isZh = document.documentElement.getAttribute('data-lang') === 'zh';
+  return (isZh && item[field + '_zh']) || item[field];
 }
 
 // Render publications based on selection state

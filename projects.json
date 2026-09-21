@@ -3,10 +3,14 @@
     {
       "id": "brain-project",
       "title": "Research on a Brain-Inspired Multi-Agent Social Interaction System Driven by Affective Cognition and Moral Reasoning",
+      "title_zh": "情感认知与道德推理驱动的类脑多智能体社会交互系统研究",
       "major_project": "Brain Science and Brain-Like Research National Science and Technology Major Project (2025-2030)",
+      "major_project_zh": "脑科学与类脑研究国家科技重大专项（2025–2030）",
       "role": "Task Member",
+      "role_zh": "任务成员",
       "years": "2025 - 2030",
       "description": "Investigating brain-inspired algorithms & benchmarks for moral reasoning, value evaluation, and social intelligence.",
+      "description_zh": "研究面向道德推理、价值评估与社会智能的类脑算法与评测基准。",
       "selected": 1
     }
   ]

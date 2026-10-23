@@ -58,6 +58,7 @@ const I18N_ZH = {
 
   'services.title': '学术服务',
   'services.reviewer': '审稿人',
+  'services.reviewer.1': 'ICLR 2027（审稿 2 篇）',
   'services.volunteer': '志愿者',
   'services.volunteer.1': '第二届中国具身智能与系统大会（CEAIS 2025）"情感具身智能"分论坛志愿者，中国西安，2025 年 11 月',
 

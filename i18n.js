@@ -24,12 +24,13 @@ const I18N_ZH = {
     '<a href="https://scholar.google.com/citations?user=6mMSxZYAAAAJ&hl=en">郑凯中</a> 老师。',
 
   'research.title': '研究方向',
-  'research.p1': '我的研究关注 <strong>AI 系统的认知机制</strong>，尤其聚焦于<strong>自主智能体</strong>。' +
-    '借助认知科学的理论框架，我希望诊断当前 AI 智能体在推理、监控与行动方面存在的<strong>结构性缺陷</strong>——' +
-    '这些局限往往被常规的任务级基准测试所掩盖。',
-  'research.p2': '我的工作从认知诊断走向建设性方案，旨在推动 AI <strong>架构</strong>与<strong>对齐</strong>的改进。' +
-    '我尤其关注执行功能、工作记忆与元认知监控等具体认知能力，在<strong>语言模型</strong>与' +
-    '<strong>行动型智能体</strong>中如何表现、又如何以不同方式失效。',
+  'research.p1': '我的研究兴趣位于<strong>人工智能</strong>、<strong>认知科学</strong>与<strong>脑科学</strong>的交叉地带，' +
+    '核心关切是：智能系统如何形成<strong>内部表征</strong>，利用这些表征推理，并理解其他智能体的<strong>信念与意图</strong>。' +
+    '在脑影像分析、脑信号解码与表征学习相关知识积累的基础上，我当前重点关注大语言模型的<strong>潜在推理</strong>、' +
+    '<strong>机制可解释性</strong>与<strong>可控干预</strong>，以及多智能体之间的<strong>潜在空间通信</strong>和<strong>心智建模</strong>。',
+  'research.p2': '我倾向于结合认知启发与机制验证，理解模型行为背后的计算过程，并探索更高效、可信、能够协作的智能体。' +
+    '未来，我希望进一步连接<strong>内部表征</strong>、<strong>心智理论</strong>与<strong>协作决策</strong>，' +
+    '研究智能体如何形成对自身、他者及环境的模型，并将其用于泛化、持续学习与人机协作。',
 
   'projects.title': '代表性项目',
   'news.title': '最新动态',
